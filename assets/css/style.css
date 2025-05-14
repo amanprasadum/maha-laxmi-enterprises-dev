@@ -1960,7 +1960,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('./assets/images/hero-bg-1.jpg');
+  background-image: url('../images/hero-bg-1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1970,15 +1970,15 @@ body {
 
 @keyframes slideBackground {
   0%, 25% {
-    background-image: url('./assets/images/hero-bg-1.jpg');
+    background-image: url('../images/hero-bg-1.jpg');
     opacity: 1;
   }
   33%, 58% {
-    background-image: url('./assets/images/hero-bg-2.jpg');
+    background-image: url('../images/hero-2.jpg');
     opacity: 1;
   }
   66%, 91% {
-    background-image: url('./assets/images/hero-bg-3.jpg');
+    background-image: url('../images/hero-bg-3.jpg');
     opacity: 1;
   }
   8%, 33%, 41%, 66%, 74%, 99% {
