@@ -1946,3 +1946,240 @@ body {
     }
 }
 /* Mahalaxmi Contact Section Styles end */
+/* Mahalaxmi Slider Section Styles */
+.mahalaxmi-slider-section {
+  position: relative;
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.mahalaxmi-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.mahalaxmi-section-divider {
+  height: 3px;
+  width: 80px;
+  background-color: #e6b913;
+  margin: 0 auto 20px;
+}
+
+.mahalaxmi-section-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.mahalaxmi-slider-container {
+  position: relative;
+  margin-top: 30px;
+}
+
+/* Slider Controls */
+.mahalaxmi-slider-controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.mahalaxmi-slider-prev,
+.mahalaxmi-slider-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.mahalaxmi-slider-prev {
+  margin-left: -25px;
+}
+
+.mahalaxmi-slider-next {
+  margin-right: -25px;
+}
+
+.mahalaxmi-slider-prev:hover,
+.mahalaxmi-slider-next:hover {
+  background-color: #e6b913;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.mahalaxmi-slider-prev i,
+.mahalaxmi-slider-next i {
+  font-size: 1.2rem;
+}
+
+/* Slider Wrapper */
+.mahalaxmi-slider-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mahalaxmi-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.mahalaxmi-slide {
+  min-width: 100%;
+  background-color: #fff;
+}
+
+.mahalaxmi-slide-content {
+  padding: 50px;
+}
+
+.mahalaxmi-slide-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.mahalaxmi-slide-title span {
+  color: #e6b913;
+}
+
+.mahalaxmi-slide-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.mahalaxmi-slide-features {
+  margin-bottom: 30px;
+}
+
+.mahalaxmi-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.mahalaxmi-feature i {
+  color: #e6b913;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.mahalaxmi-feature span {
+  font-size: 1rem;
+  color: #555;
+}
+
+.mahalaxmi-slide-btn {
+  display: inline-block;
+  background-color: #e6b913;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(230, 185, 19, 0.3);
+}
+
+.mahalaxmi-slide-btn:hover {
+  background-color: #333;
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.mahalaxmi-slide-image {
+  text-align: center;
+  padding: 20px;
+}
+
+.mahalaxmi-slide-image img {
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Slider Pagination */
+.mahalaxmi-slider-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.mahalaxmi-pagination-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mahalaxmi-pagination-dot.active {
+  width: 30px;
+  border-radius: 10px;
+  background-color: #e6b913;
+}
+
+@media (max-width: 991px) {
+  .mahalaxmi-slide-content {
+    padding: 30px;
+  }
+  
+  .mahalaxmi-slide-title {
+    font-size: 1.8rem;
+  }
+  
+  .mahalaxmi-slide-description {
+    font-size: 1rem;
+  }
+  
+  .mahalaxmi-slide-image img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mahalaxmi-slider-section {
+    padding: 50px 0;
+  }
+  
+  .mahalaxmi-section-title {
+    font-size: 2rem;
+  }
+  
+  .mahalaxmi-slide-content {
+    padding: 20px;
+  }
+  
+  .mahalaxmi-slide-text {
+    margin-bottom: 30px;
+  }
+  
+  .mahalaxmi-slide-image img {
+    max-height: 250px;
+  }
+  
+  .mahalaxmi-slider-controls {
+    display: none;
+  }
+}
