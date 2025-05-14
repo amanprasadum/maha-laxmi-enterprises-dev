@@ -1484,3 +1484,164 @@ body {
     height: 50px;
     opacity: .2
 }
+/* certificate section start */
+.certification-card {
+    background-color: var(--white);
+    padding: 40px 25px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    height: 100%;
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+    overflow: hidden;
+    border-bottom: 4px solid transparent;
+}
+
+.certification-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.certification-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(230, 185, 19, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    position: relative;
+}
+
+.certification-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dashed var(--primary-color);
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.certification-icon i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.certification-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.certification-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.certification-badge {
+    display: inline-block;
+    background-color: rgba(230, 185, 19, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+}
+
+.additional-certifications {
+    background-color: var(--light-color);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.additional-certifications:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.additional-certifications h4 {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.additional-certifications h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.quality-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: 50px;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.quality-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow);
+    background-color: var(--dark-color);
+}
+
+.quality-badge:hover i,
+.quality-badge:hover span {
+    color: var(--white);
+}
+
+.quality-badge i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+.quality-badge span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+@media(max-width: 767px) {
+    .certification-card {
+        padding: 30px 15px;
+        margin-bottom: 30px;
+    }
+    
+    .quality-badge {
+        margin-bottom: 15px;
+    }
+}
+/* certificate section end */
