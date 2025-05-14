@@ -1645,3 +1645,233 @@ body {
     }
 }
 /* certificate section end */
+/* Mahalaxmi Contact Section Styles start */
+.mahalaxmi-contact-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.mahalaxmi-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mahalaxmi-section-divider {
+    height: 3px;
+    width: 80px;
+    background-color: #e6b913;
+    margin: 0 auto 20px;
+}
+
+.mahalaxmi-section-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.mahalaxmi-card {
+    background-color: #fff;
+    padding: 40px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-bottom: 4px solid transparent;
+}
+
+.mahalaxmi-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #e6b913;
+}
+
+.mahalaxmi-card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(230, 185, 19, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    position: relative;
+}
+
+.mahalaxmi-card-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dashed #e6b913;
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.mahalaxmi-card-icon i {
+    font-size: 2.5rem;
+    color: #e6b913;
+}
+
+.mahalaxmi-card-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.mahalaxmi-contact-details {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.mahalaxmi-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.mahalaxmi-contact-item i {
+    font-size: 1.2rem;
+    color: #e6b913;
+    margin-right: 15px;
+    padding-top: 3px;
+}
+
+.mahalaxmi-contact-item span {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.mahalaxmi-contact-item a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mahalaxmi-contact-item a:hover {
+    color: #e6b913;
+}
+
+.mahalaxmi-social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.mahalaxmi-social-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.mahalaxmi-social-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.mahalaxmi-social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.mahalaxmi-social-icon i {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.facebook-bg {
+    background-color: #3b5998;
+}
+
+.instagram-bg {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.linkedin-bg {
+    background-color: #0077b5;
+}
+
+.twitter-bg {
+    background-color: #1da1f2;
+}
+
+.youtube-bg {
+    background-color: #ff0000;
+}
+
+.mahalaxmi-social-text {
+    text-align: left;
+}
+
+.mahalaxmi-social-text h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.mahalaxmi-social-text p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+.mahalaxmi-inquiry-btn {
+    background-color: #e6b913;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(230, 185, 19, 0.3);
+}
+
+.mahalaxmi-inquiry-btn:hover {
+    background-color: #333;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+@media(max-width: 991px) {
+    .mahalaxmi-social-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 767px) {
+    .mahalaxmi-card {
+        padding: 30px 15px;
+        margin-bottom: 30px;
+    }
+    
+    .mahalaxmi-section-title {
+        font-size: 2rem;
+    }
+}
+/* Mahalaxmi Contact Section Styles end */
