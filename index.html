@@ -1128,6 +1128,98 @@
         }
       });
     });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Slider Functionality
+      const slider = document.getElementById('mahalaxmiSlider');
+      const slides = document.querySelectorAll('.mahalaxmi-slide');
+      const prevBtn = document.getElementById('sliderPrev');
+      const nextBtn = document.getElementById('sliderNext');
+      const paginationDots = document.querySelectorAll('.mahalaxmi-pagination-dot');
+
+      let currentSlide = 0;
+      const slideCount = slides.length;
+
+      // Initialize slider
+      updateSlider();
+
+      // Next button click
+      nextBtn.addEventListener('click', function () {
+        currentSlide = (currentSlide + 1) % slideCount;
+        updateSlider();
+      });
+
+      // Previous button click
+      prevBtn.addEventListener('click', function () {
+        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+        updateSlider();
+      });
+
+      // Pagination dots click
+      paginationDots.forEach((dot, index) => {
+        dot.addEventListener('click', function () {
+          currentSlide = index;
+          updateSlider();
+        });
+      });
+
+      // Auto slide every 5 seconds
+      let slideInterval = setInterval(autoSlide, 5000);
+
+      // Reset interval on manual navigation
+      function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(autoSlide, 5000);
+      }
+
+      function autoSlide() {
+        currentSlide = (currentSlide + 1) % slideCount;
+        updateSlider();
+      }
+
+      // Update slider position and active dot
+      function updateSlider() {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        // Update active pagination dot
+        paginationDots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+
+        resetInterval();
+      }
+
+      // Touch events for mobile swiping
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      slider.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      slider.addEventListener('touchend', function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+          // Swipe left - next slide
+          currentSlide = (currentSlide + 1) % slideCount;
+          updateSlider();
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+          // Swipe right - previous slide
+          currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+          updateSlider();
+        }
+      }
+    });
   </script>
 </body>
 
