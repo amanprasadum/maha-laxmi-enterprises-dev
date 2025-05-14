@@ -63,7 +63,8 @@ body {
 }
 
 .navbar {
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
+    background-color: #ffffff !important;
     transition: var(--transition);
     padding: 20px 0;
     z-index: 1000
