@@ -1646,6 +1646,7 @@ body {
 }
 /* certificate section end */
 /* Mahalaxmi Contact Section Styles start */
+/* Mahalaxmi Contact Section Styles */
 .mahalaxmi-contact-section {
     background-color: #f8f9fa;
     padding: 80px 0;
@@ -1676,7 +1677,6 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     height: 100%;
-    text-align: center;
     position: relative;
     transition: all 0.3s ease;
     overflow: hidden;
@@ -1730,148 +1730,219 @@ body {
     font-size: 1.5rem;
     margin-bottom: 25px;
     color: #333;
+    text-align: center;
 }
 
-.mahalaxmi-contact-details {
+/* Form Styles */
+.mahalaxmi-contact-form {
     text-align: left;
+}
+
+.mahalaxmi-form-group {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.mahalaxmi-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.mahalaxmi-form-group label i {
+    color: #e6b913;
+    margin-right: 5px;
+}
+
+.mahalaxmi-form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.mahalaxmi-form-control:focus {
+    border-color: #e6b913;
+    box-shadow: 0 0 10px rgba(230, 185, 19, 0.2);
+    outline: none;
+    background-color: #fff;
+}
+
+.mahalaxmi-submit-btn {
+    background-color: #e6b913;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(230, 185, 19, 0.3);
+    cursor: pointer;
+}
+
+.mahalaxmi-submit-btn:hover {
+    background-color: #333;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Details Styles */
+.mahalaxmi-contact-details {
     margin-bottom: 25px;
 }
 
 .mahalaxmi-contact-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     border-bottom: 1px dashed #eee;
 }
 
-.mahalaxmi-contact-item i {
-    font-size: 1.2rem;
-    color: #e6b913;
-    margin-right: 15px;
-    padding-top: 3px;
+.mahalaxmi-contact-item:last-child {
+    border-bottom: none;
 }
 
-.mahalaxmi-contact-item span {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.mahalaxmi-contact-item a {
-    color: #333;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.mahalaxmi-contact-item a:hover {
-    color: #e6b913;
-}
-
-.mahalaxmi-social-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.mahalaxmi-social-item {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #f8f9fa;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    color: #333;
-}
-
-.mahalaxmi-social-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
-
-.mahalaxmi-social-icon {
-    width: 40px;
-    height: 40px;
+.mahalaxmi-contact-icon {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(230, 185, 19, 0.1);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
-.mahalaxmi-social-icon i {
-    font-size: 1.2rem;
-    color: #fff;
+.mahalaxmi-contact-icon i {
+    font-size: 1.3rem;
+    color: #e6b913;
 }
 
-.facebook-bg {
-    background-color: #3b5998;
+.mahalaxmi-contact-text {
+    flex: 1;
 }
 
-.instagram-bg {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-
-.linkedin-bg {
-    background-color: #0077b5;
-}
-
-.twitter-bg {
-    background-color: #1da1f2;
-}
-
-.youtube-bg {
-    background-color: #ff0000;
-}
-
-.mahalaxmi-social-text {
-    text-align: left;
-}
-
-.mahalaxmi-social-text h4 {
-    font-size: 0.9rem;
+.mahalaxmi-contact-text h4 {
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0;
+    margin-bottom: 5px;
+    color: #333;
 }
 
-.mahalaxmi-social-text p {
-    font-size: 0.8rem;
-    margin-bottom: 0;
-    opacity: 0.8;
-}
-
-.mahalaxmi-inquiry-btn {
-    background-color: #e6b913;
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: 600;
+.mahalaxmi-contact-text a,
+.mahalaxmi-contact-text p {
+    font-size: 0.95rem;
+    color: #666;
+    text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(230, 185, 19, 0.3);
+    margin-bottom: 0;
 }
 
-.mahalaxmi-inquiry-btn:hover {
-    background-color: #333;
+.mahalaxmi-contact-text a:hover {
+    color: #e6b913;
+}
+
+/* Social Media Styles */
+.mahalaxmi-social-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+.mahalaxmi-social-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #e6b913;
+}
+
+.mahalaxmi-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mahalaxmi-social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.mahalaxmi-social-link:nth-child(1) {
+    background-color: #3b5998; /* Facebook */
+}
+
+.mahalaxmi-social-link:nth-child(2) {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); /* Instagram */
+}
+
+.mahalaxmi-social-link:nth-child(3) {
+    background-color: #0077b5; /* LinkedIn */
+}
+
+.mahalaxmi-social-link:nth-child(4) {
+    background-color: #1da1f2; /* Twitter */
+}
+
+.mahalaxmi-social-link:nth-child(5) {
+    background-color: #ff0000; /* YouTube */
+}
+
+.mahalaxmi-social-link:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mahalaxmi-social-link i {
+    font-size: 1.2rem;
+}
+
+/* Map Container Styles */
+.mahalaxmi-map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 @media(max-width: 991px) {
-    .mahalaxmi-social-grid {
-        grid-template-columns: 1fr;
+    .mahalaxmi-card {
+        margin-bottom: 30px;
     }
 }
 
 @media(max-width: 767px) {
     .mahalaxmi-card {
         padding: 30px 15px;
-        margin-bottom: 30px;
     }
     
     .mahalaxmi-section-title {
         font-size: 2rem;
+    }
+    
+    .mahalaxmi-contact-item {
+        flex-direction: column;
+    }
+    
+    .mahalaxmi-contact-icon {
+        margin-bottom: 10px;
     }
 }
 /* Mahalaxmi Contact Section Styles end */
