@@ -911,6 +911,158 @@ body {
 .footer {
     background-color: var(--white);
     position: relative;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+.footer-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--light-color);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+    z-index: 1;
+}
+
+.footer-logo {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.footer-logo span {
+    color: var(--primary-color);
+}
+
+.footer-text {
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: .8;
+}
+
+.social-links {
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-5px);
+}
+
+.footer-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links a::before {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    padding-left: 20px;
+}
+
+/* Certification Styles */
+.certification-logos {
+    margin-top: 20px;
+}
+
+.certification-logo {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 10px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.certification-logo:hover {
+    transform: translateY(-5px);
+}
+
+.certification-logo img {
+    max-height: 60px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.copyright {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.copyright-text {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* .footer {
+    background-color: var(--white);
+    position: relative;
     padding-top: 100px
 }
 
@@ -1019,7 +1171,7 @@ body {
 .footer-links a:hover {
     color: var(--primary-color);
     padding-left: 20px
-}
+} */
 
 .contact-info {
     list-style: none;
@@ -2326,18 +2478,19 @@ body {
         right: 10px;
     }
 }
+
 .mahalaxmi-hero-slide {
     display: none;
     width: 100%;
     height: 100%;
-  }
-  
-  .mahalaxmi-hero-slide.active {
+}
+
+.mahalaxmi-hero-slide.active {
     display: block;
-  }
-  
-  /* New styled badge tag replacing the original badge */
-  .mahalaxmi-hero-badge-tag {
+}
+
+/* New styled badge tag replacing the original badge */
+.mahalaxmi-hero-badge-tag {
     display: inline-block;
     background: linear-gradient(135deg, #e6b913 0%, #d9a212 100%);
     color: #fff;
@@ -2349,10 +2502,10 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
-  
-  .mahalaxmi-hero-badge-tag:after {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mahalaxmi-hero-badge-tag:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -2363,4 +2516,4 @@ body {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-left: 10px solid #d9a212;
-  }
+}
