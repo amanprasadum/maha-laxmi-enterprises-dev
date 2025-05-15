@@ -135,6 +135,7 @@
 
 
   <!-- Hero Section with Slide Animation -->
+  <!-- Hero Section with Slide Animation -->
   <section class="mahalaxmi-hero-section" id="hero">
     <div class="mahalaxmi-hero-background">
       <div class="mahalaxmi-hero-overlay"></div>
@@ -147,7 +148,7 @@
           <div class="row h-100 align-items-center">
             <div class="col-lg-7">
               <div class="mahalaxmi-hero-content">
-                <div class="mahalaxmi-hero-badge">Premium Quality</div>
+                <div class="mahalaxmi-hero-badge-tag">Premium Quality</div>
                 <h1 class="mahalaxmi-hero-title" data-aos="fade-right" data-aos-delay="400">
                   Finest <span>Rice</span> Grains <br>
                   For Your Family
@@ -158,7 +159,6 @@
                 </p>
                 <div class="mahalaxmi-hero-buttons" data-aos="fade-right" data-aos-delay="800">
                   <a href="#rice-products" class="mahalaxmi-primary-btn">Explore Rice</a>
-                  <a href="#about" class="mahalaxmi-secondary-btn">Our Legacy</a>
                 </div>
 
                 <div class="mahalaxmi-hero-highlights" data-aos="fade-up" data-aos-delay="1000">
@@ -188,12 +188,6 @@
                 <div class="mahalaxmi-hero-product-image">
                   <img src="./assets/images/hero-rice-bag.png" alt="Premium Rice Bag" class="img-fluid">
                 </div>
-                <div class="mahalaxmi-hero-product-badge">
-                  <div class="badge-content">
-                    <span class="badge-discount">20%</span>
-                    <span class="badge-text">OFF</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -204,7 +198,7 @@
           <div class="row h-100 align-items-center">
             <div class="col-lg-7">
               <div class="mahalaxmi-hero-content">
-                <div class="mahalaxmi-hero-badge">Craftsman's Choice</div>
+                <div class="mahalaxmi-hero-badge-tag">Craftsman's Choice</div>
                 <h1 class="mahalaxmi-hero-title" data-aos="fade-right" data-aos-delay="400">
                   Exquisite <span>Yarn</span> <br>
                   For Creative Minds
@@ -216,7 +210,6 @@
                 </p>
                 <div class="mahalaxmi-hero-buttons" data-aos="fade-right" data-aos-delay="800">
                   <a href="#yarn-products" class="mahalaxmi-primary-btn">Discover Yarn</a>
-                  <a href="#yarn-gallery" class="mahalaxmi-secondary-btn">Crafting Gallery</a>
                 </div>
 
                 <div class="mahalaxmi-hero-highlights" data-aos="fade-up" data-aos-delay="1000">
@@ -246,12 +239,6 @@
                 <div class="mahalaxmi-hero-product-image">
                   <img src="./assets/images/hero-yarn.png" alt="Premium Yarn Collection" class="img-fluid">
                 </div>
-                <div class="mahalaxmi-hero-product-badge">
-                  <div class="badge-content">
-                    <span class="badge-discount">15%</span>
-                    <span class="badge-text">OFF</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -262,7 +249,7 @@
           <div class="row h-100 align-items-center">
             <div class="col-lg-7">
               <div class="mahalaxmi-hero-content">
-                <div class="mahalaxmi-hero-badge">Comfort & Care</div>
+                <div class="mahalaxmi-hero-badge-tag">Comfort & Care</div>
                 <h1 class="mahalaxmi-hero-title" data-aos="fade-right" data-aos-delay="400">
                   Gentle <span>Women's Pads</span> <br>
                   For Ultimate Comfort
@@ -273,7 +260,6 @@
                 </p>
                 <div class="mahalaxmi-hero-buttons" data-aos="fade-right" data-aos-delay="800">
                   <a href="#feminine-products" class="mahalaxmi-primary-btn">View Collection</a>
-                  <a href="#feminine-care" class="mahalaxmi-secondary-btn">Learn More</a>
                 </div>
 
                 <div class="mahalaxmi-hero-highlights" data-aos="fade-up" data-aos-delay="1000">
@@ -303,12 +289,6 @@
                 <div class="mahalaxmi-hero-product-image">
                   <img src="./assets/images/hero-pads.png" alt="Women's Comfort Pads" class="img-fluid">
                 </div>
-                <div class="mahalaxmi-hero-product-badge">
-                  <div class="badge-content">
-                    <span class="badge-discount">25% </span>
-                    <span class="badge-text">OFF</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -316,6 +296,7 @@
       </div>
     </div>
 
+    <!-- Wave removed as requested -->
 
     <div class="mahalaxmi-slide-dots">
       <span class="mahalaxmi-dot active" data-slide="0"></span>
@@ -323,6 +304,8 @@
       <span class="mahalaxmi-dot" data-slide="2"></span>
     </div>
   </section>
+
+  <!-- Add this to your existing CSS file or create a new style tag -->
 
   <!-- Features Section -->
   <section class="section features">
@@ -942,7 +925,7 @@
       }
     });
   </script> -->
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Variables
       const slides = document.querySelectorAll('.mahalaxmi-hero-slide');
@@ -1008,6 +991,74 @@
       // Initialize slider when DOM is loaded
       initSlider();
     });
+  </script> -->
+
+  <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    // Variables
+    const slides = document.querySelectorAll('.mahalaxmi-hero-slide');
+    const dots = document.querySelectorAll('.mahalaxmi-dot');
+    let currentSlide = 0;
+    let slideInterval;
+    
+    // Initialize slider
+    function initSlider() {
+      // Set first slide as active
+      showSlide(0);
+      
+      // Start automatic slideshow
+      startSlideshow();
+      
+      // Add event listeners to dots
+      dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+          const slideIndex = parseInt(this.getAttribute('data-slide'));
+          showSlide(slideIndex);
+          resetSlideshow();
+        });
+      });
+    }
+    
+    // Show specific slide
+    function showSlide(index) {
+      // Hide all slides
+      slides.forEach(slide => {
+        slide.classList.remove('active');
+      });
+      
+      // Remove active class from all dots
+      dots.forEach(dot => {
+        dot.classList.remove('active');
+      });
+      
+      // Show selected slide and activate corresponding dot
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      
+      // Update current slide index
+      currentSlide = index;
+    }
+    
+    // Go to next slide
+    function nextSlide() {
+      const nextIndex = (currentSlide + 1) % slides.length;
+      showSlide(nextIndex);
+    }
+    
+    // Start automatic slideshow
+    function startSlideshow() {
+      slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+    }
+    
+    // Reset slideshow timer
+    function resetSlideshow() {
+      clearInterval(slideInterval);
+      startSlideshow();
+    }
+    
+    // Initialize slider when DOM is loaded
+    initSlider();
+  });
   </script>
 </body>
 
