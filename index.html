@@ -744,10 +744,10 @@
     <div class="footer-shape"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 mb-5 mb-lg-0">
+        <div class="col-lg-5 mb-5 mb-lg-0">
           <a href="#" class="footer-logo">Maha<span>Laxmi</span>Enterprises</a>
-          <p class="footer-text">Premium rice products sourced from the finest farms across India. Experience the
-            authentic taste of nature with our wide range of rice varieties.</p>
+          <p class="footer-text">Premium products sourced from the finest quality materials. Experience excellence with
+            our wide range of rice varieties, yarn collections, and women's hygiene products.</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -755,38 +755,50 @@
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
           <h3 class="footer-title">Quick Links</h3>
           <ul class="footer-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-          <!-- <h3 class="footer-title">Products</h3>
-          <ul class="footer-links">
-            <li><a href="#products">Basmati Rice</a></li>
-            <li><a href="#products">Brown Rice</a></li>
-            <li><a href="#products">Jasmine Rice</a></li>
-            <li><a href="#products">Sona Masoori Rice</a></li>
-            <li><a href="#products">Black Rice</a></li>
-            <li><a href="#products">Red Rice</a></li>
-          </ul> -->
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h3 class="footer-title">Newsletter</h3>
-          <p class="footer-text">Subscribe to our newsletter for updates, special offers, and rice recipes.</p>
-          <div class="position-relative">
-            <input type="email" class="form-control cta-input mb-2" placeholder="Your Email">
-            <button class="btn btn-primary w-100">Subscribe</button>
+        <div class="col-lg-4 col-md-6">
+          <h3 class="footer-title">Certifications</h3>
+          <p class="footer-text">We pride ourselves on maintaining the highest quality standards</p>
+          <div class="certification-logos">
+            <div class="row g-3">
+              <div class="col-3">
+                <div class="certification-logo">
+                  <img src="./assets/images/fssai-logo.png" alt="FSSAI Certified" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="certification-logo">
+                  <img src="./assets/images/ipeda-logo.png" alt="IPEDA Certified" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="certification-logo">
+                  <img src="./assets/images/iso-logo.png" alt="ISO Certified" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="certification-logo">
+                  <img src="./assets/images/haccp-logo.png" alt="HACCP Certified" class="img-fluid">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="copyright">
-        <p class="copyright-text">© 2025 Maha Laxmi Enterprises. All Rights Reserved.</p>
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="copyright">
+            <p class="copyright-text text-center">© 2025 Maha Laxmi Enterprises. All Rights Reserved.</p>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
@@ -994,71 +1006,71 @@
   </script> -->
 
   <script>
-     document.addEventListener('DOMContentLoaded', function() {
-    // Variables
-    const slides = document.querySelectorAll('.mahalaxmi-hero-slide');
-    const dots = document.querySelectorAll('.mahalaxmi-dot');
-    let currentSlide = 0;
-    let slideInterval;
-    
-    // Initialize slider
-    function initSlider() {
-      // Set first slide as active
-      showSlide(0);
-      
-      // Start automatic slideshow
-      startSlideshow();
-      
-      // Add event listeners to dots
-      dots.forEach(dot => {
-        dot.addEventListener('click', function() {
-          const slideIndex = parseInt(this.getAttribute('data-slide'));
-          showSlide(slideIndex);
-          resetSlideshow();
+    document.addEventListener('DOMContentLoaded', function () {
+      // Variables
+      const slides = document.querySelectorAll('.mahalaxmi-hero-slide');
+      const dots = document.querySelectorAll('.mahalaxmi-dot');
+      let currentSlide = 0;
+      let slideInterval;
+
+      // Initialize slider
+      function initSlider() {
+        // Set first slide as active
+        showSlide(0);
+
+        // Start automatic slideshow
+        startSlideshow();
+
+        // Add event listeners to dots
+        dots.forEach(dot => {
+          dot.addEventListener('click', function () {
+            const slideIndex = parseInt(this.getAttribute('data-slide'));
+            showSlide(slideIndex);
+            resetSlideshow();
+          });
         });
-      });
-    }
-    
-    // Show specific slide
-    function showSlide(index) {
-      // Hide all slides
-      slides.forEach(slide => {
-        slide.classList.remove('active');
-      });
-      
-      // Remove active class from all dots
-      dots.forEach(dot => {
-        dot.classList.remove('active');
-      });
-      
-      // Show selected slide and activate corresponding dot
-      slides[index].classList.add('active');
-      dots[index].classList.add('active');
-      
-      // Update current slide index
-      currentSlide = index;
-    }
-    
-    // Go to next slide
-    function nextSlide() {
-      const nextIndex = (currentSlide + 1) % slides.length;
-      showSlide(nextIndex);
-    }
-    
-    // Start automatic slideshow
-    function startSlideshow() {
-      slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
-    }
-    
-    // Reset slideshow timer
-    function resetSlideshow() {
-      clearInterval(slideInterval);
-      startSlideshow();
-    }
-    
-    // Initialize slider when DOM is loaded
-    initSlider();
-  });
+      }
+
+      // Show specific slide
+      function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => {
+          slide.classList.remove('active');
+        });
+
+        // Remove active class from all dots
+        dots.forEach(dot => {
+          dot.classList.remove('active');
+        });
+
+        // Show selected slide and activate corresponding dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+
+        // Update current slide index
+        currentSlide = index;
+      }
+
+      // Go to next slide
+      function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+      }
+
+      // Start automatic slideshow
+      function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+      }
+
+      // Reset slideshow timer
+      function resetSlideshow() {
+        clearInterval(slideInterval);
+        startSlideshow();
+      }
+
+      // Initialize slider when DOM is loaded
+      initSlider();
+    });
   </script>
 </body>
 
