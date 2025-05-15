@@ -1485,6 +1485,7 @@ body {
     height: 50px;
     opacity: .2
 }
+
 /* certificate section start */
 .certification-card {
     background-color: var(--white);
@@ -1531,6 +1532,7 @@ body {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -1640,11 +1642,12 @@ body {
         padding: 30px 15px;
         margin-bottom: 30px;
     }
-    
+
     .quality-badge {
         margin-bottom: 15px;
     }
 }
+
 /* certificate section end */
 /* Mahalaxmi Contact Section Styles start */
 /* Mahalaxmi Contact Section Styles */
@@ -1716,6 +1719,7 @@ body {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -1888,23 +1892,28 @@ body {
 }
 
 .mahalaxmi-social-link:nth-child(1) {
-    background-color: #3b5998; /* Facebook */
+    background-color: #3b5998;
+    /* Facebook */
 }
 
 .mahalaxmi-social-link:nth-child(2) {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); /* Instagram */
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    /* Instagram */
 }
 
 .mahalaxmi-social-link:nth-child(3) {
-    background-color: #0077b5; /* LinkedIn */
+    background-color: #0077b5;
+    /* LinkedIn */
 }
 
 .mahalaxmi-social-link:nth-child(4) {
-    background-color: #1da1f2; /* Twitter */
+    background-color: #1da1f2;
+    /* Twitter */
 }
 
 .mahalaxmi-social-link:nth-child(5) {
-    background-color: #ff0000; /* YouTube */
+    background-color: #ff0000;
+    /* YouTube */
 }
 
 .mahalaxmi-social-link:hover {
@@ -1933,348 +1942,387 @@ body {
     .mahalaxmi-card {
         padding: 30px 15px;
     }
-    
+
     .mahalaxmi-section-title {
         font-size: 2rem;
     }
-    
+
     .mahalaxmi-contact-item {
         flex-direction: column;
     }
-    
+
     .mahalaxmi-contact-icon {
         margin-bottom: 10px;
     }
 }
+
 /* Mahalaxmi Contact Section Styles end */
 
-/* Mahalaxmi Hero Section Styles
+/* Mahalaxmi Hero Section Styles */
+.mahalaxmi-hero-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.mahalaxmi-hero-slide.active {
+    display: block;
+}
+
 .mahalaxmi-hero-section {
-  position: relative;
-  height: 100vh;
-  min-height: 650px;
-  overflow: hidden;
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    overflow: hidden;
 }
 
 .mahalaxmi-hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../images/hero-bg-1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: slideBackground 15s infinite;
-  z-index: -2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/hero-bg-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slideBackground 15s infinite;
+    z-index: -2;
 }
 
 @keyframes slideBackground {
-  0%, 25% {
-    background-image: url('../images/hero-bg-1.jpg');
-    opacity: 1;
-  }
-  33%, 58% {
-    background-image: url('../images/hero-2.jpg');
-    opacity: 1;
-  }
-  66%, 91% {
-    background-image: url('../images/hero-bg-3.jpg');
-    opacity: 1;
-  }
-  8%, 33%, 41%, 66%, 74%, 99% {
-    opacity: 0.7;
-  }
+
+    0%,
+    25% {
+        background-image: url('../images/hero-bg-1.jpg');
+        opacity: 1;
+    }
+
+    33%,
+    58% {
+        background-image: url('../images/hero-2.jpg');
+        opacity: 1;
+    }
+
+    66%,
+    91% {
+        background-image: url('../images/hero-bg-3.jpg');
+        opacity: 1;
+    }
+
+    8%,
+    33%,
+    41%,
+    66%,
+    74%,
+    99% {
+        opacity: 0.7;
+    }
 }
 
 .mahalaxmi-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: -1;
 }
 
 .mahalaxmi-hero-content {
-  color: #fff;
-  max-width: 600px;
+    color: #fff;
+    max-width: 600px;
 }
 
 .mahalaxmi-hero-badge {
-  display: inline-block;
-  background-color: #e6b913;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(230, 185, 19, 0.3);
-  animation: float 3s ease-in-out infinite;
+    display: inline-block;
+    background-color: #e6b913;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(230, 185, 19, 0.3);
+    animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .mahalaxmi-hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .mahalaxmi-hero-title span {
-  color: #e6b913;
+    color: #e6b913;
 }
 
 .mahalaxmi-hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
-  line-height: 1.8;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.8;
 }
 
 .mahalaxmi-hero-buttons {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 40px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
 }
 
 .mahalaxmi-primary-btn {
-  display: inline-block;
-  background-color: #e6b913;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(230, 185, 19, 0.3);
+    display: inline-block;
+    background-color: #e6b913;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(230, 185, 19, 0.3);
 }
 
 .mahalaxmi-primary-btn:hover {
-  background-color: #fff;
-  color: #333;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.3);
+    background-color: #fff;
+    color: #333;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.3);
 }
 
 .mahalaxmi-secondary-btn {
-  display: inline-block;
-  background-color: transparent;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid #fff;
+    display: inline-block;
+    background-color: transparent;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #fff;
 }
 
 .mahalaxmi-secondary-btn:hover {
-  background-color: #fff;
-  color: #333;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.2);
+    background-color: #fff;
+    color: #333;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.2);
 }
 
 .mahalaxmi-hero-highlights {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
 }
 
 .mahalaxmi-highlight {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .mahalaxmi-highlight-icon {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  color: #e6b913;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #e6b913;
 }
 
 .mahalaxmi-highlight-text h4 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-  font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .mahalaxmi-highlight-text p {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
 }
 
 .mahalaxmi-hero-product {
-  position: relative;
-  animation: productFloat 4s ease-in-out infinite;
+    position: relative;
+    animation: productFloat 4s ease-in-out infinite;
 }
 
 @keyframes productFloat {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(3deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
 }
 
 .mahalaxmi-hero-product-image {
-  max-width: 400px;
-  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+    max-width: 400px;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
 }
 
 .mahalaxmi-hero-product-badge {
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  width: 80px;
-  height: 80px;
-  background-color: #e74c3c;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pulse 2s infinite;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
-  }
-  
-  70% {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 15px rgba(231, 76, 60, 0);
-  }
-  
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
-  }
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+    }
+
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 15px rgba(231, 76, 60, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+    }
 }
 
 .badge-content {
-  text-align: center;
-  color: #fff;
-  font-weight: 700;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
 }
 
 .badge-discount {
-  font-size: 1.8rem;
-  line-height: 1;
+    font-size: 1.8rem;
+    line-height: 1;
 }
 
 .badge-text {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 .mahalaxmi-hero-wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  line-height: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
 }
 
 .mahalaxmi-slide-dots {
-  position: absolute;
-  right: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .mahalaxmi-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .mahalaxmi-dot.active {
-  height: 30px;
-  border-radius: 10px;
-  background-color: #e6b913;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #e6b913;
 }
 
 @media (max-width: 1199px) {
-  .mahalaxmi-hero-title {
-    font-size: 3rem;
-  }
+    .mahalaxmi-hero-title {
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 991px) {
-  .mahalaxmi-hero-section {
-    height: auto;
-    padding: 100px 0 80px;
-  }
-  
-  .mahalaxmi-hero-content {
-    margin-bottom: 50px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .mahalaxmi-hero-highlights {
-    justify-content: center;
-  }
-  
-  .mahalaxmi-hero-product {
-    margin: 0 auto;
-  }
-  
-  .mahalaxmi-slide-dots {
-    right: 20px;
-  }
+    .mahalaxmi-hero-section {
+        height: auto;
+        padding: 100px 0 80px;
+    }
+
+    .mahalaxmi-hero-content {
+        margin-bottom: 50px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mahalaxmi-hero-highlights {
+        justify-content: center;
+    }
+
+    .mahalaxmi-hero-product {
+        margin: 0 auto;
+    }
+
+    .mahalaxmi-slide-dots {
+        right: 20px;
+    }
 }
 
 @media (max-width: 767px) {
-  .mahalaxmi-hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .mahalaxmi-hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .mahalaxmi-hero-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .mahalaxmi-hero-highlights {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .mahalaxmi-highlight {
-    justify-content: center;
-  }
-  
-  .mahalaxmi-hero-product-image {
-    max-width: 300px;
-  }
-  
-  .mahalaxmi-slide-dots {
-    right: 10px;
-  }
-} */
+    .mahalaxmi-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .mahalaxmi-hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .mahalaxmi-hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mahalaxmi-hero-highlights {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mahalaxmi-highlight {
+        justify-content: center;
+    }
+
+    .mahalaxmi-hero-product-image {
+        max-width: 300px;
+    }
+
+    .mahalaxmi-slide-dots {
+        right: 10px;
+    }
+}
