@@ -2302,13 +2302,13 @@ body {
 
     33%,
     58% {
-        background-image: url('../images/yarn.jpg');
+        background-image: url('../images/yarn-hero.jpg');
         opacity: 1;
     }
 
     66%,
     91% {
-        background-image: url('../images/hero-bg-3.jpg');
+        background-image: url('../images/pad.jpg');
         opacity: 1;
     }
 
