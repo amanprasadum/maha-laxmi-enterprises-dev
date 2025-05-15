@@ -892,7 +892,7 @@
     });
 
   </script>
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Hero Section Background Slide Animation
       const heroBg = document.querySelector('.mahalaxmi-hero-background');
@@ -947,6 +947,73 @@
           once: true
         });
       }
+    });
+  </script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Variables
+      const slides = document.querySelectorAll('.mahalaxmi-hero-slide');
+      const dots = document.querySelectorAll('.mahalaxmi-dot');
+      let currentSlide = 0;
+      let slideInterval;
+
+      // Initialize slider
+      function initSlider() {
+        // Set first slide as active
+        showSlide(0);
+
+        // Start automatic slideshow
+        startSlideshow();
+
+        // Add event listeners to dots
+        dots.forEach(dot => {
+          dot.addEventListener('click', function () {
+            const slideIndex = parseInt(this.getAttribute('data-slide'));
+            showSlide(slideIndex);
+            resetSlideshow();
+          });
+        });
+      }
+
+      // Show specific slide
+      function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => {
+          slide.classList.remove('active');
+        });
+
+        // Remove active class from all dots
+        dots.forEach(dot => {
+          dot.classList.remove('active');
+        });
+
+        // Show selected slide and activate corresponding dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+
+        // Update current slide index
+        currentSlide = index;
+      }
+
+      // Go to next slide
+      function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+      }
+
+      // Start automatic slideshow
+      function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+      }
+
+      // Reset slideshow timer
+      function resetSlideshow() {
+        clearInterval(slideInterval);
+        startSlideshow();
+      }
+
+      // Initialize slider when DOM is loaded
+      initSlider();
     });
   </script>
 </body>
