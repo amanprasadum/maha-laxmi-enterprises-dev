@@ -2914,22 +2914,23 @@ body {
     .mahalaxmi-product-info {
         margin-top: 30px;
     }
-    
+
     .mahalaxmi-product-cta {
         flex-direction: column;
     }
-    
+
     .mahalaxmi-btn {
         width: 100%;
     }
 }
 
 @media (max-width: 767px) {
+
     .mahalaxmi-meta-item,
     .mahalaxmi-details-row {
         flex-direction: column;
     }
-    
+
     .mahalaxmi-meta-label,
     .mahalaxmi-details-label {
         margin-bottom: 5px;
@@ -2941,6 +2942,7 @@ body {
 /* ----------------- product page start ---------------------------------- */
 /* Product Categories Section */
 .mahalaxmi-categories-section {
+    margin-top: 100px;
     padding: 70px 0;
     background-color: var(--light-color);
 }
@@ -3183,11 +3185,12 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 991px) {
+
     .mahalaxmi-category-card,
     .mahalaxmi-product-card {
         margin-bottom: 30px;
     }
-    
+
     .mahalaxmi-cta-content {
         padding: 30px 20px;
     }
@@ -3197,15 +3200,15 @@ body {
     .mahalaxmi-section-title {
         font-size: 1.5rem;
     }
-    
+
     .mahalaxmi-category-title {
         font-size: 1.3rem;
     }
-    
+
     .mahalaxmi-cta-title {
         font-size: 1.5rem;
     }
-    
+
     .mahalaxmi-cta-buttons {
         flex-direction: column;
     }
@@ -3220,4 +3223,5 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 /* ----------------- product page end ---------------------------------- */
