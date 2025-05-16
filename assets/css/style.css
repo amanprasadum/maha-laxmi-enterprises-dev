@@ -2534,7 +2534,304 @@ body {
 /* Mahalaxmi Contact Section Styles end */
 
 /* Mahalaxmi Hero Section Styles */
+.mahalaxmi-hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 650px;
+  overflow: hidden;
+}
+
+/* Slide Styles */
 .mahalaxmi-hero-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.mahalaxmi-hero-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Background Styles */
+.mahalaxmi-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  z-index: -2;
+}
+
+/* Background Image Changes via JavaScript */
+.mahalaxmi-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: -1;
+}
+
+/* Hero Content Styles */
+.mahalaxmi-hero-content {
+  color: #fff;
+  max-width: 600px;
+}
+
+/* Badge Tag Style */
+.mahalaxmi-hero-badge-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #e6b913 0%, #d9a212 100%);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mahalaxmi-hero-badge-tag:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #d9a212;
+}
+
+/* Title Styles */
+.mahalaxmi-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mahalaxmi-hero-title span {
+  color: #e6b913;
+}
+
+/* Subtitle Styles */
+.mahalaxmi-hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+/* Button Styles */
+.mahalaxmi-hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.mahalaxmi-primary-btn {
+  display: inline-block;
+  background-color: #e6b913;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(230, 185, 19, 0.3);
+}
+
+.mahalaxmi-primary-btn:hover {
+  background-color: #fff;
+  color: #333;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Highlights Styles */
+.mahalaxmi-hero-highlights {
+  display: flex;
+  gap: 30px;
+}
+
+.mahalaxmi-highlight {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mahalaxmi-highlight-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #e6b913;
+}
+
+.mahalaxmi-highlight-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.mahalaxmi-highlight-text p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Product Image Styles */
+.mahalaxmi-hero-product {
+  position: relative;
+  animation: productFloat 4s ease-in-out infinite;
+}
+
+@keyframes productFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.mahalaxmi-hero-product-image {
+  max-width: 400px;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* Slide Navigation Dots */
+.mahalaxmi-slide-dots {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10;
+}
+
+.mahalaxmi-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mahalaxmi-dot.active {
+  height: 30px;
+  border-radius: 10px;
+  background-color: #e6b913;
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+  .mahalaxmi-hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .mahalaxmi-hero-section {
+    height: auto;
+    padding: 100px 0 80px;
+  }
+
+  .mahalaxmi-hero-content {
+    margin-bottom: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mahalaxmi-hero-highlights {
+    justify-content: center;
+  }
+
+  .mahalaxmi-hero-product {
+    margin: 0 auto;
+  }
+
+  .mahalaxmi-slide-dots {
+    right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mahalaxmi-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .mahalaxmi-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .mahalaxmi-hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .mahalaxmi-hero-highlights {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mahalaxmi-highlight {
+    justify-content: center;
+  }
+
+  .mahalaxmi-hero-product-image {
+    max-width: 300px;
+  }
+
+  .mahalaxmi-slide-dots {
+    right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mahalaxmi-hero-section {
+    min-height: 550px;
+  }
+  
+  .mahalaxmi-hero-title {
+    font-size: 2rem;
+  }
+  
+  .mahalaxmi-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .mahalaxmi-hero-product-image {
+    max-width: 250px;
+  }
+}
+/* .mahalaxmi-hero-slide {
     display: none;
     width: 100%;
     height: 100%;
@@ -2912,7 +3209,6 @@ body {
     display: block;
 }
 
-/* New styled badge tag replacing the original badge */
 .mahalaxmi-hero-badge-tag {
     display: inline-block;
     background: linear-gradient(135deg, #e6b913 0%, #d9a212 100%);
@@ -2939,4 +3235,4 @@ body {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-left: 10px solid #d9a212;
-}
+} */
