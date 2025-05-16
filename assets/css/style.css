@@ -2622,6 +2622,7 @@ body {
 
 /* Product Hero Section */
 .mahalaxmi-product-hero-section {
+    margin-top: 100px !important;
     padding: 70px 0;
     background-color: var(--light-color);
 }
