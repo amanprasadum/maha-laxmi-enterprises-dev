@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maha Laxmi Enterprises - Premium Rice Products</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffc107;
+            --secondary-color: #116530;
+            --dark-color: #333;
+            --text-color: #666;
+            --light-color: #f8f9fa;
+            --white: #fff;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+        
+        /* Product Hero Section */
+        .mahalaxmi-product-hero-section {
+            margin-top: 100px !important;
+            padding: 70px 0;
+            background-color: var(--light-color);
+        }
+        
+        .mahalaxmi-product-image-container {
+            position: relative;
+        }
+        
+        .mahalaxmi-product-main-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            background-color: var(--white);
+            padding: 20px;
+        }
+        
+        .mahalaxmi-product-main-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .mahalaxmi-thumbnail {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .mahalaxmi-thumbnail.active {
+            border-color: var(--primary-color);
+        }
+        
+        .mahalaxmi-thumbnail:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mahalaxmi-product-info {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            height: 100%;
+        }
+        
+        .mahalaxmi-product-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .mahalaxmi-product-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .mahalaxmi-product-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .mahalaxmi-product-rating {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .mahalaxmi-product-rating i {
+            margin-right: 2px;
+        }
+        
+        .mahalaxmi-product-rating span {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-left: 10px;
+        }
+        
+        .mahalaxmi-product-meta {
+            margin-bottom: 25px;
+        }
+        
+        .mahalaxmi-meta-item {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-bottom: 15px;
+        }
+        
+        .mahalaxmi-meta-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .mahalaxmi-meta-label {
+            flex: 0 0 120px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .mahalaxmi-meta-value {
+            flex: 1;
+            color: var(--text-color);
+        }
+        
+        .mahalaxmi-product-description {
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .mahalaxmi-product-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .mahalaxmi-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mahalaxmi-btn-view {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+        
+        .mahalaxmi-btn-view:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        .mahalaxmi-btn-call {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        .mahalaxmi-btn-call:hover {
+            background-color: var(--dark-color);
+        }
+        
+        .mahalaxmi-btn-enquiry {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+        
+        .mahalaxmi-btn-enquiry:hover {
+            background-color: #d4a911;
+        }
+        
+        /* Product Details Section */
+        .mahalaxmi-product-details-section {
+            padding: 70px 0;
+            background-color: var(--white);
+        }
+        
+        .mahalaxmi-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+        
+        .mahalaxmi-card-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .mahalaxmi-section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        .mahalaxmi-section-divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .mahalaxmi-card-body {
+            padding: 30px;
+        }
+        
+        .mahalaxmi-details-table {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mahalaxmi-details-row {
+            display: flex;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .mahalaxmi-details-row:last-child {
+            border-bottom: none;
+        }
+        
+        .mahalaxmi-details-label {
+            flex: 0 0 150px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .mahalaxmi-details-value {
+            flex: 1;
+            color: var(--text-color);
+        }
+        
+        .mahalaxmi-product-certification {
+            background-color: rgba(17, 101, 48, 0.05);
+            border-left: 3px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .mahalaxmi-product-certification p {
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .mahalaxmi-product-highlights {
+            margin-top: 25px;
+        }
+        
+        .mahalaxmi-highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .mahalaxmi-highlight-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .mahalaxmi-highlight-icon {
+            flex: 0 0 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+        
+        .mahalaxmi-highlight-text {
+            flex: 1;
+            padding-left: 10px;
+        }
+        
+        .mahalaxmi-btn-primary {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+        }
+        
+        .mahalaxmi-btn-primary:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        /* Modal Styles */
+        .mahalaxmi-modal .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .mahalaxmi-modal .modal-header {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border-bottom: none;
+            padding: 20px 30px;
+        }
+        
+        .mahalaxmi-modal .modal-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .mahalaxmi-modal .modal-body {
+            padding: 30px;
+        }
+        
+        .mahalaxmi-modal .form-label {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+        }
+        
+        .mahalaxmi-modal .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+        }
+        
+        .mahalaxmi-modal .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+        
+        .mahalaxmi-modal .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .mahalaxmi-modal-product-image {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .mahalaxmi-modal-product-image img {
+            max-width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+        }
+        
+        .mahalaxmi-modal-form-container {
+            height: 100%;
+        }
+        
+        @media (max-width: 991px) {
+            .mahalaxmi-product-info {
+                margin-top: 30px;
+            }
+        
+            .mahalaxmi-product-cta {
+                flex-direction: column;
+            }
+        
+            .mahalaxmi-btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .mahalaxmi-meta-item,
+            .mahalaxmi-details-row {
+                flex-direction: column;
+            }
+        
+            .mahalaxmi-meta-label,
+            .mahalaxmi-details-label {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader  -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Maha<span>Laxmi</span>Enterprises</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="navbar-toggler-icon">
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#products" id="productsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu mahalaxmi-dropdown" aria-labelledby="productsDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#rice">
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-icon">
+                                            <i class="fas fa-seedling"></i>
+                                        </div>
+                                        <div class="dropdown-text">
+                                            <h6>Rice</h6>
+                                            <span>Premium quality rice varieties</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#yarn">
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-icon">
+                                            <i class="fas fa-spool"></i>
+                                        </div>
+                                        <div class="dropdown-text">
+                                            <h6>Yarn</h6>
+                                            <span>High-quality textile materials</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#womens-pad">
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-icon">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+                                        <div class="dropdown-text">
+                                            <h6>Women's Pad</h6>
+                                            <span>Eco-friendly feminine hygiene</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item view-all" href="#all-products">
+                                    <span>View All Products</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="mahalaxmi-product-hero-section py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="mahalaxmi-product-image-container">
+                        <div class="mahalaxmi-product-main-image">
+                            <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn" class="img-fluid" id="mainProductImage">
+                        </div>
+                        <div class="mahalaxmi-product-thumbnails mt-3">
+                            <div class="row g-2">
+                                <div class="col-3">
+                                    <div class="mahalaxmi-thumbnail active" data-img="../assets/images/yarn-product.jpg">
+                                        <img src="../assets/images/yarn-product.jpg" alt="Cotton Yarn Thumbnail 1" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="mahalaxmi-thumbnail" data-img="../assets/images/yarn-beige.jpg">
+                                        <img src="../assets/images/yarn-beige.jpg" alt="Cotton Yarn Thumbnail 2" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="mahalaxmi-thumbnail" data-img="../assets/images/yarn-blue.jpg">
+                                        <img src="../assets/images/yarn-blue.jpg" alt="Cotton Yarn Thumbnail 3" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="mahalaxmi-thumbnail" data-img="../assets/images/yarn-mixed.jpg">
+                                        <img src="../assets/images/yarn-mixed.jpg" alt="Cotton Yarn Thumbnail 4" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mahalaxmi-product-info">
+                        <h1 class="mahalaxmi-product-title">Premium Cotton Yarn</h1>
+                        <div class="mahalaxmi-product-meta">
+                            <div class="mahalaxmi-meta-item">
+                                <span class="mahalaxmi-meta-label">Business Type</span>
+                                <span class="mahalaxmi-meta-value">Manufacturer, Exporter, Supplier</span>
+                            </div>
+                            <div class="mahalaxmi-meta-item">
+                                <span class="mahalaxmi-meta-label">Color</span>
+                                <span class="mahalaxmi-meta-value">Natural White, DYED</span>
+                            </div>
+                            <div class="mahalaxmi-meta-item">
+                                <span class="mahalaxmi-meta-label">Technique</span>
+                                <span class="mahalaxmi-meta-value">Ring Spun</span>
+                            </div>
+                            <div class="mahalaxmi-meta-item">
+                                <span class="mahalaxmi-meta-label">Yarn Type</span>
+                                <span class="mahalaxmi-meta-value">Raw White, DYED</span>
+                            </div>
+                        </div>
+                        <div class="mahalaxmi-product-cta">
+                            <button class="mahalaxmi-btn mahalaxmi-btn-view">
+                                <i class="fas fa-eye me-2"></i> Click to view more
+                            </button>
+                            <button class="mahalaxmi-btn mahalaxmi-btn-call" data-bs-toggle="modal" data-bs-target="#callRequestModal">
+                                <i class="fas fa-phone-alt me-2"></i> Request to Call
+                            </button>
+                            <button class="mahalaxmi-btn mahalaxmi-btn-enquiry" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                                <i class="fas fa-envelope me-2"></i> Send Enquiry
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section class="mahalaxmi-product-details-section py-5">
+        <div class="container">
+            <div class="mahalaxmi-card">
+                <div class="mahalaxmi-card-header">
+                    <h2 class="mahalaxmi-section-title">Product Details</h2>
+                    <div class="mahalaxmi-section-divider"></div>
+                </div>
+                <div class="mahalaxmi-card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mahalaxmi-details-table">
+                                <div class="mahalaxmi-details-row">
+                                    <div class="mahalaxmi-details-label">Pattern</div>
+                                    <div class="mahalaxmi-details-value">Dyed</div>
+                                </div>
+                                <div class="mahalaxmi-details-row">
+                                    <div class="mahalaxmi-details-label">Country of Origin</div>
+                                    <div class="mahalaxmi-details-value">India</div>
+                                </div>
+                                <div class="mahalaxmi-details-row">
+                                    <div class="mahalaxmi-details-label">Features</div>
+                                    <div class="mahalaxmi-details-value">Easy to use, Vibrant colors & Quality product
+                                    </div>
+                                </div>
+                                <div class="mahalaxmi-details-row">
+                                    <div class="mahalaxmi-details-label">Usage/Application</div>
+                                    <div class="mahalaxmi-details-value">Weaving & Knitting</div>
+                                </div>
+                                <div class="mahalaxmi-details-row">
+                                    <div class="mahalaxmi-details-label">Payment Terms</div>
+                                    <div class="mahalaxmi-details-value">L/C, D/A, T/T</div>
+                                </div>
+                                <div class="mahalaxmi-details-row">
+                                    <div class="mahalaxmi-details-label">Packaging Details</div>
+                                    <div class="mahalaxmi-details-value">CARTON PACKING/PP PACKING</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mahalaxmi-product-certification">
+                                <p><strong>Better Cotton Initiative (BCI)</strong>, a global not-for-profit, is
+                                    <strong>the world's largest cotton sustainability programme</strong>. BCI aims to
+                                    transform cotton production worldwide, by addressing the negative impacts of cotton
+                                    growing and processing.
+                                </p>
+                            </div>
+
+                            <div class="mahalaxmi-product-highlights mt-4">
+                                <div class="mahalaxmi-highlight-item">
+                                    <div class="mahalaxmi-highlight-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="mahalaxmi-highlight-text">
+                                        <strong>Count:</strong> ALL COUNTS
+                                    </div>
+                                </div>
+                                <div class="mahalaxmi-highlight-item">
+                                    <div class="mahalaxmi-highlight-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="mahalaxmi-highlight-text">
+                                        <strong>Material:</strong> Cotton yarn
+                                    </div>
+                                </div>
+                                <div class="mahalaxmi-highlight-item">
+                                    <div class="mahalaxmi-highlight-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="mahalaxmi-highlight-text">
+                                        <strong>Application:</strong> Weaving & Knitting
+                                    </div>
+                                </div>
+                                <div class="mahalaxmi-highlight-item">
+                                    <div class="mahalaxmi-highlight-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="mahalaxmi-highlight-text">
+                                        <strong>Color:</strong> Raw white & Dyed
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mahalaxmi-interest-cta mt-4 text-center">
+                                <button class="mahalaxmi-btn mahalaxmi-btn-primary">
+                                    <i class="fas fa-thumbs-up me-2"></i> Yes! I am interested
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Modal -->
+    <div class="modal fade mahalaxmi-modal" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="enquiryModalLabel">Send Product Enquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="mahalaxmi-modal-product-image">
+                                <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn" class="img-fluid">
+                            </div>
+                            <div class="p-3">
+                                <h4>Premium Cotton Yarn</h4>
+                                <p class="mb-0">High-quality cotton yarn for weaving & knitting applications</p>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="mahalaxmi-modal-form-container">
+                                <form id="enquiryForm">
+                                    <div class="mb-3">
+                                        <label for="enquiryName" class="form-label">Your Name*</label>
+                                        <input type="text" class="form-control" id="enquiryName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="enquiryEmail" class="form-label">Email Address*</label>
+                                        <input type="email" class="form-control" id="enquiryEmail" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="enquiryMobile" class="form-label">Mobile Number*</label>
+                                        <input type="tel" class="form-control" id="enquiryMobile" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="enquiryQuantity" class="form-label">Quantity*</label>
+                                            <input type="number" class="form-control" id="enquiryQuantity" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="enquiryUnits" class="form-label">Measurement Units*</label>
+                                            <select class="form-select" id="enquiryUnits" required>
+                                                <option value="kg">Kilograms (kg)</option>
+                                                <option value="ton">Tons</option>
+                                                <option value="pcs">Pieces</option>
+                                                <option value="rolls">Rolls</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="enquiryComment" class="form-label">Comment</label>
+                                        <textarea class="form-control" id="enquiryComment" rows="3" placeholder="Additional details or requirements..."></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="mahalaxmi-btn mahalaxmi-btn-view" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="mahalaxmi-btn mahalaxmi-btn-enquiry" id="submitEnquiryBtn">
+                        <i class="fas fa-paper-plane me-2"></i> Send Enquiry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call Request Modal -->
+<div class="modal fade mahalaxmi-modal" id="callRequestModal" tabindex="-1" aria-labelledby="callRequestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="callRequestModalLabel">Request a Call Back</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="mahalaxmi-modal-product-image">
+                            <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn" class="img-fluid">
+                        </div>
+                        <div class="p-3">
+                            <h4>Premium Cotton Yarn</h4>
+                            <p class="mb-0">High-quality cotton yarn for weaving & knitting applications</p>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="mahalaxmi-modal-form-container">
+                            <form id="callRequestForm">
+                                <div class="mb-3">
+                                    <label for="callName" class="form-label">Your Name*</label>
+                                    <input type="text" class="form-control" id="callName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="callMobile" class="form-label">Mobile Number*</label>
+                                    <input type="tel" class="form-control" id="callMobile" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="callEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="callEmail">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="preferredTime" class="form-label">Preferred Time to Call</label>
+                                    <select class="form-select" id="preferredTime">
+                                        <option value="">Select preferred time</option>
+                                        <option value="morning">Morning (9 AM - 12 PM)</option>
+                                        <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+                                        <option value="evening">Evening (4 PM - 7 PM)</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="callPurpose" class="form-label">Purpose of Call</label>
+                                    <textarea class="form-control" id="callPurpose" rows="2" placeholder="Brief description of your requirements..."></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="mahalaxmi-btn mahalaxmi-btn-view" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="mahalaxmi-btn mahalaxmi-btn-call" id="submitCallRequestBtn">
+                    <i class="fas fa-phone-alt me-2"></i> Request Call
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="mahalaxmi-footer bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h4 class="text-primary mb-4">Maha Laxmi Enterprises</h4>
+                <p>Premium manufacturer and supplier of quality rice products, yarn, and women's hygiene products.</p>
+                <div class="mahalaxmi-social-links mt-3">
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-white mb-4">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-white mb-4">Contact Information</h5>
+                <ul class="list-unstyled contact-info">
+                    <li class="d-flex mb-3">
+                        <i class="fas fa-map-marker-alt me-3 mt-1"></i>
+                        <span>123 Business Park, Industrial Area, Delhi, India</span>
+                    </li>
+                    <li class="d-flex mb-3">
+                        <i class="fas fa-phone-alt me-3 mt-1"></i>
+                        <span>+91 98765 43210</span>
+                    </li>
+                    <li class="d-flex mb-3">
+                        <i class="fas fa-envelope me-3 mt-1"></i>
+                        <span>info@mahalaxmienterprises.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright -->
+<div class="copyright bg-darker py-3">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-md-0 text-white">© 2023 Maha Laxmi Enterprises. All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0 text-white">Designed with <i class="fas fa-heart text-danger"></i> by MLWebDesigns</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Top -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+    // Initialize AOS Animation
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+
+    // Preloader
+    $(window).on('load', function() {
+        if ($('#preloader').length) {
+            $('#preloader').delay(100).fadeOut('slow', function() {
+                $(this).remove();
+            });
+        }
+    });
+
+    // Custom Cursor
+    document.addEventListener('mousemove', function(e) {
+        const cursor = document.querySelector('.cursor');
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // Product Image Gallery
+    $('.mahalaxmi-thumbnail').on('click', function() {
+        const imgSrc = $(this).data('img');
+        $('#mainProductImage').attr('src', imgSrc);
+        $('.mahalaxmi-thumbnail').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    // Form Submission for Enquiry
+    $('#submitEnquiryBtn').on('click', function() {
+        const form = document.getElementById('enquiryForm');
+        if (form.checkValidity()) {
+            // Add your form submission logic here
+            alert('Thank you for your enquiry. We will get back to you shortly!');
+            $('#enquiryModal').modal('hide');
+            form.reset();
+        } else {
+            form.reportValidity();
+        }
+    });
+
+    // Form Submission for Call Request
+    $('#submitCallRequestBtn').on('click', function() {
+        const form = document.getElementById('callRequestForm');
+        if (form.checkValidity()) {
+            // Add your form submission logic here
+            alert('Thank you! We will call you at your preferred time.');
+            $('#callRequestModal').modal('hide');
+            form.reset();
+        } else {
+            form.reportValidity();
+        }
+    });
+
+    // Back to top button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
+    });
+
+    $('.back-to-top').click(function() {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
+</script>
+</body>
+</html>
