@@ -702,6 +702,7 @@
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="./assets/js/mahalaxmi-hero-custom-plugin.js"></script>
   <script>
     // Preloader
     window.addEventListener('load', function () {
@@ -775,112 +776,7 @@
   </script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Background images
-      const backgroundImages = [
-        './assets/images/basmati.jpg',  // Rice
-        './assets/images/yarn-hero.jpg',  // Yarn
-        './assets/images/pad.jpg'  // Women's Pad
-      ];
-
-      // Variables
-      const heroBackground = document.querySelector('.mahalaxmi-hero-background');
-      const slides = document.querySelectorAll('.mahalaxmi-hero-slide');
-      const dots = document.querySelectorAll('.mahalaxmi-dot');
-      let currentSlide = 0;
-      let slideInterval;
-      let isTransitioning = false;
-
-      // Set initial background
-      heroBackground.style.backgroundImage = `url('${backgroundImages[0]}')`;
-
-      // Initialize slider
-      function initSlider() {
-        // Set first slide as active
-        showSlide(0);
-
-        // Start automatic slideshow with longer duration
-        startSlideshow();
-
-        // Add event listeners to dots
-        dots.forEach(dot => {
-          dot.addEventListener('click', function () {
-            if (isTransitioning) return;
-
-            const slideIndex = parseInt(this.getAttribute('data-slide'));
-            showSlide(slideIndex);
-            resetSlideshow();
-          });
-        });
-      }
-
-      // Show specific slide with synchronized background
-      function showSlide(index) {
-        if (isTransitioning) return;
-        isTransitioning = true;
-
-        // First change the background image with fade effect
-        heroBackground.style.opacity = '0.3';
-
-        setTimeout(() => {
-          heroBackground.style.backgroundImage = `url('${backgroundImages[index]}')`;
-          heroBackground.style.opacity = '1';
-
-          // Then update the slide content
-          slides.forEach(slide => {
-            slide.classList.remove('active');
-          });
-
-          dots.forEach(dot => {
-            dot.classList.remove('active');
-          });
-
-          slides[index].classList.add('active');
-          dots[index].classList.add('active');
-
-          // Update current slide index
-          currentSlide = index;
-
-          // Reset transition lock after transition completes
-          setTimeout(() => {
-            isTransitioning = false;
-          }, 500); // Match this with your CSS transition time
-        }, 500);
-      }
-
-      // Go to next slide
-      function nextSlide() {
-        if (isTransitioning) return;
-        const nextIndex = (currentSlide + 1) % slides.length;
-        showSlide(nextIndex);
-      }
-
-      // Start automatic slideshow
-      function startSlideshow() {
-        // Use 8 seconds for better user experience
-        slideInterval = setInterval(nextSlide, 8000);
-      }
-
-      // Reset slideshow timer
-      function resetSlideshow() {
-        clearInterval(slideInterval);
-        startSlideshow();
-      }
-
-      // Preload images for smoother transitions
-      function preloadImages() {
-        backgroundImages.forEach(imgUrl => {
-          const img = new Image();
-          img.src = imgUrl;
-        });
-      }
-
-      // Preload images
-      preloadImages();
-
-      // Initialize slider when DOM is loaded
-      initSlider();
-    });
+   
   </script>
   <script>
     // Simple slider functionality
