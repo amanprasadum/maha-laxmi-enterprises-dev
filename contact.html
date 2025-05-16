@@ -190,198 +190,76 @@
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-shape"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a href="#" class="footer-logo">Maha<span>Laxmi</span>Enterprises</a>
-                    <p class="footer-text">Premium rice products sourced from the finest farms across India. Experience
-                        the
-                        authentic taste of nature with our wide range of rice varieties.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#process">Process</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                    <h3 class="footer-title">Products</h3>
-                    <ul class="footer-links">
-                        <li><a href="#products">Basmati Rice</a></li>
-                        <li><a href="#products">Brown Rice</a></li>
-                        <li><a href="#products">Jasmine Rice</a></li>
-                        <li><a href="#products">Sona Masoori Rice</a></li>
-                        <li><a href="#products">Black Rice</a></li>
-                        <li><a href="#products">Red Rice</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Newsletter</h3>
-                    <p class="footer-text">Subscribe to our newsletter for updates, special offers, and rice recipes.
-                    </p>
-                    <div class="position-relative">
-                        <input type="email" class="form-control cta-input mb-2" placeholder="Your Email">
-                        <button class="btn btn-primary w-100">Subscribe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p class="copyright-text">© 2025 Maha Laxmi Enterprises. All Rights Reserved.</p>
-            </div>
+     <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-shape"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <a href="#" class="footer-logo">Maha<span>Laxmi</span>Enterprises</a>
+          <p class="footer-text">Premium products sourced from the finest quality materials. Experience excellence with
+            our wide range of rice varieties, yarn collections, and women's hygiene products.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
         </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
-
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Preloader
-        window.addEventListener('load', function () {
-            const preloader = document.getElementById('preloader');
-            preloader.classList.add('hide');
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        });
-
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Back to Top Button
-        window.addEventListener('scroll', function () {
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
-        });
-
-        // Custom Cursor
-        document.addEventListener('mousemove', function (e) {
-            const cursor = document.querySelector('.cursor');
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        document.addEventListener('mousedown', function () {
-            const cursor = document.querySelector('.cursor');
-            cursor.classList.add('grow');
-        });
-
-        document.addEventListener('mouseup', function () {
-            const cursor = document.querySelector('.cursor');
-            cursor.classList.remove('grow');
-        });
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-header').forEach(item => {
-            item.addEventListener('click', function () {
-                const faqBody = this.nextElementSibling;
-                const icon = this.querySelector('.faq-icon');
-
-                if (faqBody.style.maxHeight) {
-                    faqBody.style.maxHeight = null;
-                    icon.classList.remove('active');
-                } else {
-                    faqBody.style.maxHeight = faqBody.scrollHeight + 'px';
-                    icon.classList.add('active');
-                }
-            });
-        });
-
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Hero Section Background Slide Animation
-            const heroBg = document.querySelector('.mahalaxmi-hero-background');
-            const slideDots = document.querySelectorAll('.mahalaxmi-dot');
-
-            let currentSlide = 0;
-            const totalSlides = 3;
-            let slideInterval = setInterval(nextSlide, 5000);
-
-            // Initialize slide animation
-            updateSlideIndicator();
-
-            // Handle slide dot clicks
-            slideDots.forEach((dot, index) => {
-                dot.addEventListener('click', function () {
-                    currentSlide = index;
-                    updateSlide();
-                    updateSlideIndicator();
-                    resetInterval();
-                });
-            });
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSlide();
-                updateSlideIndicator();
-            }
-
-            function updateSlide() {
-                const imageUrl = `./assets/images/hero-bg-${currentSlide + 1}.jpg`;
-                heroBg.style.backgroundImage = `url('${imageUrl}')`;
-            }
-
-            function updateSlideIndicator() {
-                slideDots.forEach((dot, index) => {
-                    if (index === currentSlide) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
-
-            function resetInterval() {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 5000);
-            }
-
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 1000,
-                    once: true
-                });
-            }
-        });
-    </script>
-</body>
-
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h3 class="footer-title">Certifications</h3>
+          <p class="footer-text">We pride ourselves on maintaining the highest quality standards</p>
+          <div class="certification-logos">
+            <div class="row g-3">
+              <div class="col-3">
+                <div class="certification-logo">
+                  <img src="./assets/images/certificate/fssai.jpg" alt="FSSAI Certified" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="certification-logo">
+                  <img src="./assets/images/certificate/apeda.jpg" alt="IPEDA Certified" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="certification-logo">
+                  <img src="./assets/images/certificate/iso.jpg" alt="ISO Certified" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="certification-logo">
+                  <img src="./assets/images/certificate/haccp.jpg" alt="HACCP Certified" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="copyright">
+            <p class="copyright-text text-center">© 2025 Maha Laxmi Enterprises. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/custom-plugins/mahalaxmi-hero-custom-plugin.js"></script>
+  <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
+ </body>
 </html>
