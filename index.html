@@ -473,7 +473,118 @@
       </div>
 
       <!-- Certifications Cards -->
-      <div class="row">
+
+      <section class="certification-slider-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2 class="section-title">Our Certifications</h2>
+              <p class="section-subtitle">We maintain the highest standards of quality and safety</p>
+            </div>
+          </div>
+
+          <div class="certification-slider-container">
+            <div class="certification-slider">
+              <div class="certification-slide">
+                <div class="certification-card">
+                  <div class="certification-icon">
+                    <i class="fas fa-certificate"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="/api/placeholder/200/120" alt="FSSAI Certificate">
+                  </div>
+                  <h3 class="certification-title">FSSAI</h3>
+                  <p class="certification-description">Food Safety and Standards Authority of India compliance for all
+                    our food products.</p>
+                  <div class="certification-badge">
+                    <span>Verified</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card">
+                  <div class="certification-icon">
+                    <i class="fas fa-award"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="/api/placeholder/200/120" alt="APEDA Certificate">
+                  </div>
+                  <h3 class="certification-title">APEDA</h3>
+                  <p class="certification-description">Agricultural and Processed Food Products Export Development
+                    Authority approved exporter.</p>
+                  <div class="certification-badge">
+                    <span>Authorized</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card">
+                  <div class="certification-icon">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="/api/placeholder/200/120" alt="ISO Certificate">
+                  </div>
+                  <h3 class="certification-title">ISO Certified</h3>
+                  <p class="certification-description">International Organization for Standardization certified
+                    operations and processes.</p>
+                  <div class="certification-badge">
+                    <span>Certified</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card">
+                  <div class="certification-icon">
+                    <i class="fas fa-tasks"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="/api/placeholder/200/120" alt="HACCP Certificate">
+                  </div>
+                  <h3 class="certification-title">HACCP</h3>
+                  <p class="certification-description">Hazard Analysis Critical Control Point compliant packaging and
+                    manufacturing facilities.</p>
+                  <div class="certification-badge">
+                    <span>Compliant</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card">
+                  <div class="certification-icon">
+                    <i class="fas fa-leaf"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="/api/placeholder/200/120" alt="Organic Certificate">
+                  </div>
+                  <h3 class="certification-title">Organic Certified</h3>
+                  <p class="certification-description">Our products are certified organic, ensuring eco-friendly farming
+                    practices.</p>
+                  <div class="certification-badge">
+                    <span>Certified</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slider-controls">
+              <button class="slider-prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="slider-next" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- <div class="row">
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="certification-card">
             <div class="certification-icon">
@@ -529,7 +640,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Additional Certifications -->
       <div class="row mt-4">
@@ -594,7 +705,7 @@
             </p>
             <div class="additional-certifications">
               <h4>Packaging Solutions</h4>
-             
+
               <div class="quality-badge">
                 <i class="fas fa-shield-alt"></i>
                 <span>Vacuum sealed for freshness</span>
@@ -634,7 +745,7 @@
                 <i class="fas fa-file-contract"></i>
                 <span>CIF / FOB / DDP options</span>
               </div>
-              
+
               <div class="quality-badge">
                 <i class="fas fa-clipboard-check"></i>
                 <span>Quick documentation and customs clearance</span>
@@ -795,130 +906,6 @@
     });
 
   </script>
-  <!-- <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Hero Section Background Slide Animation
-      const heroBg = document.querySelector('.mahalaxmi-hero-background');
-      const slideDots = document.querySelectorAll('.mahalaxmi-dot');
-
-      let currentSlide = 0;
-      const totalSlides = 3;
-      let slideInterval = setInterval(nextSlide, 5000);
-
-      // Initialize slide animation
-      updateSlideIndicator();
-
-      // Handle slide dot clicks
-      slideDots.forEach((dot, index) => {
-        dot.addEventListener('click', function () {
-          currentSlide = index;
-          updateSlide();
-          updateSlideIndicator();
-          resetInterval();
-        });
-      });
-
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlide();
-        updateSlideIndicator();
-      }
-
-      function updateSlide() {
-        const imageUrl = `./assets/images/hero-bg-${currentSlide + 1}.jpg`;
-        heroBg.style.backgroundImage = `url('${imageUrl}')`;
-      }
-
-      function updateSlideIndicator() {
-        slideDots.forEach((dot, index) => {
-          if (index === currentSlide) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
-          }
-        });
-      }
-
-      function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 5000);
-      }
-
-      if (typeof AOS !== 'undefined') {
-        AOS.init({
-          duration: 1000,
-          once: true
-        });
-      }
-    });
-  </script> -->
-  <!-- <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Variables
-      const slides = document.querySelectorAll('.mahalaxmi-hero-slide');
-      const dots = document.querySelectorAll('.mahalaxmi-dot');
-      let currentSlide = 0;
-      let slideInterval;
-
-      // Initialize slider
-      function initSlider() {
-        // Set first slide as active
-        showSlide(0);
-
-        // Start automatic slideshow
-        startSlideshow();
-
-        // Add event listeners to dots
-        dots.forEach(dot => {
-          dot.addEventListener('click', function () {
-            const slideIndex = parseInt(this.getAttribute('data-slide'));
-            showSlide(slideIndex);
-            resetSlideshow();
-          });
-        });
-      }
-
-      // Show specific slide
-      function showSlide(index) {
-        // Hide all slides
-        slides.forEach(slide => {
-          slide.classList.remove('active');
-        });
-
-        // Remove active class from all dots
-        dots.forEach(dot => {
-          dot.classList.remove('active');
-        });
-
-        // Show selected slide and activate corresponding dot
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-
-        // Update current slide index
-        currentSlide = index;
-      }
-
-      // Go to next slide
-      function nextSlide() {
-        const nextIndex = (currentSlide + 1) % slides.length;
-        showSlide(nextIndex);
-      }
-
-      // Start automatic slideshow
-      function startSlideshow() {
-        slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
-      }
-
-      // Reset slideshow timer
-      function resetSlideshow() {
-        clearInterval(slideInterval);
-        startSlideshow();
-      }
-
-      // Initialize slider when DOM is loaded
-      initSlider();
-    });
-  </script> -->
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -987,6 +974,102 @@
       initSlider();
     });
   </script>
+  <script>
+  // Simple slider functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.certification-slider');
+    const slides = document.querySelectorAll('.certification-slide');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    
+    if (!slider || !slides.length || !prevBtn || !nextBtn) return;
+    
+    const slideWidth = slides[0].offsetWidth + 20; // Width + gap
+    const visibleSlides = Math.floor(slider.offsetWidth / slideWidth);
+    
+    let currentIndex = 0;
+    
+    function updateSlider() {
+      slider.scrollTo({
+        left: currentIndex * slideWidth,
+        behavior: 'smooth'
+      });
+    }
+    
+    prevBtn.addEventListener('click', function() {
+      currentIndex = Math.max(0, currentIndex - 1);
+      updateSlider();
+    });
+    
+    nextBtn.addEventListener('click', function() {
+      currentIndex = Math.min(slides.length - visibleSlides, currentIndex + 1);
+      updateSlider();
+    });
+    
+    // Handle resize events
+    window.addEventListener('resize', function() {
+      // Recalculate visible slides
+      const newVisibleSlides = Math.floor(slider.offsetWidth / slideWidth);
+      if (currentIndex > slides.length - newVisibleSlides) {
+        currentIndex = Math.max(0, slides.length - newVisibleSlides);
+        updateSlider();
+      }
+    });
+    
+    // Auto-play functionality
+    let autoPlayInterval = setInterval(() => {
+      if (currentIndex >= slides.length - visibleSlides) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+      updateSlider();
+    }, 5000);
+    
+    // Pause auto-play on hover
+    slider.addEventListener('mouseenter', () => {
+      clearInterval(autoPlayInterval);
+    });
+    
+    slider.addEventListener('mouseleave', () => {
+      autoPlayInterval = setInterval(() => {
+        if (currentIndex >= slides.length - visibleSlides) {
+          currentIndex = 0;
+        } else {
+          currentIndex++;
+        }
+        updateSlider();
+      }, 5000);
+    });
+    
+    // Handle touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    slider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchStartX - touchEndX > swipeThreshold) {
+        // Swipe left
+        currentIndex = Math.min(slides.length - visibleSlides, currentIndex + 1);
+        updateSlider();
+      }
+      if (touchEndX - touchStartX > swipeThreshold) {
+        // Swipe right
+        currentIndex = Math.max(0, currentIndex - 1);
+        updateSlider();
+      }
+    }
+  });
+</script>
 </body>
 
 </html>
