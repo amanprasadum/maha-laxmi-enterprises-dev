@@ -738,6 +738,7 @@ body {
 }
 
 .product-card {
+    height: 95%;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
