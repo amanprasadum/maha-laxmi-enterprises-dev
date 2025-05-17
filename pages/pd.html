@@ -672,79 +672,63 @@
         </div>
     </section>
 
-    <!-- Enquiry Modal -->
-    <div class="modal fade mahalaxmi-modal" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel"
+
+
+    <!-- Combined Product Enquiry Modal -->
+    <div class="modal fade mahalaxmi-modal" id="productModal" tabindex="-1" aria-labelledby="productModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="enquiryModalLabel">Send Product Enquiry</h5>
+                    <h5 class="modal-title" id="productModalLabel">Product Enquiry</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="enquiryForm">
-                        <div class="mb-3">
-                            <label for="enquiryName" class="form-label">Your Name*</label>
-                            <input type="text" class="form-control" id="enquiryName" required>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mahalaxmi-modal-product-image">
+                                <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn"
+                                    class="img-fluid">
+                            </div>
+                            <div class="p-2">
+                                <h6 class="small fw-bold mb-0">Premium Cotton Yarn</h6>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="enquiryEmail" class="form-label">Email Address*</label>
-                            <input type="email" class="form-control" id="enquiryEmail" required>
+                        <div class="col-8">
+                            <form id="productEnquiryForm">
+                                <div class="mb-3">
+                                    <label for="enquiryQuantity" class="form-label">Quantity*</label>
+                                    <input type="number" class="form-control" id="enquiryQuantity" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="enquiryUnits" class="form-label">Measurement Units*</label>
+                                    <select class="form-select" id="enquiryUnits" required>
+                                        <option value="kg">Kilograms (kg)</option>
+                                        <option value="ton">Tons</option>
+                                        <option value="pcs">Pieces</option>
+                                        <option value="rolls">Rolls</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="enquiryMobile" class="form-label">Mobile Number*</label>
+                                    <input type="tel" class="form-control" id="enquiryMobile" required>
+                                </div>
+                            </form>
                         </div>
-                        <div class="mb-3">
-                            <label for="enquiryComment" class="form-label">Comment</label>
-                            <textarea class="form-control" id="enquiryComment" rows="3"
-                                placeholder="Additional details or requirements..."></textarea>
-                        </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="mahalaxmi-btn mahalaxmi-btn-view"
                         data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="mahalaxmi-btn mahalaxmi-btn-enquiry" id="submitEnquiryBtn">
-                        <i class="fas fa-paper-plane me-2"></i> Send Enquiry
+                    <button type="button" class="mahalaxmi-btn mahalaxmi-btn-enquiry" id="submitProductFormBtn">
+                        <i class="fas fa-paper-plane me-2"></i> Submit
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Call Request Modal -->
-    <div class="modal fade mahalaxmi-modal" id="callRequestModal" tabindex="-1" aria-labelledby="callRequestModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="callRequestModalLabel">Request a Call Back</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="callRequestForm">
-                        <div class="mb-3">
-                            <label for="callName" class="form-label">Your Name*</label>
-                            <input type="text" class="form-control" id="callName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="callMobile" class="form-label">Mobile Number*</label>
-                            <input type="tel" class="form-control" id="callMobile" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="callPurpose" class="form-label">Purpose of Call</label>
-                            <textarea class="form-control" id="callPurpose" rows="3"
-                                placeholder="Brief description of your requirements..."></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="mahalaxmi-btn mahalaxmi-btn-view"
-                        data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="mahalaxmi-btn mahalaxmi-btn-call" id="submitCallRequestBtn">
-                        <i class="fas fa-phone-alt me-2"></i> Request Call
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Footer -->
     <footer class="mahalaxmi-footer bg-dark text-white py-5">
         <div class="container">
