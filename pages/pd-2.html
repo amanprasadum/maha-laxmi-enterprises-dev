@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Polyester Yarns</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e6b913;
+            --secondary-color: #116530;
+            --accent-color: #ff6b6b;
+            --light-color: #f8f9f2;
+            --dark-color: #243c2e;
+            --text-color: #2d3436;
+            --white: #ffffff;
+            --black: #000000;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, .07);
+            --transition: all .4s cubic-bezier(.165, .84, .44, 1)
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--text-color);
+            background-color: var(--white)
+        }
+
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity .5s ease
+        }
+
+        .preloader.hide {
+            opacity: 0;
+            pointer-events: none
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(230, 185, 19, .2);
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Product Section */
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .moq {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .price-tag {
+            background-color: var(--primary-color);
+            color: var(--white);
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .product-meta {
+            margin-bottom: 20px;
+        }
+
+        .meta-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            min-width: 120px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #d1a70f;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #0e5427;
+        }
+
+        /* Product Details Section */
+        .details-section {
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .details-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .details-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .detail-item {
+            margin-bottom: 15px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            color: var(--dark-color);
+        }
+
+        .detail-description {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .interested-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .interested-btn:hover {
+            background-color: #ff5252;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal {
+            background-color: var(--white);
+            border-radius: 8px;
+            max-width: 800px;
+            width: 90%;
+            display: flex;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal-image {
+            flex: 1;
+            background-color: var(--light-color);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .modal-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #555;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-section {
+                flex-direction: column;
+            }
+            
+            .modal {
+                flex-direction: column;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .details-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <div class="container">
+        <!-- First Section: Product Overview -->
+        <section class="product-section">
+            <div class="product-image">
+                <img src="/api/placeholder/500/400" alt="Polyester Yarns">
+            </div>
+            <div class="product-info">
+                <h1 class="product-title">Polyester Yarns</h1>
+                <p class="moq"><strong>10 Ton</strong> (MOQ)</p>
+                <div class="price-tag">Get Best Price</div>
+                
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Business Type</span>
+                        <span class="meta-value">Manufacturer, Exporter</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Material</span>
+                        <span class="meta-value">100% Polyester</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Color</span>
+                        <span class="meta-value">Raw white & Dyed</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Type</span>
+                        <span class="meta-value">Polyester Yarn</span>
+                    </div>
+                </div>
+                
+                <p><a href="#" style="color: var(--secondary-color);">Click to view more</a></p>
+                
+                <div class="action-buttons">
+                    <button id="requestCallBtn" class="btn btn-primary">Request to Call</button>
+                    <button class="btn btn-secondary">Send Enquiry</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Second Section: Product Details -->
+        <section class="details-section">
+            <h2 class="details-title">Product Details</h2>
+            
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="detail-label">Count</span>
+                    <span class="detail-value">Ne 10/1-60/1 (Single & Double)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Usage</span>
+                    <span class="detail-value">Weaving & Knitting</span>
+                </div>
+            </div>
+            
+            <div class="detail-description">
+                <p>Available with us in several grades and specifications, our products stand high on the counts of quality. Situated in Gurgaon(India), ours is the name reckoned for providing quality products at competitive price.</p>
+            </div>
+            
+            <button class="interested-btn">Yes! I am interested</button>
+        </section>
+    </div>
+    
+    <!-- Request Call Modal -->
+    <div id="callModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-image">
+                <img src="/api/placeholder/400/400" alt="Polyester Yarns">
+            </div>
+            <div class="modal-content">
+                <h3 class="modal-title">Request a Call Back - Polyester Yarns</h3>
+                <button class="close-modal">&times;</button>
+                
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Quantity</label>
+                        <input type="text" class="form-control" placeholder="Enter quantity">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Measurement Units</label>
+                        <select class="form-control">
+                            <option>Tons</option>
+                            <option>Kilograms</option>
+                            <option>Pounds</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mobile No.</label>
+                        <input type="tel" class="form-control" placeholder="Enter your mobile number">
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(() => {
+                preloader.classList.add('hide');
+            }, 500);
+        });
+        
+        // Modal functionality
+        const requestCallBtn = document.getElementById('requestCallBtn');
+        const callModal = document.getElementById('callModal');
+        const closeModal = document.querySelector('.close-modal');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        requestCallBtn.addEventListener('click', function() {
+            callModal.classList.add('active');
+        });
+        
+        closeModal.addEventListener('click', function() {
+            callModal.classList.remove('active');
+        });
+        
+        closeBtn.addEventListener('click', function() {
+            callModal.classList.remove('active');
+        });
+        
+        callModal.addEventListener('click', function(e) {
+            if (e.target === callModal) {
+                callModal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
