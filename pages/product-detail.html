@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +11,404 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        :root {
+            --primary-color: #ffc107;
+            --secondary-color: #116530;
+            --dark-color: #333;
+            --text-color: #666;
+            --light-color: #f8f9fa;
+            --white: #fff;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
 
+        /* Product Hero Section */
+        .mahalaxmi-product-hero-section {
+            margin-top: 100px !important;
+            padding: 70px 0;
+            background-color: var(--light-color);
+        }
+
+        .mahalaxmi-product-image-container {
+            position: relative;
+        }
+
+        .mahalaxmi-product-main-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            background-color: var(--white);
+            padding: 20px;
+        }
+
+        .mahalaxmi-product-main-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .mahalaxmi-thumbnail {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .mahalaxmi-thumbnail.active {
+            border-color: var(--primary-color);
+        }
+
+        .mahalaxmi-thumbnail:hover {
+            transform: translateY(-5px);
+        }
+
+        .mahalaxmi-product-info {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            height: 100%;
+        }
+
+        .mahalaxmi-product-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .mahalaxmi-product-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .mahalaxmi-product-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .mahalaxmi-product-rating {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .mahalaxmi-product-rating i {
+            margin-right: 2px;
+        }
+
+        .mahalaxmi-product-rating span {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-left: 10px;
+        }
+
+        .mahalaxmi-product-meta {
+            margin-bottom: 25px;
+        }
+
+        .mahalaxmi-meta-item {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .mahalaxmi-meta-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .mahalaxmi-meta-label {
+            flex: 0 0 120px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .mahalaxmi-meta-value {
+            flex: 1;
+            color: var(--text-color);
+        }
+
+        .mahalaxmi-product-description {
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .mahalaxmi-product-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .mahalaxmi-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mahalaxmi-btn-view {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        .mahalaxmi-btn-view:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .mahalaxmi-btn-call {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .mahalaxmi-btn-call:hover {
+            background-color: var(--dark-color);
+        }
+
+        .mahalaxmi-btn-enquiry {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .mahalaxmi-btn-enquiry:hover {
+            background-color: #d4a911;
+        }
+
+        /* Product Details Section */
+        .mahalaxmi-product-details-section {
+            padding: 70px 0;
+            background-color: var(--white);
+        }
+
+        .mahalaxmi-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .mahalaxmi-card-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mahalaxmi-section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .mahalaxmi-section-divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .mahalaxmi-card-body {
+            padding: 30px;
+        }
+
+        .mahalaxmi-details-table {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mahalaxmi-details-row {
+            display: flex;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+
+        .mahalaxmi-details-row:last-child {
+            border-bottom: none;
+        }
+
+        .mahalaxmi-details-label {
+            flex: 0 0 150px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .mahalaxmi-details-value {
+            flex: 1;
+            color: var(--text-color);
+        }
+
+        .mahalaxmi-product-certification {
+            background-color: rgba(17, 101, 48, 0.05);
+            border-left: 3px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .mahalaxmi-product-certification p {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .mahalaxmi-product-highlights {
+            margin-top: 25px;
+        }
+
+        .mahalaxmi-highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .mahalaxmi-highlight-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .mahalaxmi-highlight-icon {
+            flex: 0 0 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .mahalaxmi-highlight-text {
+            flex: 1;
+            padding-left: 10px;
+        }
+
+        .mahalaxmi-btn-primary {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+        }
+
+        .mahalaxmi-btn-primary:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Modal Styles */
+        .mahalaxmi-modal .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .mahalaxmi-modal .modal-header {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border-bottom: none;
+            padding: 20px 30px;
+        }
+
+        .mahalaxmi-modal .modal-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .mahalaxmi-modal .modal-body {
+            padding: 30px;
+        }
+
+        .mahalaxmi-modal .form-label {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+        }
+
+        .mahalaxmi-modal .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .mahalaxmi-modal .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+
+        .mahalaxmi-modal .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mahalaxmi-modal-product-image {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .mahalaxmi-modal-product-image img {
+            max-width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+        }
+
+        .mahalaxmi-modal-form-container {
+            height: 100%;
+        }
+
+        @media (max-width: 991px) {
+            .mahalaxmi-product-info {
+                margin-top: 30px;
+            }
+
+            .mahalaxmi-product-cta {
+                flex-direction: column;
+            }
+
+            .mahalaxmi-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .mahalaxmi-meta-item,
+            .mahalaxmi-details-row {
+                flex-direction: column;
+            }
+
+            .mahalaxmi-meta-label,
+            .mahalaxmi-details-label {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -104,36 +504,38 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="mahalaxmi-product-image-container">
                         <div class="mahalaxmi-product-main-image">
-                            <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn" class="img-fluid">
+                            <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn" class="img-fluid"
+                                id="mainProductImage">
                         </div>
-                        <!-- <div class="mahalaxmi-product-thumbnails mt-3">
+                        <div class="mahalaxmi-product-thumbnails mt-3">
                             <div class="row g-2">
                                 <div class="col-3">
-                                    <div class="mahalaxmi-thumbnail active">
-                                        <img src="../assets/images/yarn.jpg" alt="Cotton Yarn Thumbnail 1"
+                                    <div class="mahalaxmi-thumbnail active"
+                                        data-img="../assets/images/yarn-product.jpg">
+                                        <img src="../assets/images/yarn-product.jpg" alt="Cotton Yarn Thumbnail 1"
                                             class="img-fluid">
                                     </div>
                                 </div>
                                 <div class="col-3">
-                                    <div class="mahalaxmi-thumbnail">
-                                        <img src="../assets/images/yarn.jpg" alt="Cotton Yarn Thumbnail 2"
+                                    <div class="mahalaxmi-thumbnail" data-img="../assets/images/yarn-product.jpg">
+                                        <img src="../assets/images/yarn-product.jpg" alt="Cotton Yarn Thumbnail 2"
                                             class="img-fluid">
                                     </div>
                                 </div>
                                 <div class="col-3">
-                                    <div class="mahalaxmi-thumbnail">
-                                        <img src="../assets/images/yarn.jpg" alt="Cotton Yarn Thumbnail 3"
+                                    <div class="mahalaxmi-thumbnail" data-img="../assets/images/yarn-hero.jpg">
+                                        <img src="../assets/images/yarn-hero.jpg" alt="Cotton Yarn Thumbnail 3"
                                             class="img-fluid">
                                     </div>
                                 </div>
                                 <div class="col-3">
-                                    <div class="mahalaxmi-thumbnail">
-                                        <img src="../assets/images/yarn.jpg" alt="Cotton Yarn Thumbnail 4"
+                                    <div class="mahalaxmi-thumbnail" data-img="../assets/images/yarn-product.jpg">
+                                        <img src="../assets/images/yarn-product.jpg" alt="Cotton Yarn Thumbnail 4"
                                             class="img-fluid">
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -157,14 +559,26 @@
                                 <span class="mahalaxmi-meta-value">Raw White, DYED</span>
                             </div>
                         </div>
-                        <div class="mahalaxmi-product-cta">
+                        <!-- <div class="mahalaxmi-product-cta">
                             <button class="mahalaxmi-btn mahalaxmi-btn-view">
                                 <i class="fas fa-eye me-2"></i> Click to view more
                             </button>
-                            <button class="mahalaxmi-btn mahalaxmi-btn-call">
+                            <button class="mahalaxmi-btn mahalaxmi-btn-call" data-bs-toggle="modal"
+                                data-bs-target="#callRequestModal">
                                 <i class="fas fa-phone-alt me-2"></i> Request to Call
                             </button>
-                            <button class="mahalaxmi-btn mahalaxmi-btn-enquiry">
+                            <button class="mahalaxmi-btn mahalaxmi-btn-enquiry" data-bs-toggle="modal"
+                                data-bs-target="#enquiryModal">
+                                <i class="fas fa-envelope me-2"></i> Send Enquiry
+                            </button>
+                        </div> -->
+                        <div class="mahalaxmi-product-cta">
+                            <button class="mahalaxmi-btn mahalaxmi-btn-call" data-bs-toggle="modal"
+                                data-bs-target="#productModal">
+                                <i class="fas fa-phone-alt me-2"></i> Request to Call
+                            </button>
+                            <button class="mahalaxmi-btn mahalaxmi-btn-enquiry" data-bs-toggle="modal"
+                                data-bs-target="#productModal">
                                 <i class="fas fa-envelope me-2"></i> Send Enquiry
                             </button>
                         </div>
@@ -269,17 +683,151 @@
         </div>
     </section>
 
+    <!-- Compact Product Enquiry Modal -->
+    <!-- <div class="modal fade mahalaxmi-modal" id="productModal" tabindex="-1" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Quick Enquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-3">
+                        <div class="mahalaxmi-modal-product-image">
+                            <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn"
+                                class="img-fluid rounded border p-2 shadow-sm">
+                        </div>
+                        <h6 class="mt-2 fw-bold">Premium Cotton Yarn</h6>
+                    </div>
+
+                    <form id="productEnquiryForm">
+                        <div class="mb-2">
+                            <label for="enquiryQuantity" class="form-label small fw-medium">Quantity*</label>
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-white"><i
+                                        class="fas fa-balance-scale text-primary"></i></span>
+                                <input type="number" class="form-control border-start-0" id="enquiryQuantity" required>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="enquiryUnits" class="form-label small fw-medium">Units*</label>
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-white"><i class="fas fa-ruler text-primary"></i></span>
+                                <select class="form-select border-start-0" id="enquiryUnits" required>
+                                    <option value="kg">Kilograms (kg)</option>
+                                    <option value="ton">Tons</option>
+                                    <option value="pcs">Pieces</option>
+                                    <option value="rolls">Rolls</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="enquiryMobile" class="form-label small fw-medium">Mobile Number*</label>
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-white"><i class="fas fa-phone text-primary"></i></span>
+                                <input type="tel" class="form-control border-start-0" id="enquiryMobile" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer flex-column">
+                    <button type="button" class="mahalaxmi-btn mahalaxmi-btn-enquiry w-100" id="submitProductFormBtn">
+                        <i class="fas fa-paper-plane me-2"></i> Send Enquiry
+                    </button>
+                    <button type="button" class="btn btn-link text-secondary small w-100 p-0 mt-2"
+                        data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Compact Product Enquiry Modal -->
+    <div class="modal fade mahalaxmi-modal" id="productModal" tabindex="-1" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg"> <!-- Changed to modal-lg for wider layout -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Quick Enquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row g-3 align-items-start">
+                        <!-- Left Column: Product Image -->
+                        <div class="col-md-5 text-center">
+                            <div class="mahalaxmi-modal-product-image">
+                                <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn"
+                                    class="img-fluid rounded border p-2 shadow-sm">
+                            </div>
+                            <h6 class="mt-2 fw-bold">Premium Cotton Yarn</h6>
+                        </div>
+
+                        <!-- Right Column: Enquiry Form -->
+                        <div class="col-md-7">
+                            <form id="productEnquiryForm">
+                                <div class="mb-2">
+                                    <label for="enquiryQuantity" class="form-label small fw-medium">Quantity*</label>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text bg-white">
+                                            <i class="fas fa-balance-scale text-primary"></i>
+                                        </span>
+                                        <input type="number" class="form-control border-start-0" id="enquiryQuantity"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-2">
+                                    <label for="enquiryUnits" class="form-label small fw-medium">Units*</label>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text bg-white">
+                                            <i class="fas fa-ruler text-primary"></i>
+                                        </span>
+                                        <select class="form-select border-start-0" id="enquiryUnits" required>
+                                            <option value="kg">Kilograms (kg)</option>
+                                            <option value="ton">Tons</option>
+                                            <option value="pcs">Pieces</option>
+                                            <option value="rolls">Rolls</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-2">
+                                    <label for="enquiryMobile" class="form-label small fw-medium">Mobile Number*</label>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text bg-white">
+                                            <i class="fas fa-phone text-primary"></i>
+                                        </span>
+                                        <input type="tel" class="form-control border-start-0" id="enquiryMobile"
+                                            required>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer flex-column">
+                    <button type="button" class="mahalaxmi-btn mahalaxmi-btn-enquiry w-100" id="submitProductFormBtn">
+                        <i class="fas fa-paper-plane me-2"></i> Send Enquiry
+                    </button>
+                    <button type="button" class="btn btn-link text-secondary small w-100 p-0 mt-2"
+                        data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-shape"></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <a href="../index.html" class="footer-logo">Maha<span>Laxmi</span>Enterprises</a>
-                    <p class="footer-text">Premium products sourced from the finest quality materials. Experience
-                        excellence with
-                        our wide range of rice varieties, yarn collections, and women's hygiene products.</p>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <a href="./index.html" class="footer-logo">Maha<span>Laxmi</span>Enterprises</a>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -287,7 +835,7 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                <div class="col-lg-6 col-md-6">
                     <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
@@ -295,38 +843,6 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h3 class="footer-title">Certifications</h3>
-                    <p class="footer-text">We pride ourselves on maintaining the highest quality standards</p>
-                    <div class="certification-logos">
-                        <div class="row g-3">
-                            <div class="col-3">
-                                <div class="certification-logo">
-                                    <img src="../assets/images/certificate/fssai.jpg" alt="FSSAI Certified"
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="certification-logo">
-                                    <img src="../assets/images/certificate/apeda.jpg" alt="IPEDA Certified"
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="certification-logo">
-                                    <img src="../assets/images/certificate/iso.jpg" alt="ISO Certified"
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="certification-logo">
-                                    <img src="../assets/images/certificate/haccp.jpg" alt="HACCP Certified"
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="row mt-5">
@@ -338,14 +854,90 @@
             </div>
         </div>
     </footer>
-    <!-- Back to Top Button -->
+
+
+
+    <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-    <!-- Scripts -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="../assets/js/app.js"></script>
-    <script src="../assets/js/custom-plugins/mahalaxmi-hero-custom-plugin.js"></script>
-    <script src="../assets/js/custom-plugins/certificate-slider.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Preloader
+        $(window).on('load', function () {
+            if ($('#preloader').length) {
+                $('#preloader').delay(100).fadeOut('slow', function () {
+                    $(this).remove();
+                });
+            }
+        });
+
+        // Custom Cursor
+        document.addEventListener('mousemove', function (e) {
+            const cursor = document.querySelector('.cursor');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Product Image Gallery
+        $('.mahalaxmi-thumbnail').on('click', function () {
+            const imgSrc = $(this).data('img');
+            $('#mainProductImage').attr('src', imgSrc);
+            $('.mahalaxmi-thumbnail').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        // Form Submission for Enquiry
+        $('#submitEnquiryBtn').on('click', function () {
+            const form = document.getElementById('enquiryForm');
+            if (form.checkValidity()) {
+                // Add your form submission logic here
+                alert('Thank you for your enquiry. We will get back to you shortly!');
+                $('#enquiryModal').modal('hide');
+                form.reset();
+            } else {
+                form.reportValidity();
+            }
+        });
+
+        // Form Submission for Call Request
+        $('#submitCallRequestBtn').on('click', function () {
+            const form = document.getElementById('callRequestForm');
+            if (form.checkValidity()) {
+                // Add your form submission logic here
+                alert('Thank you! We will call you at your preferred time.');
+                $('#callRequestModal').modal('hide');
+                form.reset();
+            } else {
+                form.reportValidity();
+            }
+        });
+
+        // Back to top button
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.back-to-top').fadeIn('slow');
+            } else {
+                $('.back-to-top').fadeOut('slow');
+            }
+        });
+
+        $('.back-to-top').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+            return false;
+        });
+    </script>
 </body>
 
 </html>
