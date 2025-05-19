@@ -11,7 +11,131 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
+<style>
+  /* Hero Title Animation */
+.mahalaxmi-hero-title {
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
 
+.mahalaxmi-hero-title span {
+  position: relative;
+  color: #e84c3d; /* Highlight color - adjust to match your brand */
+  display: inline-block;
+  animation: colorPulse 3s infinite;
+}
+
+.mahalaxmi-hero-title span::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #e84c3d; /* Match span color */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+  animation: lineReveal 1.2s ease forwards;
+  animation-delay: 1s;
+}
+
+/* Make active slide visible with animations */
+.mahalaxmi-hero-slide {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.mahalaxmi-hero-slide.active {
+  opacity: 1;
+}
+
+.mahalaxmi-hero-slide.active .mahalaxmi-hero-badge-tag {
+  animation: slideInDown 0.5s ease-out forwards;
+}
+
+.mahalaxmi-hero-slide.active .mahalaxmi-hero-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.mahalaxmi-hero-slide.active .mahalaxmi-hero-buttons {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.9s;
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    color: #e84c3d;
+  }
+  50% {
+    color: #ff7063;
+  }
+}
+
+@keyframes lineReveal {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+/* Special effect for slide transitions */
+.mahalaxmi-hero-slide:not(.active) {
+  display: none;
+}
+
+.mahalaxmi-hero-slide.active .mahalaxmi-hero-title {
+  animation: textReveal 1s ease forwards;
+}
+
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
 </head>
 
 <body>
