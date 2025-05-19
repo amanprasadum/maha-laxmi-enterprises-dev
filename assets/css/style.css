@@ -3812,10 +3812,10 @@ body {
     background-color: var(--dark-color);
 }
 
-.mahalaxmi-btn-enquiry {
+/* .mahalaxmi-btn-enquiry {
     background-color: var(--primary-color);
     color: var(--dark-color);
-}
+} */
 
 .mahalaxmi-btn-enquiry:hover {
     background-color: #d4a911;
