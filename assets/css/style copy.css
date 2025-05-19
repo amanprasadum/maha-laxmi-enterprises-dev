@@ -2583,14 +2583,14 @@ body {
 /* Mahalaxmi Contact Section Styles end */
 
 /* Mahalaxmi Hero Section Styles */
-
+/* Mahalaxmi Hero Section Styles */
 .mahalaxmi-hero-section {
     position: relative;
     height: 600px;
-    /* Changed from 100vh to fixed height */
     min-height: 500px;
-    /* Reduced from 650px */
     overflow: hidden;
+    background-color: #000;
+    /* Fallback background */
 }
 
 /* Slide Styles */
@@ -2635,9 +2635,9 @@ body {
 /* Hero Content Styles */
 .mahalaxmi-hero-content {
     color: #fff;
-    max-width: 600px;
+    max-width: 700px;
+    /* Increased from 600px for better readability when centered */
     padding-top: 20px;
-    /* Added to ensure content stays within bounds */
 }
 
 /* Badge Tag Style */
@@ -2646,13 +2646,10 @@ body {
     background: linear-gradient(135deg, #e6b913 0%, #d9a212 100%);
     color: #fff;
     padding: 8px 20px;
-    /* Reduced padding */
     border-radius: 4px;
     font-weight: 700;
     font-size: 0.9rem;
-    /* Slightly reduced */
     margin-bottom: 15px;
-    /* Reduced from 20px */
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -2675,11 +2672,9 @@ body {
 /* Title Styles */
 .mahalaxmi-hero-title {
     font-size: 3rem;
-    /* Reduced from 3.5rem */
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 15px;
-    /* Reduced from 20px */
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -2690,12 +2685,9 @@ body {
 /* Subtitle Styles */
 .mahalaxmi-hero-subtitle {
     font-size: 1.1rem;
-    /* Reduced from 1.2rem */
     margin-bottom: 20px;
-    /* Reduced from 30px */
     opacity: 0.9;
     line-height: 1.6;
-    /* Reduced from 1.8 */
 }
 
 /* Button Styles */
@@ -2703,7 +2695,6 @@ body {
     display: flex;
     gap: 15px;
     margin-bottom: 30px;
-    /* Reduced from 40px */
 }
 
 .mahalaxmi-primary-btn {
@@ -2711,7 +2702,6 @@ body {
     background-color: #e6b913;
     color: #fff;
     padding: 12px 25px;
-    /* Reduced from 14px 30px */
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -2730,44 +2720,176 @@ body {
 .mahalaxmi-hero-highlights {
     display: flex;
     gap: 25px;
-    /* Reduced from 30px */
 }
 
 .mahalaxmi-highlight {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* Reduced from 15px */
 }
 
 .mahalaxmi-highlight-icon {
     width: 45px;
-    /* Reduced from 50px */
     height: 45px;
-    /* Reduced from 50px */
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    /* Reduced from 1.3rem */
     color: #e6b913;
 }
 
 .mahalaxmi-highlight-text h4 {
     font-size: 1rem;
-    /* Reduced from 1.1rem */
     margin-bottom: 3px;
-    /* Reduced from 5px */
     font-weight: 600;
 }
 
 .mahalaxmi-highlight-text p {
     font-size: 0.85rem;
-    /* Reduced from 0.9rem */
     opacity: 0.8;
     margin: 0;
+}
+
+/* Slide Navigation Dots */
+.mahalaxmi-slide-dots {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10;
+}
+
+.mahalaxmi-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mahalaxmi-dot.active {
+    height: 25px;
+    border-radius: 10px;
+    background-color: #e6b913;
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+    .mahalaxmi-hero-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .mahalaxmi-hero-section {
+        height: auto;
+        padding: 80px 0 60px;
+    }
+
+    .mahalaxmi-hero-content {
+        margin-bottom: 40px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mahalaxmi-hero-highlights {
+        justify-content: center;
+    }
+
+    .mahalaxmi-slide-dots {
+        right: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mahalaxmi-hero-title {
+        font-size: 2.3rem;
+    }
+
+    .mahalaxmi-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .mahalaxmi-hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .mahalaxmi-hero-highlights {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .mahalaxmi-highlight {
+        justify-content: center;
+    }
+
+    .mahalaxmi-slide-dots {
+        right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mahalaxmi-hero-section {
+        min-height: 450px;
+    }
+
+    .mahalaxmi-hero-title {
+        font-size: 1.8rem;
+    }
+
+    .mahalaxmi-hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    /* Improve dots visibility on small screens */
+    .mahalaxmi-slide-dots {
+        right: 10px;
+        gap: 8px;
+    }
+
+    .mahalaxmi-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .mahalaxmi-dot.active {
+        height: 20px;
+    }
+}
+
+/* Additional Responsive Fixes for Very Small Screens */
+@media (max-width: 400px) {
+    .mahalaxmi-hero-section {
+        min-height: 420px;
+    }
+
+    .mahalaxmi-hero-title {
+        font-size: 1.6rem;
+    }
+
+    .mahalaxmi-hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .mahalaxmi-primary-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .mahalaxmi-highlight-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
 }
 
 /* Product Image Styles */
@@ -4440,11 +4562,11 @@ body {
     .air-cool-footer {
         padding-top: 80px;
     }
-    
+
     .air-cool-footer__shape {
         height: 80px;
     }
-    
+
     .air-cool-footer__title {
         margin-top: 20px;
     }
@@ -4454,7 +4576,7 @@ body {
     .air-cool-footer__contact-item {
         align-items: center;
     }
-    
+
     .air-cool-footer__info {
         width: calc(100% - 55px);
     }
