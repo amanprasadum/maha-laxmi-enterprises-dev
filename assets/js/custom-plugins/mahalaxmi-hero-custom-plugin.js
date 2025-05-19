@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="mahalaxmi-loading-progress">
       <div class="mahalaxmi-progress-bar"></div>
     </div>
-    <div class="mahalaxmi-loading-text">Loading beautiful imagery...</div>
+    <div class="mahalaxmi-loading-text">Loading...</div>
   `;
   document.querySelector('.mahalaxmi-hero-section').appendChild(loadingOverlay);
 
@@ -265,6 +265,17 @@ document.addEventListener('DOMContentLoaded', function () {
   function preloadImages() {
     const progressBar = document.querySelector('.mahalaxmi-progress-bar');
     
+    // Start with initial background image loaded right away
+    heroBackground.style.backgroundImage = `url('${backgroundImages[0]}')`;
+    
+    // If no images load within 2 seconds, force complete anyway
+    const forceLoadTimeout = setTimeout(() => {
+      if (imagesLoaded < totalImages) {
+        console.log('Forcing slider to start after timeout');
+        completeLoading();
+      }
+    }, 2000);
+    
     backgroundImages.forEach((imgUrl, index) => {
       const img = new Image();
       img.onload = function() {
@@ -273,7 +284,8 @@ document.addEventListener('DOMContentLoaded', function () {
         progressBar.style.width = `${progress}%`;
         
         if (imagesLoaded === totalImages) {
-          setTimeout(completeLoading, 500);
+          clearTimeout(forceLoadTimeout);
+          setTimeout(completeLoading, 200); // Reduced delay
         }
       };
       
@@ -282,7 +294,8 @@ document.addEventListener('DOMContentLoaded', function () {
         imagesLoaded++;
         
         if (imagesLoaded === totalImages) {
-          setTimeout(completeLoading, 500);
+          clearTimeout(forceLoadTimeout);
+          setTimeout(completeLoading, 200); // Reduced delay
         }
       };
       
@@ -292,18 +305,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Complete loading sequence and start slider
   function completeLoading() {
-    heroBackground.style.backgroundImage = `url('${backgroundImages[0]}')`;
-    heroBackground.classList.add('mahalaxmi-slide-enter');
+    // Force loading to complete immediately
+    document.querySelector('.mahalaxmi-progress-bar').style.width = '100%';
     
-    // Animate loading overlay away
+    // Set background image immediately
+    heroBackground.style.backgroundImage = `url('${backgroundImages[0]}')`;
+    heroBackground.style.opacity = '1';
+    
+    // Remove loading overlay completely
     const loadingOverlay = document.querySelector('.mahalaxmi-loading-overlay');
     loadingOverlay.style.opacity = '0';
     
+    // Initialize slider immediately instead of waiting
     setTimeout(() => {
-      loadingOverlay.style.display = 'none';
+      loadingOverlay.remove(); // Completely remove from DOM
       showSlide(0);
       startSlideshow();
-    }, config.loadingDuration);
+    }, 500); // Reduced timeout to make transition faster
   }
 
   // Setup all event listeners
