@@ -497,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function () {
       nextSlide();
       resetSlideshow();
     } else if (touchEndX > touchStartX + swipeThreshold) {
-      // Swipe right - pcrevious slide
+      // Swipe right -v pcrevious slide
       prevSlide();
       resetSlideshow();
     }
