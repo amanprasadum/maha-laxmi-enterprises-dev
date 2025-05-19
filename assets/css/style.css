@@ -136,15 +136,16 @@ body {
   box-shadow: none;
 }
 
-.navbar-toggler-icon {
+.navbar-toggler .navbar-toggler-icon {
   width: 24px;
   height: 17px;
   position: relative;
+  background-image: none;
   transition: all 0.3s ease;
 }
 
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
+.navbar-toggler .navbar-toggler-icon::before,
+.navbar-toggler .navbar-toggler-icon::after {
   content: '';
   position: absolute;
   left: 0;
@@ -154,15 +155,15 @@ body {
   transition: all 0.3s ease;
 }
 
-.navbar-toggler-icon::before {
+.navbar-toggler .navbar-toggler-icon::before {
   top: 0;
 }
 
-.navbar-toggler-icon::after {
+.navbar-toggler .navbar-toggler-icon::after {
   bottom: 0;
 }
 
-.navbar-toggler-icon span {
+.navbar-toggler .navbar-toggler-icon span {
   position: absolute;
   left: 0;
   width: 100%;
