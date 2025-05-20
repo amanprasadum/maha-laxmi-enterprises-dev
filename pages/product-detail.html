@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +10,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
-
 </head>
-
 <body>
     <!-- Preloader  -->
     <div id="preloader">
         <div class="loader"></div>
     </div>
-
     <!-- Custom Cursor -->
     <div class="cursor"></div>
-
+    <!-- navbar start -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Maha<span>Laxmi</span>Enterprises</a>
@@ -103,7 +99,7 @@
             </div>
         </div>
     </nav>
-
+    <!-- product hero section start -->
     <section class="mahalaxmi-product-hero-section py-5 mt-5">
         <div class="container">
             <div class="row">
@@ -165,19 +161,6 @@
                                 <span class="mahalaxmi-meta-value">Raw White, DYED</span>
                             </div>
                         </div>
-                        <!-- <div class="mahalaxmi-product-cta">
-                            <button class="mahalaxmi-btn mahalaxmi-btn-view">
-                                <i class="fas fa-eye me-2"></i> Click to view more
-                            </button>
-                            <button class="mahalaxmi-btn mahalaxmi-btn-call" data-bs-toggle="modal"
-                                data-bs-target="#callRequestModal">
-                                <i class="fas fa-phone-alt me-2"></i> Request to Call
-                            </button>
-                            <button class="mahalaxmi-btn mahalaxmi-btn-enquiry" data-bs-toggle="modal"
-                                data-bs-target="#enquiryModal">
-                                <i class="fas fa-envelope me-2"></i> Send Enquiry
-                            </button>
-                        </div> -->
                         <div class="mahalaxmi-product-cta">
                             <button class="mahalaxmi-btn mahalaxmi-btn-call" data-bs-toggle="modal"
                                 data-bs-target="#productModal">
@@ -193,7 +176,6 @@
             </div>
         </div>
     </section>
-
     <!-- Product Details Section -->
     <section class="mahalaxmi-product-details-section py-5">
         <div class="container">
@@ -288,70 +270,10 @@
             </div>
         </div>
     </section>
-
-    <!-- Compact Product Enquiry Modal -->
-    <!-- <div class="modal fade mahalaxmi-modal" id="productModal" tabindex="-1" aria-labelledby="productModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="productModalLabel">Quick Enquiry</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center mb-3">
-                        <div class="mahalaxmi-modal-product-image">
-                            <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn"
-                                class="img-fluid rounded border p-2 shadow-sm">
-                        </div>
-                        <h6 class="mt-2 fw-bold">Premium Cotton Yarn</h6>
-                    </div>
-
-                    <form id="productEnquiryForm">
-                        <div class="mb-2">
-                            <label for="enquiryQuantity" class="form-label small fw-medium">Quantity*</label>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-text bg-white"><i
-                                        class="fas fa-balance-scale text-primary"></i></span>
-                                <input type="number" class="form-control border-start-0" id="enquiryQuantity" required>
-                            </div>
-                        </div>
-                        <div class="mb-2">
-                            <label for="enquiryUnits" class="form-label small fw-medium">Units*</label>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-text bg-white"><i class="fas fa-ruler text-primary"></i></span>
-                                <select class="form-select border-start-0" id="enquiryUnits" required>
-                                    <option value="kg">Kilograms (kg)</option>
-                                    <option value="ton">Tons</option>
-                                    <option value="pcs">Pieces</option>
-                                    <option value="rolls">Rolls</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-2">
-                            <label for="enquiryMobile" class="form-label small fw-medium">Mobile Number*</label>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-text bg-white"><i class="fas fa-phone text-primary"></i></span>
-                                <input type="tel" class="form-control border-start-0" id="enquiryMobile" required>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer flex-column">
-                    <button type="button" class="mahalaxmi-btn mahalaxmi-btn-enquiry w-100" id="submitProductFormBtn">
-                        <i class="fas fa-paper-plane me-2"></i> Send Enquiry
-                    </button>
-                    <button type="button" class="btn btn-link text-secondary small w-100 p-0 mt-2"
-                        data-bs-dismiss="modal">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- Compact Product Enquiry Modal -->
     <div class="modal fade mahalaxmi-modal" id="productModal" tabindex="-1" aria-labelledby="productModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg"> <!-- Changed to modal-lg for wider layout -->
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="productModalLabel">Quick Enquiry</h5>
@@ -360,7 +282,6 @@
 
                 <div class="modal-body">
                     <div class="row g-3 align-items-start">
-                        <!-- Left Column: Product Image -->
                         <div class="col-md-5 text-center">
                             <div class="mahalaxmi-modal-product-image">
                                 <img src="../assets/images/yarn-product.jpg" alt="Premium Cotton Yarn"
@@ -368,8 +289,6 @@
                             </div>
                             <h6 class="mt-2 fw-bold">Premium Cotton Yarn</h6>
                         </div>
-
-                        <!-- Right Column: Enquiry Form -->
                         <div class="col-md-7">
                             <form id="productEnquiryForm">
                                 <div class="mb-2">
@@ -507,15 +426,12 @@
             </div>
         </div>
     </footer>
-
     <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
     <!-- JavaScript Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
     <!-- Custom JavaScript -->
     <script>
         // Initialize AOS Animation
