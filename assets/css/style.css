@@ -405,117 +405,7 @@ body {
     margin-top: 2px;
   }
 }
-/* .navbar {
-    background-color: #ffffff !important;
-    transition: var(--transition);
-    padding: 20px 0;
-    z-index: 1000
-}
-
-.navbar.scrolled {
-    background-color: var(--white) !important;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
-    padding: 15px 0
-}
-
-.navbar-brand {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: var(--dark-color) !important;
-    letter-spacing: 1px
-}
-
-.navbar-brand span {
-    color: var(--primary-color);
-    position: relative
-}
-
-.navbar-brand span::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-color)
-}
-
-.nav-link {
-    color: var(--dark-color) !important;
-    font-weight: 600;
-    letter-spacing: .5px;
-    margin: 0 5px;
-    padding: 10px 15px !important;
-    border-radius: 30px;
-    transition: var(--transition)
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--white) !important;
-    background-color: var(--primary-color)
-}
-
-.navbar-toggler {
-    border: none;
-    padding: 0
-}
-
-.navbar-toggler:focus {
-    box-shadow: none
-}
-
-.navbar-toggler-icon {
-    width: 24px;
-    height: 17px;
-    position: relative;
-    transition: var(--transition)
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--dark-color);
-    transition: var(--transition)
-}
-
-.navbar-toggler-icon::before {
-    top: 0
-}
-
-.navbar-toggler-icon::after {
-    bottom: 0
-}
-
-.navbar-toggler-icon span {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--dark-color);
-    top: 50%;
-    transform: translateY(-50%);
-    transition: var(--transition)
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-    transform: rotate(45deg);
-    top: 7px
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    transform: rotate(-45deg);
-    bottom: 7px
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span {
-    opacity: 0
-} */
-
+/* 
 .hero {
     position: relative;
     min-height: 100vh;
@@ -586,7 +476,7 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1
-}
+} */
 
 .btn-primary {
     background-color: var(--primary-color);
