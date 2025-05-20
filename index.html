@@ -11,275 +11,35 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
-<style>
-  /* Hero Title Animation */
-/* Hero Title Animation */
-.mahalaxmi-hero-title {
-  position: relative;
-  overflow: hidden;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transform: translateY(30px);
-  animation: fadeSlideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  animation-delay: 0.3s;
-}
+  <style>
+  .mahalaxmi-hero-title{position:relative;overflow:hidden;font-weight:700;margin-bottom:1.5rem;opacity:0;text-shadow:0 5px 15px rgba(0,0,0,0.1);transform:translateY(30px);animation:fadeSlideUp 1s cubic-bezier(0.2,0.8,0.2,1) forwards;animation-delay:0.3s}
+  .mahalaxmi-hero-title span{position:relative;color:#e6b913;display:inline-block;animation:shimmerGlow 4s infinite;text-shadow:0 0 5px rgba(230,185,19,0.3),0 0 10px rgba(230,185,19,0.2),0 0 15px rgba(230,185,19,0.1);background:linear-gradient(90deg,#e6b913,#f0cb47,#e6b913);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:textShimmer 3s linear infinite}
+  .mahalaxmi-hero-title span::after{content:'';position:absolute;width:100%;height:3px;bottom:-2px;left:0;background:linear-gradient(to right,transparent,#e6b913,transparent);box-shadow:0 0 8px #e6b913;transform:scaleX(0);transform-origin:bottom right;transition:transform 0.5s ease-out;animation:lineRevealGlow 1.2s ease forwards;animation-delay:1s}
+  .mahalaxmi-hero-slide{opacity:0;transition:opacity 0.8s cubic-bezier(0.4,0,0.2,1)}
+  .mahalaxmi-hero-slide.active{opacity:1}
+  .mahalaxmi-hero-slide.active .mahalaxmi-hero-badge-tag{opacity:0;transform:scale(0.8) translateY(-15px);animation:badgeReveal 0.7s cubic-bezier(0.17,0.67,0.83,0.67) forwards}
+  .mahalaxmi-hero-slide.active .mahalaxmi-hero-subtitle{opacity:0;filter:blur(4px);transform:translateY(30px);animation:subtitleReveal 1s ease-out forwards;animation-delay:0.7s}
+  .mahalaxmi-hero-slide.active .mahalaxmi-hero-buttons{opacity:0;transform:scale(0.9) translateY(15px);animation:buttonPopIn 0.8s cubic-bezier(0.2,0.8,0.2,1) forwards;animation-delay:1s}
+  .mahalaxmi-primary-btn{position:relative;overflow:hidden}
+  .mahalaxmi-primary-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:buttonShine 3s infinite;animation-delay:1.5s}
+  @keyframes fadeSlideUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+  @keyframes badgeReveal{0%{opacity:0;transform:scale(0.8) translateY(-15px)}50%{opacity:1;transform:scale(1.05) translateY(0)}100%{opacity:1;transform:scale(1) translateY(0)}}
+  @keyframes textShimmer{0%{background-position:0% center}100%{background-position:200% center}}
+  @keyframes shimmerGlow{0%,100%{text-shadow:0 0 5px rgba(230,185,19,0.3),0 0 10px rgba(230,185,19,0.2),0 0 15px rgba(230,185,19,0.1)}50%{text-shadow:0 0 10px rgba(230,185,19,0.5),0 0 20px rgba(230,185,19,0.3),0 0 30px rgba(230,185,19,0.2)}}
+  @keyframes lineRevealGlow{0%{transform:scaleX(0);opacity:0.5}100%{transform:scaleX(1);transform-origin:bottom left;opacity:1}}
+  @keyframes subtitleReveal{0%{opacity:0;filter:blur(4px);transform:translateY(30px)}100%{opacity:1;filter:blur(0);transform:translateY(0)}}
+  @keyframes buttonPopIn{0%{opacity:0;transform:scale(0.9) translateY(15px)}70%{opacity:1;transform:scale(1.05) translateY(-2px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+  @keyframes buttonShine{0%{left:-100%}20%,100%{left:100%}}
+  .mahalaxmi-hero-slide:not(.active){display:none}
+  .mahalaxmi-hero-slide.active .mahalaxmi-hero-title{animation:textReveal 1s cubic-bezier(0.2,0.8,0.2,1) forwards}
+  .mahalaxmi-dot{position:relative;display:inline-block;width:12px;height:12px;margin:0 6px;border-radius:50%;background-color:rgba(255,255,255,0.5);cursor:pointer;transition:all 0.3s ease}
+  .mahalaxmi-dot:hover{transform:scale(1.2)}
+  .mahalaxmi-dot.active{background-color:#e6b913;box-shadow:0 0 0 2px rgba(230,185,19,0.3),0 0 8px rgba(230,185,19,0.6);animation:dotPulse 2s infinite}
+  @keyframes dotPulse{0%,100%{box-shadow:0 0 0 2px rgba(230,185,19,0.3)}50%{box-shadow:0 0 0 5px rgba(230,185,19,0.1)}}
+  @keyframes textReveal{0%{opacity:0;transform:translateY(30px);letter-spacing:-0.5px}60%{letter-spacing:1px}100%{opacity:1;transform:translateY(0);letter-spacing:normal}}
+  @media(max-width:768px){.mahalaxmi-hero-title{font-size:1.8rem;line-height:1.3}.mahalaxmi-hero-subtitle{font-size:0.9rem}}
 
-.mahalaxmi-hero-title span {
-  position: relative;
-  color: #e6b913; /* Golden amber color as requested */
-  display: inline-block;
-  animation: shimmerGlow 4s infinite;
-  text-shadow: 0 0 5px rgba(230, 185, 19, 0.3), 
-               0 0 10px rgba(230, 185, 19, 0.2),
-               0 0 15px rgba(230, 185, 19, 0.1);
-  background: linear-gradient(90deg, #e6b913, #f0cb47, #e6b913);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textShimmer 3s linear infinite;
-}
-
-.mahalaxmi-hero-title span::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  bottom: -2px;
-  left: 0;
-  background: linear-gradient(to right, transparent, #e6b913, transparent);
-  box-shadow: 0 0 8px #e6b913;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.5s ease-out;
-  animation: lineRevealGlow 1.2s ease forwards;
-  animation-delay: 1s;
-}
-
-/* Make active slide visible with animations */
-.mahalaxmi-hero-slide {
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mahalaxmi-hero-slide.active {
-  opacity: 1;
-}
-
-.mahalaxmi-hero-slide.active .mahalaxmi-hero-badge-tag {
-  opacity: 0;
-  transform: scale(0.8) translateY(-15px);
-  animation: badgeReveal 0.7s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
-}
-
-.mahalaxmi-hero-slide.active .mahalaxmi-hero-subtitle {
-  opacity: 0;
-  filter: blur(4px);
-  transform: translateY(30px);
-  animation: subtitleReveal 1s ease-out forwards;
-  animation-delay: 0.7s;
-}
-
-.mahalaxmi-hero-slide.active .mahalaxmi-hero-buttons {
-  opacity: 0;
-  transform: scale(0.9) translateY(15px);
-  animation: buttonPopIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  animation-delay: 1s;
-}
-
-.mahalaxmi-primary-btn {
-  position: relative;
-  overflow: hidden;
-}
-
-.mahalaxmi-primary-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  animation: buttonShine 3s infinite;
-  animation-delay: 1.5s;
-}
-
-/* Keyframes for animations */
-@keyframes fadeSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes badgeReveal {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) translateY(-15px);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05) translateY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes textShimmer {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
-@keyframes shimmerGlow {
-  0%, 100% {
-    text-shadow: 0 0 5px rgba(230, 185, 19, 0.3), 
-                 0 0 10px rgba(230, 185, 19, 0.2),
-                 0 0 15px rgba(230, 185, 19, 0.1);
-  }
-  50% {
-    text-shadow: 0 0 10px rgba(230, 185, 19, 0.5), 
-                 0 0 20px rgba(230, 185, 19, 0.3),
-                 0 0 30px rgba(230, 185, 19, 0.2);
-  }
-}
-
-@keyframes lineRevealGlow {
-  0% {
-    transform: scaleX(0);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-    opacity: 1;
-  }
-}
-
-@keyframes subtitleReveal {
-  0% {
-    opacity: 0;
-    filter: blur(4px);
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes buttonPopIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9) translateY(15px);
-  }
-  70% {
-    opacity: 1;
-    transform: scale(1.05) translateY(-2px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes buttonShine {
-  0% {
-    left: -100%;
-  }
-  20% {
-    left: 100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-/* Special effect for slide transitions */
-.mahalaxmi-hero-slide:not(.active) {
-  display: none;
-}
-
-.mahalaxmi-hero-slide.active .mahalaxmi-hero-title {
-  animation: textReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-/* Slide dots animation */
-.mahalaxmi-dot {
-  position: relative;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 6px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.mahalaxmi-dot:hover {
-  transform: scale(1.2);
-}
-
-.mahalaxmi-dot.active {
-  background-color: #e6b913;
-  box-shadow: 0 0 0 2px rgba(230, 185, 19, 0.3), 
-              0 0 8px rgba(230, 185, 19, 0.6);
-  animation: dotPulse 2s infinite;
-}
-
-@keyframes dotPulse {
-  0% {
-    box-shadow: 0 0 0 2px rgba(230, 185, 19, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 0 5px rgba(230, 185, 19, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 0 2px rgba(230, 185, 19, 0.3);
-  }
-}
-
-@keyframes textReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-    letter-spacing: -0.5px;
-  }
-  60% {
-    letter-spacing: 1px;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    letter-spacing: normal;
-  }
-}
-
-/* Add responsive adjustments */
-@media (max-width: 768px) {
-  .mahalaxmi-hero-title {
-    font-size: 1.8rem;
-    line-height: 1.3;
-  }
-  
-  .mahalaxmi-hero-subtitle {
-    font-size: 0.9rem;
-  }
-}
-</style>
+  </style>
 </head>
 
 <body>
