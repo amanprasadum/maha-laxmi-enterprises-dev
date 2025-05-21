@@ -1,0 +1,267 @@
+/* Product Filter Section Styles */
+.mahalaxmi-filter-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+    margin-top: 100px;
+}
+
+.mahalaxmi-filter-wrapper {
+    margin-bottom: 40px;
+}
+
+.mahalaxmi-filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.mahalaxmi-filter-btn {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    background-color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.mahalaxmi-filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.mahalaxmi-filter-btn:hover::before,
+.mahalaxmi-filter-btn.active::before {
+    width: 100%;
+}
+
+.mahalaxmi-filter-btn.active {
+    color: var(--dark-color);
+}
+
+.filter-icon {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.filter-text {
+    font-size: 0.95rem;
+}
+
+.mahalaxmi-filter-content {
+    position: relative;
+}
+
+.filter-container {
+    position: relative;
+    transition: height 0.4s ease-out;
+}
+
+.filter-item {
+    transition: all 0.4s ease-out;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.filter-item.hide {
+    opacity: 0;
+    transform: scale(0.8);
+    position: absolute;
+}
+
+.filter-item.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Product Card Styles */
+.mahalaxmi-product-card {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mahalaxmi-product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.mahalaxmi-product-image {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+}
+
+.mahalaxmi-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.mahalaxmi-product-card:hover .mahalaxmi-product-image img {
+    transform: scale(1.1);
+}
+
+.mahalaxmi-product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mahalaxmi-product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 60, 46, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.mahalaxmi-product-card:hover .mahalaxmi-product-overlay {
+    opacity: 1;
+}
+
+.mahalaxmi-overlay-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-color);
+    transition: var(--transition);
+    transform: translateY(20px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mahalaxmi-product-card:hover .mahalaxmi-overlay-btn {
+    transform: translateY(0);
+}
+
+.mahalaxmi-overlay-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+.mahalaxmi-product-content {
+    padding: 25px;
+}
+
+.mahalaxmi-product-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.mahalaxmi-product-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.mahalaxmi-product-description {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.mahalaxmi-product-meta {
+    margin-bottom: 20px;
+}
+
+.mahalaxmi-product-footer {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .mahalaxmi-filter-btn {
+        padding: 10px 20px;
+    }
+
+    .filter-icon {
+        font-size: 0.9rem;
+    }
+
+    .filter-text {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .mahalaxmi-filter-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mahalaxmi-filter-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+/* Animation for Filter Items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-item {
+    animation: fadeIn 0.6s ease-out;
+}
