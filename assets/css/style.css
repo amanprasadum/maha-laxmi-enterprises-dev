@@ -23,6 +23,11 @@ body {
     color: var(--text-color);
     background-color: var(--white)
 }
+/* util css by me  */
+.w-233{
+    width: 233px;
+}
+/* util css by me end */
 
 .preloader {
     position: fixed;
