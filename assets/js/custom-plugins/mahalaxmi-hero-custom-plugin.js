@@ -2,7 +2,7 @@
       const backgroundImages = [
         './assets/images/basmati.jpg',  // Rice
         './assets/images/yarn-hero.jpg',  // Yarn
-        './assets/images/pad.jpg'  // Women's Pad
+        // './assets/images/pad.jpg'  // Women's Pad
       ];
 
       const heroBackground = document.querySelector('.mahalaxmi-hero-background');
