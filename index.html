@@ -51,6 +51,7 @@
     font-size: 1.5rem;
     color: var(--secondary-color) !important;
     transition: var(--transition);
+    text-decoration: none;
 }
 
 .mle-brand:hover {
@@ -75,6 +76,7 @@
     position: relative;
     border-radius: 25px;
     margin: 0 0.2rem;
+    text-decoration: none;
 }
 
 .mle-nav-link:hover,
@@ -118,12 +120,18 @@
     transition: var(--transition);
     border: none;
     background: none;
+    text-decoration: none;
 }
 
 .mle-dropdown-item:hover {
     background-color: var(--primary-color);
     color: var(--white) !important;
     padding-left: 2rem;
+}
+
+.mle-dropdown-item:focus {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
 }
 
 .mle-dropdown-divider {
@@ -147,24 +155,30 @@
 }
 
 .mle-submenu {
-    position: absolute;
-    top: 0;
-    left: 100%;
     background-color: var(--white);
     border: 1px solid var(--primary-color);
     border-radius: 15px;
     box-shadow: var(--card-shadow);
     padding: 1rem 0;
     min-width: 200px;
-    display: none;
 }
 
-.mle-dropdown-submenu:hover > .mle-submenu {
-    display: block;
-}
+/* Desktop Submenu */
+@media (min-width: 992px) {
+    .mle-submenu {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        display: none;
+    }
 
-.mle-dropdown-submenu:hover > .mle-dropdown-item::after {
-    transform: rotate(90deg);
+    .mle-dropdown-submenu:hover > .mle-submenu {
+        display: block;
+    }
+
+    .mle-dropdown-submenu:hover > .mle-dropdown-item::after {
+        transform: rotate(90deg);
+    }
 }
 
 /* Mobile Toggler */
@@ -211,6 +225,7 @@
         box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
         transform: none !important;
         width: 100%;
+        float: none !important;
     }
 
     .mle-submenu {
@@ -224,9 +239,10 @@
         width: 100%;
         left: 0 !important;
         top: 0 !important;
+        float: none !important;
     }
 
-    .mle-dropdown-submenu.mle-submenu-open > .mle-submenu {
+    .mle-submenu.show {
         display: block !important;
     }
 
@@ -235,7 +251,7 @@
         transform: none;
     }
 
-    .mle-dropdown-submenu.mle-submenu-open > .mle-dropdown-item::after {
+    .mle-dropdown-submenu > .mle-dropdown-item[aria-expanded="true"]::after {
         transform: rotate(180deg);
     }
 
@@ -267,6 +283,22 @@
         font-size: 0.9rem;
         padding: 0.6rem 1.2rem;
     }
+}
+
+/* Fix for Bootstrap dropdown toggle */
+.show > .mle-dropdown-menu {
+    display: block !important;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
 }
   </style>
 </head>
@@ -366,6 +398,7 @@
 <!-- Navigation -->
 <!-- Navigation Section -->
 <!-- Navigation Section -->
+<!-- Navigation Section -->
 <nav class="navbar navbar-expand-lg mle-navbar">
     <div class="container">
         <!-- Brand -->
@@ -398,21 +431,21 @@
 
                 <!-- Products with Rice Types -->
                 <li class="nav-item dropdown mle-dropdown">
-                    <a class="nav-link dropdown-toggle mle-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle mle-nav-link" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-seedling me-1"></i>Products
                     </a>
-                    <ul class="dropdown-menu mle-dropdown-menu">
+                    <ul class="dropdown-menu mle-dropdown-menu" aria-labelledby="productsDropdown">
                         <li><a class="dropdown-item mle-dropdown-item" href="#all-products">
                             <i class="fas fa-th-large me-2"></i>All Products
                         </a></li>
                         <li><hr class="dropdown-divider mle-dropdown-divider"></li>
                         
                         <!-- Rice Submenu -->
-                        <li class="dropdown-submenu mle-dropdown-submenu">
-                            <a class="dropdown-item mle-dropdown-item mle-submenu-toggle" href="#rice" data-submenu="rice-submenu">
+                        <li class="dropend mle-dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle mle-dropdown-item mle-submenu-toggle" href="#" id="riceSubmenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-grain me-2"></i>Rice Varieties
                             </a>
-                            <ul class="dropdown-menu mle-submenu" id="rice-submenu">
+                            <ul class="dropdown-menu mle-submenu" aria-labelledby="riceSubmenu">
                                 <li><a class="dropdown-item mle-dropdown-item" href="#basmati-rice">
                                     <i class="fas fa-star me-2"></i>Basmati Rice
                                 </a></li>
@@ -1024,50 +1057,58 @@
   <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
  
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Handle submenu toggle on mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    // Handle mobile submenu toggle
     const submenuToggles = document.querySelectorAll('.mle-submenu-toggle');
     
-    submenuToggles.forEach(toggle => {
+    submenuToggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
-            // Only handle on mobile (when dropdown is in mobile mode)
+            // Check if we're on mobile
             if (window.innerWidth <= 991.98) {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                const submenuId = this.getAttribute('data-submenu');
-                const submenu = document.getElementById(submenuId);
-                const parent = this.parentElement;
+                const submenu = this.nextElementSibling;
+                const isOpen = submenu.classList.contains('show');
                 
-                // Toggle submenu visibility
-                if (submenu.style.display === 'block') {
-                    submenu.style.display = 'none';
-                    parent.classList.remove('mle-submenu-open');
+                // Close all other submenus
+                document.querySelectorAll('.mle-submenu').forEach(function(s) {
+                    s.classList.remove('show');
+                });
+                
+                // Toggle current submenu
+                if (!isOpen) {
+                    submenu.classList.add('show');
+                    this.setAttribute('aria-expanded', 'true');
                 } else {
-                    // Hide other submenus first
-                    document.querySelectorAll('.mle-submenu').forEach(s => {
-                        s.style.display = 'none';
-                    });
-                    document.querySelectorAll('.mle-dropdown-submenu').forEach(s => {
-                        s.classList.remove('mle-submenu-open');
-                    });
-                    
-                    // Show this submenu
-                    submenu.style.display = 'block';
-                    parent.classList.add('mle-submenu-open');
+                    submenu.classList.remove('show');
+                    this.setAttribute('aria-expanded', 'false');
                 }
             }
         });
     });
-
-    // Reset submenu states on window resize
+    
+    // Close submenus when main dropdown closes
+    const mainDropdown = document.getElementById('productsDropdown');
+    if (mainDropdown) {
+        mainDropdown.addEventListener('hidden.bs.dropdown', function() {
+            document.querySelectorAll('.mle-submenu').forEach(function(submenu) {
+                submenu.classList.remove('show');
+            });
+            document.querySelectorAll('.mle-submenu-toggle').forEach(function(toggle) {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+    
+    // Reset on window resize
     window.addEventListener('resize', function() {
         if (window.innerWidth > 991.98) {
-            document.querySelectorAll('.mle-submenu').forEach(submenu => {
-                submenu.style.display = '';
+            document.querySelectorAll('.mle-submenu').forEach(function(submenu) {
+                submenu.classList.remove('show');
             });
-            document.querySelectorAll('.mle-dropdown-submenu').forEach(parent => {
-                parent.classList.remove('mle-submenu-open');
+            document.querySelectorAll('.mle-submenu-toggle').forEach(function(toggle) {
+                toggle.setAttribute('aria-expanded', 'false');
             });
         }
     });
