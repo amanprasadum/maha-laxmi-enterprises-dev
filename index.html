@@ -132,88 +132,134 @@
   </nav> -->
   <!-- NAVBAR SECTION -->
 <!-- Navbar HTML -->
-<nav class="maa-laxmi-responsive-navbar">
-    <div class="maa-laxmi-responsive-container">
-        <!-- Logo -->
-        <a href="#" class="maa-laxmi-responsive-logo"> 
-            <img src="./assets/images/logo-2.jpg" alt="Maa Laxmi Enterprises"> 
-        </a>
-        
-        <!-- Mobile Menu Toggle -->
-        <button class="maa-laxmi-responsive-toggle" type="button" id="maaLaxmiToggle">
-            <span class="maa-laxmi-responsive-toggle-bar"></span>
-            <span class="maa-laxmi-responsive-toggle-bar"></span>
-            <span class="maa-laxmi-responsive-toggle-bar"></span>
-        </button>
-        
-        <!-- Navigation Menu -->
-        <div class="maa-laxmi-responsive-menu" id="maaLaxmiMenu">
-            <ul class="maa-laxmi-responsive-nav-list">
-                <li class="maa-laxmi-responsive-nav-item">
-                    <a href="./index.html" class="maa-laxmi-responsive-nav-link maa-laxmi-responsive-active">Home</a>
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mle-navbar">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand mle-brand" href="#">
+      <img src="https://via.placeholder.com/30x30" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+      YourBrand
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler mle-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link active mle-nav-link" aria-current="page" href="#">Home</a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a class="nav-link mle-nav-link" href="#">About</a>
+        </li>
+
+        <!-- Services with Dropdown -->
+        <li class="nav-item dropdown mle-dropdown">
+          <a class="nav-link dropdown-toggle mle-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu mle-dropdown-menu">
+            <li><a class="dropdown-item mle-dropdown-item" href="#">Web Development</a></li>
+            <li><a class="dropdown-item mle-dropdown-item" href="#">Mobile Apps</a></li>
+            <li><hr class="dropdown-divider"></li>
+            
+            <!-- Nested Submenu -->
+            <li class="dropdown-submenu mle-dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle mle-dropdown-item" href="#">Digital Marketing</a>
+              <ul class="dropdown-menu mle-submenu">
+                <li><a class="dropdown-item mle-dropdown-item" href="#">SEO</a></li>
+                <li><a class="dropdown-item mle-dropdown-item" href="#">Social Media</a></li>
+                <li><a class="dropdown-item mle-dropdown-item" href="#">Content Marketing</a></li>
+                <li><a class="dropdown-item mle-dropdown-item" href="#">PPC Advertising</a></li>
+              </ul>
+            </li>
+            
+            <li><a class="dropdown-item mle-dropdown-item" href="#">Consulting</a></li>
+          </ul>
+        </li>
+
+        <!-- Products with Nested Submenus -->
+        <li class="nav-item dropdown mle-dropdown">
+          <a class="nav-link dropdown-toggle mle-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu mle-dropdown-menu">
+            <li><a class="dropdown-item mle-dropdown-item" href="#">All Products</a></li>
+            <li><hr class="dropdown-divider"></li>
+            
+            <!-- Software Submenu -->
+            <li class="dropdown-submenu mle-dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle mle-dropdown-item" href="#">Software</a>
+              <ul class="dropdown-menu mle-submenu">
+                <li><a class="dropdown-item mle-dropdown-item" href="#">CRM System</a></li>
+                <li><a class="dropdown-item mle-dropdown-item" href="#">Project Management</a></li>
+                <li class="dropdown-submenu mle-dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle mle-dropdown-item" href="#">Analytics Tools</a>
+                  <ul class="dropdown-menu mle-submenu">
+                    <li><a class="dropdown-item mle-dropdown-item" href="#">Web Analytics</a></li>
+                    <li><a class="dropdown-item mle-dropdown-item" href="#">Sales Analytics</a></li>
+                    <li><a class="dropdown-item mle-dropdown-item" href="#">Marketing Analytics</a></li>
+                  </ul>
                 </li>
-                <li class="maa-laxmi-responsive-nav-item">
-                    <a href="./about.html" class="maa-laxmi-responsive-nav-link">About Us</a>
-                </li>
-                <li class="maa-laxmi-responsive-nav-item maa-laxmi-responsive-dropdown">
-                    <a href="#" class="maa-laxmi-responsive-nav-link maa-laxmi-responsive-dropdown-toggle">
-                        Products <i class="maa-laxmi-responsive-arrow">▼</i>
-                    </a>
-                    <div class="maa-laxmi-responsive-dropdown-menu">
-                        <!-- Rice Submenu -->
-                        <div class="maa-laxmi-responsive-submenu">
-                            <a href="#" class="maa-laxmi-responsive-submenu-toggle">
-                                <div class="maa-laxmi-responsive-submenu-content">
-                                    <div class="maa-laxmi-responsive-submenu-icon">🌾</div>
-                                    <div class="maa-laxmi-responsive-submenu-text">
-                                        <strong>Rice</strong>
-                                        <span>Premium quality rice varieties</span>
-                                    </div>
-                                </div>
-                                <i class="maa-laxmi-responsive-submenu-arrow">▶</i>
-                            </a>
-                            <div class="maa-laxmi-responsive-submenu-dropdown">
-                                <a href="./pages/basmati-rice.html" class="maa-laxmi-responsive-submenu-link">Basmati Rice</a>
-                                <a href="./pages/jasmine-rice.html" class="maa-laxmi-responsive-submenu-link">Jasmine Rice</a>
-                                <a href="./pages/brown-rice.html" class="maa-laxmi-responsive-submenu-link">Brown Rice</a>
-                                <a href="./pages/wild-rice.html" class="maa-laxmi-responsive-submenu-link">Wild Rice</a>
-                            </div>
-                        </div>
-                        
-                        <!-- Yarn Submenu -->
-                        <div class="maa-laxmi-responsive-submenu">
-                            <a href="#" class="maa-laxmi-responsive-submenu-toggle">
-                                <div class="maa-laxmi-responsive-submenu-content">
-                                    <div class="maa-laxmi-responsive-submenu-icon">🧶</div>
-                                    <div class="maa-laxmi-responsive-submenu-text">
-                                        <strong>Yarn</strong>
-                                        <span>High-quality textile materials</span>
-                                    </div>
-                                </div>
-                                <i class="maa-laxmi-responsive-submenu-arrow">▶</i>
-                            </a>
-                            <div class="maa-laxmi-responsive-submenu-dropdown">
-                                <a href="./pages/cotton-yarn.html" class="maa-laxmi-responsive-submenu-link">Cotton Yarn</a>
-                                <a href="./pages/polyester-yarn.html" class="maa-laxmi-responsive-submenu-link">Polyester Yarn</a>
-                                <a href="./pages/wool-yarn.html" class="maa-laxmi-responsive-submenu-link">Wool Yarn</a>
-                                <a href="./pages/silk-yarn.html" class="maa-laxmi-responsive-submenu-link">Silk Yarn</a>
-                            </div>
-                        </div>
-                        
-                        <hr class="maa-laxmi-responsive-divider">
-                        <a href="./pages/product.html" class="maa-laxmi-responsive-view-all">
-                            <span>View All Products</span>
-                            <i class="maa-laxmi-responsive-arrow-right">→</i>
-                        </a>
-                    </div>
-                </li>
-                <li class="maa-laxmi-responsive-nav-item">
-                    <a href="./contact.html" class="maa-laxmi-responsive-nav-link">Contact</a>
-                </li>
-            </ul>
+              </ul>
+            </li>
+
+            <!-- Hardware Submenu -->
+            <li class="dropdown-submenu mle-dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle mle-dropdown-item" href="#">Hardware</a>
+              <ul class="dropdown-menu mle-submenu">
+                <li><a class="dropdown-item mle-dropdown-item" href="#">Servers</a></li>
+                <li><a class="dropdown-item mle-dropdown-item" href="#">Networking</a></li>
+                <li><a class="dropdown-item mle-dropdown-item" href="#">Storage</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Blog -->
+        <li class="nav-item">
+          <a class="nav-link mle-nav-link" href="#">Blog</a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a class="nav-link mle-nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Right Side Items -->
+      <div class="d-flex">
+        <!-- Search -->
+        <form class="d-flex me-3" role="search">
+          <input class="form-control mle-search-input" type="search" placeholder="Search..." aria-label="Search">
+          <button class="btn btn-outline-light mle-search-btn" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <!-- User Dropdown -->
+        <div class="dropdown">
+          <a class="btn btn-outline-light dropdown-toggle mle-user-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user"></i> Account
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end mle-dropdown-menu">
+            <li><a class="dropdown-item mle-dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item mle-dropdown-item" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item mle-dropdown-item" href="#">Logout</a></li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 </nav>
+
 
   <!-- Mahalaxmi Hero Section -->
   <section class="mahalaxmi-hero-section" id="hero">
@@ -799,59 +845,66 @@
 
   <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
   <script>
-    // Mobile menu toggle
-document.getElementById('maaLaxmiToggle').addEventListener('click', function() {
-    const menu = document.getElementById('maaLaxmiMenu');
-    menu.classList.toggle('active');
-});
-
-// Mobile dropdown toggles
-document.querySelectorAll('.maa-laxmi-responsive-dropdown-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(e) {
+   // JavaScript for mobile submenu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle submenu clicks on mobile
+  const submenuItems = document.querySelectorAll('.mle-dropdown-submenu > .mle-dropdown-item');
+  
+  submenuItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      // Only prevent default on mobile
+      if (window.innerWidth <= 991.98) {
         e.preventDefault();
-        this.parentElement.classList.toggle('active');
-    });
-});
-
-document.querySelectorAll('.maa-laxmi-responsive-submenu-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.parentElement.classList.toggle('active');
-    });
-});
-
-// Smart positioning for submenus
-document.querySelectorAll('.maa-laxmi-responsive-submenu').forEach(function(submenu) {
-    submenu.addEventListener('mouseenter', function() {
-        const dropdown = this.querySelector('.maa-laxmi-responsive-submenu-dropdown');
-        const rect = dropdown.getBoundingClientRect();
-        const windowWidth = window.innerWidth;
+        e.stopPropagation();
         
-        // Check if dropdown goes outside right edge of screen
-        if (rect.right > windowWidth) {
-            dropdown.classList.add('maa-laxmi-responsive-right');
-        } else {
-            dropdown.classList.remove('maa-laxmi-responsive-right');
-        }
-    });
-});
-
-// Also check main dropdown positioning
-document.querySelectorAll('.maa-laxmi-responsive-dropdown').forEach(function(dropdown) {
-    dropdown.addEventListener('mouseenter', function() {
-        const menu = this.querySelector('.maa-laxmi-responsive-dropdown-menu');
-        const rect = menu.getBoundingClientRect();
-        const windowWidth = window.innerWidth;
+        const submenu = this.nextElementSibling;
+        const parent = this.parentElement;
         
-        // Check if dropdown goes outside right edge of screen
-        if (rect.right > windowWidth) {
-            menu.style.left = 'auto';
-            menu.style.right = '0';
+        // Toggle submenu visibility
+        if (submenu.style.display === 'block') {
+          submenu.style.display = 'none';
+          parent.classList.remove('show');
         } else {
-            menu.style.left = '0';
-            menu.style.right = 'auto';
+          // Hide other submenus
+          document.querySelectorAll('.mle-submenu').forEach(s => {
+            s.style.display = 'none';
+          });
+          document.querySelectorAll('.mle-dropdown-submenu').forEach(s => {
+            s.classList.remove('show');
+          });
+          
+          // Show this submenu
+          submenu.style.display = 'block';
+          parent.classList.add('show');
         }
+      }
     });
+  });
+
+  // Close submenus when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.mle-dropdown-submenu')) {
+      document.querySelectorAll('.mle-submenu').forEach(submenu => {
+        submenu.style.display = 'none';
+      });
+      document.querySelectorAll('.mle-dropdown-submenu').forEach(parent => {
+        parent.classList.remove('show');
+      });
+    }
+  });
+
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 991.98) {
+      // Reset mobile submenu states on desktop
+      document.querySelectorAll('.mle-submenu').forEach(submenu => {
+        submenu.style.display = '';
+      });
+      document.querySelectorAll('.mle-dropdown-submenu').forEach(parent => {
+        parent.classList.remove('show');
+      });
+    }
+  });
 });
 </script>
   
