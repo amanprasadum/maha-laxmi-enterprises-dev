@@ -44,6 +44,7 @@
 
 /* About Section */
 .maa-laxmi-about {
+    margin-top: 3rem;
     background: linear-gradient(135deg, var(--light-color) 0%, var(--white) 100%);
 }
 
