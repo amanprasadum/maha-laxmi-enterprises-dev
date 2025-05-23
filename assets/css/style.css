@@ -4070,7 +4070,7 @@ body {
 
 .terms-icon i {
     font-size: 2rem;
-    color: var(--white);
+    color: var(--primary-color);
 }
 
 @keyframes float {
