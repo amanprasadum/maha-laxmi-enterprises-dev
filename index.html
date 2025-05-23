@@ -38,6 +38,7 @@
   @keyframes dotPulse{0%,100%{box-shadow:0 0 0 2px rgba(230,185,19,0.3)}50%{box-shadow:0 0 0 5px rgba(230,185,19,0.1)}}
   @keyframes textReveal{0%{opacity:0;transform:translateY(30px);letter-spacing:-0.5px}60%{letter-spacing:1px}100%{opacity:1;transform:translateY(0);letter-spacing:normal}}
   @media(max-width:768px){.mahalaxmi-hero-title{font-size:1.8rem;line-height:1.3}.mahalaxmi-hero-subtitle{font-size:0.9rem}}
+
 .mle-navbar {
     background-color: var(--light-color) !important;
     box-shadow: var(--card-shadow);
@@ -184,7 +185,7 @@
     height: 1.2em;
 }
 
-/* Mobile Responsive Fixes */
+/* Mobile Responsive */
 @media (max-width: 991.98px) {
     .mle-nav-center {
         margin: 1rem 0;
@@ -212,13 +213,9 @@
         width: 100%;
     }
 
-    .mle-dropdown.show .mle-dropdown-menu {
-        display: block !important;
-    }
-
     .mle-submenu {
         position: static !important;
-        display: block !important;
+        display: none !important;
         box-shadow: none;
         margin: 0.5rem 0;
         border-left: 3px solid var(--primary-color);
@@ -229,12 +226,16 @@
         top: 0 !important;
     }
 
+    .mle-dropdown-submenu.mle-submenu-open > .mle-submenu {
+        display: block !important;
+    }
+
     .mle-dropdown-submenu > .mle-dropdown-item::after {
         content: "\f107";
         transform: none;
     }
 
-    .mle-dropdown-submenu:hover > .mle-dropdown-item::after {
+    .mle-dropdown-submenu.mle-submenu-open > .mle-dropdown-item::after {
         transform: rotate(180deg);
     }
 
@@ -266,15 +267,6 @@
         font-size: 0.9rem;
         padding: 0.6rem 1.2rem;
     }
-}
-
-/* Ensure proper visibility on all devices */
-.navbar-toggler:not(.collapsed) {
-    border-color: var(--primary-color);
-}
-
-.show > .mle-dropdown-menu {
-    display: block !important;
 }
   </style>
 </head>
@@ -373,6 +365,7 @@
 <!-- Navbar Section -->
 <!-- Navigation -->
 <!-- Navigation Section -->
+<!-- Navigation Section -->
 <nav class="navbar navbar-expand-lg mle-navbar">
     <div class="container">
         <!-- Brand -->
@@ -416,10 +409,10 @@
                         
                         <!-- Rice Submenu -->
                         <li class="dropdown-submenu mle-dropdown-submenu">
-                            <a class="dropdown-item mle-dropdown-item" href="#rice">
+                            <a class="dropdown-item mle-dropdown-item mle-submenu-toggle" href="#rice" data-submenu="rice-submenu">
                                 <i class="fas fa-grain me-2"></i>Rice Varieties
                             </a>
-                            <ul class="dropdown-menu mle-submenu">
+                            <ul class="dropdown-menu mle-submenu" id="rice-submenu">
                                 <li><a class="dropdown-item mle-dropdown-item" href="#basmati-rice">
                                     <i class="fas fa-star me-2"></i>Basmati Rice
                                 </a></li>
@@ -1030,7 +1023,56 @@
 
   <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
  
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Handle submenu toggle on mobile
+    const submenuToggles = document.querySelectorAll('.mle-submenu-toggle');
+    
+    submenuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            // Only handle on mobile (when dropdown is in mobile mode)
+            if (window.innerWidth <= 991.98) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const submenuId = this.getAttribute('data-submenu');
+                const submenu = document.getElementById(submenuId);
+                const parent = this.parentElement;
+                
+                // Toggle submenu visibility
+                if (submenu.style.display === 'block') {
+                    submenu.style.display = 'none';
+                    parent.classList.remove('mle-submenu-open');
+                } else {
+                    // Hide other submenus first
+                    document.querySelectorAll('.mle-submenu').forEach(s => {
+                        s.style.display = 'none';
+                    });
+                    document.querySelectorAll('.mle-dropdown-submenu').forEach(s => {
+                        s.classList.remove('mle-submenu-open');
+                    });
+                    
+                    // Show this submenu
+                    submenu.style.display = 'block';
+                    parent.classList.add('mle-submenu-open');
+                }
+            }
+        });
+    });
+
+    // Reset submenu states on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 991.98) {
+            document.querySelectorAll('.mle-submenu').forEach(submenu => {
+                submenu.style.display = '';
+            });
+            document.querySelectorAll('.mle-dropdown-submenu').forEach(parent => {
+                parent.classList.remove('mle-submenu-open');
+            });
+        }
+    });
+});
+  </script>
 </body>
 
 </html>
