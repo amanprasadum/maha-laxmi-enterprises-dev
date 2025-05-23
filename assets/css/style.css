@@ -1319,17 +1319,17 @@ body {
 }
 
 @media(max-width:991px) {
-    .navbar-collapse {
+    /* .navbar-collapse {
         background-color: var(--white);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
         margin-top: 15px
-    }
+    } */
 
-    .nav-link {
+    /* .nav-link {
         margin: 5px 0
-    }
+    } */
 
     .hero-title {
         font-size: 3rem
