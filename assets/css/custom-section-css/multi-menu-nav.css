@@ -1,4 +1,7 @@
 /* Enhanced Custom Navbar Styling - Clean White Theme */
+.navbar{
+    background: #ffffff !important;
+}
 .navbar-custom {
     background: #ffffff !important;
     backdrop-filter: blur(10px);
