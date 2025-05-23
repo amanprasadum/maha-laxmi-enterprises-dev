@@ -4642,3 +4642,59 @@ body {
         width: calc(100% - 55px);
     }
 }
+/* privacy policy start */
+/* Maa Laxmi Terms & Privacy Styles */
+.maa-laxmi-terms-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.maa-laxmi-terms-container {
+  background-color: var(--light-color);
+  border-radius: 8px;
+  padding: 3rem;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 3rem;
+}
+
+.maa-laxmi-terms-title {
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.maa-laxmi-terms-content {
+  line-height: 1.6;
+}
+
+.maa-laxmi-terms-item {
+  margin-bottom: 2rem;
+}
+
+.maa-laxmi-terms-subtitle {
+  color: var(--dark-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.maa-laxmi-terms-text {
+  color: var(--text-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .maa-laxmi-terms-container {
+    padding: 2rem;
+  }
+  
+  .maa-laxmi-terms-title {
+    font-size: 2rem;
+  }
+  
+  .maa-laxmi-terms-subtitle {
+    font-size: 1.3rem;
+  }
+}
+/* privacy policy end */
