@@ -481,6 +481,58 @@ body {
     transform: translateX(5px);
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.1);
 }
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+/* Mobile dropdown show/hide */
+@media (max-width: 991.98px) {
+  .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    margin-left: 15px !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: rgba(255,255,255,0.1) !important;
+    display: none; /* Hidden by default */
+  }
+  
+  .dropdown-menu.show {
+    display: block !important;
+  }
+}
+
+/* Dropdown arrow fixes */
+.dropdown-toggle::after {
+  display: inline-block !important;
+  margin-left: 0.255em !important;
+  vertical-align: 0.255em !important;
+  content: "" !important;
+  border-top: 0.3em solid !important;
+  border-right: 0.3em solid transparent !important;
+  border-bottom: 0 !important;
+  border-left: 0.3em solid transparent !important;
+  transition: transform 0.3s ease !important;
+}
+
+.dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(-180deg) !important;
+}
+
+/* Nested dropdown positioning */
+.nav-item.dropdown .dropdown-menu {
+  left: 100% !important;
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Z-index fixes */
+.navbar {
+  z-index: 1030 !important;
+}
+
+.dropdown-menu {
+  z-index: 1050 !important;
+}
 
 /* Enhanced Mobile Adjustments - FIXED VERSION */
 @media (max-width: 991px) {
@@ -513,8 +565,11 @@ body {
         float: none !important;
         width: auto !important;
         transform: none !important;
-        display: block !important; /* Force show on mobile */
+       display: none; 
     }
+    .mahalaxmi-dropdown.show {
+    display: block !important; /* Shown when toggled */
+  }
 
     /* CRITICAL FIX: Force submenu visibility on mobile */
     .submenu-dropdown {
@@ -536,9 +591,7 @@ body {
     }
 
     /* Remove desktop hover behavior on mobile */
-    .dropdown-menu .nav-item.dropdown:hover .submenu-dropdown {
-        display: block !important;
-    }
+    
 
     /* Force show nested dropdown items on mobile */
     .nav-item.dropdown .submenu-dropdown {
@@ -657,6 +710,9 @@ body {
         display: block !important;
         position: static !important;
     }
+      .navbar-collapse.collapse:not(.show) {
+    display: none !important;
+  }
 }
 
 /* Extra small devices */
@@ -712,6 +768,8 @@ body {
     0%, 100% { transform: rotate(8deg) scale(1.05); }
     50% { transform: rotate(8deg) scale(1.1); }
 }
+
+/* navbar end  */
 /* 
 .hero {
     position: relative;
