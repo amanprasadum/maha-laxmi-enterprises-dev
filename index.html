@@ -132,61 +132,87 @@
   </nav> -->
   <!-- NAVBAR SECTION -->
 <!-- Navbar HTML -->
-<nav>
-  <div class="maa-laxmi-responsive-navbar">
-    <i class='bx bx-menu maa-laxmi-responsive-menu-btn'></i>
-    <div class="maa-laxmi-responsive-logo">
-      <a href="#">
-        <img src="./assets/images/logo-2.jpg" alt="Maa Laxmi Enterprises">
-      </a>
+<nav class="maa-laxmi-responsive-navbar">
+    <div class="maa-laxmi-responsive-container">
+        <!-- Logo -->
+        <a href="#" class="maa-laxmi-responsive-logo"> 
+            <img src="./assets/images/logo-2.jpg" alt="Maa Laxmi Enterprises"> 
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="maa-laxmi-responsive-toggle" type="button" id="maaLaxmiToggle">
+            <span class="maa-laxmi-responsive-toggle-bar"></span>
+            <span class="maa-laxmi-responsive-toggle-bar"></span>
+            <span class="maa-laxmi-responsive-toggle-bar"></span>
+        </button>
+        
+        <!-- Navigation Menu -->
+        <div class="maa-laxmi-responsive-menu" id="maaLaxmiMenu">
+            <ul class="maa-laxmi-responsive-nav-list">
+                <li class="maa-laxmi-responsive-nav-item">
+                    <a href="./index.html" class="maa-laxmi-responsive-nav-link maa-laxmi-responsive-active">Home</a>
+                </li>
+                <li class="maa-laxmi-responsive-nav-item">
+                    <a href="./about.html" class="maa-laxmi-responsive-nav-link">About Us</a>
+                </li>
+                <li class="maa-laxmi-responsive-nav-item maa-laxmi-responsive-dropdown">
+                    <a href="#" class="maa-laxmi-responsive-nav-link maa-laxmi-responsive-dropdown-toggle">
+                        Products <i class="maa-laxmi-responsive-arrow">▼</i>
+                    </a>
+                    <div class="maa-laxmi-responsive-dropdown-menu">
+                        <!-- Rice Submenu -->
+                        <div class="maa-laxmi-responsive-submenu">
+                            <a href="#" class="maa-laxmi-responsive-submenu-toggle">
+                                <div class="maa-laxmi-responsive-submenu-content">
+                                    <div class="maa-laxmi-responsive-submenu-icon">🌾</div>
+                                    <div class="maa-laxmi-responsive-submenu-text">
+                                        <strong>Rice</strong>
+                                        <span>Premium quality rice varieties</span>
+                                    </div>
+                                </div>
+                                <i class="maa-laxmi-responsive-submenu-arrow">▶</i>
+                            </a>
+                            <div class="maa-laxmi-responsive-submenu-dropdown">
+                                <a href="./pages/basmati-rice.html" class="maa-laxmi-responsive-submenu-link">Basmati Rice</a>
+                                <a href="./pages/jasmine-rice.html" class="maa-laxmi-responsive-submenu-link">Jasmine Rice</a>
+                                <a href="./pages/brown-rice.html" class="maa-laxmi-responsive-submenu-link">Brown Rice</a>
+                                <a href="./pages/wild-rice.html" class="maa-laxmi-responsive-submenu-link">Wild Rice</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Yarn Submenu -->
+                        <div class="maa-laxmi-responsive-submenu">
+                            <a href="#" class="maa-laxmi-responsive-submenu-toggle">
+                                <div class="maa-laxmi-responsive-submenu-content">
+                                    <div class="maa-laxmi-responsive-submenu-icon">🧶</div>
+                                    <div class="maa-laxmi-responsive-submenu-text">
+                                        <strong>Yarn</strong>
+                                        <span>High-quality textile materials</span>
+                                    </div>
+                                </div>
+                                <i class="maa-laxmi-responsive-submenu-arrow">▶</i>
+                            </a>
+                            <div class="maa-laxmi-responsive-submenu-dropdown">
+                                <a href="./pages/cotton-yarn.html" class="maa-laxmi-responsive-submenu-link">Cotton Yarn</a>
+                                <a href="./pages/polyester-yarn.html" class="maa-laxmi-responsive-submenu-link">Polyester Yarn</a>
+                                <a href="./pages/wool-yarn.html" class="maa-laxmi-responsive-submenu-link">Wool Yarn</a>
+                                <a href="./pages/silk-yarn.html" class="maa-laxmi-responsive-submenu-link">Silk Yarn</a>
+                            </div>
+                        </div>
+                        
+                        <hr class="maa-laxmi-responsive-divider">
+                        <a href="./pages/product.html" class="maa-laxmi-responsive-view-all">
+                            <span>View All Products</span>
+                            <i class="maa-laxmi-responsive-arrow-right">→</i>
+                        </a>
+                    </div>
+                </li>
+                <li class="maa-laxmi-responsive-nav-item">
+                    <a href="./contact.html" class="maa-laxmi-responsive-nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="maa-laxmi-responsive-nav-links">
-      <div class="maa-laxmi-responsive-sidebar-logo">
-        <span class="maa-laxmi-responsive-logo-name">Maa Laxmi Enterprises</span>
-        <i class='bx bx-x maa-laxmi-responsive-close-btn'></i>
-      </div>
-      <ul class="maa-laxmi-responsive-links">
-        <li><a href="./index.html">HOME</a></li>
-        <li><a href="./about.html">ABOUT US</a></li>
-        <li>
-          <a href="#">PRODUCTS</a>
-          <i class='bx bxs-chevron-down maa-laxmi-responsive-products-arrow maa-laxmi-responsive-arrow'></i>
-          <ul class="maa-laxmi-responsive-products-sub-menu maa-laxmi-responsive-sub-menu">
-            <li><a href="./pages/basmati-rice.html">Basmati Rice</a></li>
-            <li><a href="./pages/jasmine-rice.html">Jasmine Rice</a></li>
-            <li><a href="./pages/brown-rice.html">Brown Rice</a></li>
-            <li class="maa-laxmi-responsive-more">
-              <span><a href="#">Rice Varieties</a>
-                <i class='bx bxs-chevron-right maa-laxmi-responsive-arrow maa-laxmi-responsive-more-arrow'></i>
-              </span>
-              <ul class="maa-laxmi-responsive-more-sub-menu maa-laxmi-responsive-sub-menu">
-                <li><a href="./pages/wild-rice.html">Wild Rice</a></li>
-                <li><a href="./pages/organic-rice.html">Organic Rice</a></li>
-                <li><a href="./pages/premium-rice.html">Premium Rice</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">YARN</a>
-          <i class='bx bxs-chevron-down maa-laxmi-responsive-yarn-arrow maa-laxmi-responsive-arrow'></i>
-          <ul class="maa-laxmi-responsive-yarn-sub-menu maa-laxmi-responsive-sub-menu">
-            <li><a href="./pages/cotton-yarn.html">Cotton Yarn</a></li>
-            <li><a href="./pages/polyester-yarn.html">Polyester Yarn</a></li>
-            <li><a href="./pages/wool-yarn.html">Wool Yarn</a></li>
-            <li><a href="./pages/silk-yarn.html">Silk Yarn</a></li>
-          </ul>
-        </li>
-        <li><a href="./contact.html">CONTACT US</a></li>
-      </ul>
-    </div>
-    <div class="maa-laxmi-responsive-search-box">
-      <i class='bx bx-search'></i>
-      <div class="maa-laxmi-responsive-input-box">
-        <input type="text" placeholder="Search products...">
-      </div>
-    </div>
-  </div>
 </nav>
 
   <!-- Mahalaxmi Hero Section -->
@@ -773,46 +799,60 @@
 
   <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
   <script>
-// Search box open close js code
-let maaLaxmiNavbar = document.querySelector(".maa-laxmi-responsive-navbar");
-let maaLaxmiSearchBox = document.querySelector(".maa-laxmi-responsive-search-box .bx-search");
-
-maaLaxmiSearchBox.addEventListener("click", ()=>{
-  maaLaxmiNavbar.classList.toggle("showInput");
-  if(maaLaxmiNavbar.classList.contains("showInput")){
-    maaLaxmiSearchBox.classList.replace("bx-search" ,"bx-x");
-  }else {
-    maaLaxmiSearchBox.classList.replace("bx-x" ,"bx-search");
-  }
+    // Mobile menu toggle
+document.getElementById('maaLaxmiToggle').addEventListener('click', function() {
+    const menu = document.getElementById('maaLaxmiMenu');
+    menu.classList.toggle('active');
 });
 
-// Sidebar open close js code
-let maaLaxmiNavLinks = document.querySelector(".maa-laxmi-responsive-nav-links");
-let maaLaxmiMenuOpenBtn = document.querySelector(".maa-laxmi-responsive-navbar .bx-menu");
-let maaLaxmiMenuCloseBtn = document.querySelector(".maa-laxmi-responsive-nav-links .bx-x");
+// Mobile dropdown toggles
+document.querySelectorAll('.maa-laxmi-responsive-dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
+    });
+});
 
-maaLaxmiMenuOpenBtn.onclick = function() {
-  maaLaxmiNavLinks.style.left = "0";
-}
-maaLaxmiMenuCloseBtn.onclick = function() {
-  maaLaxmiNavLinks.style.left = "-100%";
-}
+document.querySelectorAll('.maa-laxmi-responsive-submenu-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
+    });
+});
 
-// Sidebar submenu open close js code
-let maaLaxmiProductsArrow = document.querySelector(".maa-laxmi-responsive-products-arrow");
-maaLaxmiProductsArrow.onclick = function() {
-  maaLaxmiNavLinks.classList.toggle("show1");
-}
+// Smart positioning for submenus
+document.querySelectorAll('.maa-laxmi-responsive-submenu').forEach(function(submenu) {
+    submenu.addEventListener('mouseenter', function() {
+        const dropdown = this.querySelector('.maa-laxmi-responsive-submenu-dropdown');
+        const rect = dropdown.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        
+        // Check if dropdown goes outside right edge of screen
+        if (rect.right > windowWidth) {
+            dropdown.classList.add('maa-laxmi-responsive-right');
+        } else {
+            dropdown.classList.remove('maa-laxmi-responsive-right');
+        }
+    });
+});
 
-let maaLaxmiMoreArrow = document.querySelector(".maa-laxmi-responsive-more-arrow");
-maaLaxmiMoreArrow.onclick = function() {
-  maaLaxmiNavLinks.classList.toggle("show2");
-}
-
-let maaLaxmiYarnArrow = document.querySelector(".maa-laxmi-responsive-yarn-arrow");
-maaLaxmiYarnArrow.onclick = function() {
-  maaLaxmiNavLinks.classList.toggle("show3");
-}
+// Also check main dropdown positioning
+document.querySelectorAll('.maa-laxmi-responsive-dropdown').forEach(function(dropdown) {
+    dropdown.addEventListener('mouseenter', function() {
+        const menu = this.querySelector('.maa-laxmi-responsive-dropdown-menu');
+        const rect = menu.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        
+        // Check if dropdown goes outside right edge of screen
+        if (rect.right > windowWidth) {
+            menu.style.left = 'auto';
+            menu.style.right = '0';
+        } else {
+            menu.style.left = '0';
+            menu.style.right = 'auto';
+        }
+    });
+});
 </script>
   
 </body>
