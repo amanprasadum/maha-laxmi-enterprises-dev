@@ -4279,7 +4279,7 @@ body {
     padding: 3rem;
     background: var(--gradient);
     border-radius: 20px;
-    color: var(--white);
+    color: #243c2e;
     box-shadow: 0 15px 40px rgba(230, 185, 19, 0.3);
 }
 
