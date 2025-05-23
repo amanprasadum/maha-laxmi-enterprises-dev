@@ -2445,8 +2445,9 @@ body {
 
 @media (max-width: 576px) {
     .mahalaxmi-hero-section {
+        margin-top: 4rem;
         min-height: 450px;
-        /* Reduced from 550px */
+
     }
 
     .mahalaxmi-hero-title {
@@ -4436,7 +4437,7 @@ body {
 
 /* ========================= plant and machine start================================ */
 .maa-laxmi-plant-machine-valuer-section {
-      margin-top: 2rem;
+    margin-top: 2rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 80px 0;
 }
