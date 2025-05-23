@@ -1,0 +1,433 @@
+/* Maa Laxmi Company Page Styles */
+.maa-laxmi-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.maa-laxmi-section {
+    padding: 80px 0;
+}
+
+.maa-laxmi-section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.maa-laxmi-section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.maa-laxmi-section-title p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.maa-laxmi-section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+/* About Section */
+.maa-laxmi-about {
+    background: linear-gradient(135deg, var(--light-color) 0%, var(--white) 100%);
+}
+
+.maa-laxmi-about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.maa-laxmi-about-text h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 25px;
+}
+
+.maa-laxmi-about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.maa-laxmi-about-highlight {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.maa-laxmi-about-highlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: var(--transition);
+}
+
+.maa-laxmi-about-highlight:hover::before {
+    right: -30%;
+}
+
+.maa-laxmi-about-image {
+    position: relative;
+}
+
+.maa-laxmi-about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.maa-laxmi-about-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transform: rotate(15deg);
+}
+
+/* Statistics Section */
+.maa-laxmi-stats {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-color) 100%);
+    color: var(--white);
+}
+
+.maa-laxmi-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.maa-laxmi-stat-item {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.maa-laxmi-stat-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.maa-laxmi-stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.maa-laxmi-stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Products Section */
+.maa-laxmi-products {
+    background: var(--light-color);
+}
+
+.maa-laxmi-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.maa-laxmi-product-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.maa-laxmi-product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.maa-laxmi-product-image {
+    height: 250px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--white);
+}
+
+.maa-laxmi-product-content {
+    padding: 30px;
+}
+
+.maa-laxmi-product-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.maa-laxmi-product-desc {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.maa-laxmi-product-features {
+    list-style: none;
+}
+
+.maa-laxmi-product-features li {
+    padding: 8px 0;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 25px;
+}
+
+.maa-laxmi-product-features li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* Values Section */
+.maa-laxmi-values {
+    background: var(--white);
+}
+
+.maa-laxmi-values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.maa-laxmi-value-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.maa-laxmi-value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+.maa-laxmi-value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.maa-laxmi-value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.maa-laxmi-value-card h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.maa-laxmi-value-card p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Mission Section */
+.maa-laxmi-mission {
+    background: var(--white);
+}
+
+.maa-laxmi-mission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.maa-laxmi-mission-text {
+    order: 2;
+}
+
+.maa-laxmi-mission-visual {
+    order: 1;
+    position: relative;
+}
+
+.maa-laxmi-mission-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 40px;
+    border-radius: 20px;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.maa-laxmi-mission-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: maaLaxmiFloat 6s ease-in-out infinite;
+}
+
+@keyframes maaLaxmiFloat {
+    0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+    50% { transform: translate(-30%, -30%) rotate(180deg); }
+}
+
+.maa-laxmi-mission-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.maa-laxmi-mission-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.maa-laxmi-mission-desc {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+.maa-laxmi-mission-text h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 25px;
+}
+
+.maa-laxmi-mission-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .maa-laxmi-section {
+        padding: 60px 0;
+    }
+
+    .maa-laxmi-section-title h2 {
+        font-size: 2rem;
+    }
+
+    .maa-laxmi-about-content,
+    .maa-laxmi-mission-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .maa-laxmi-mission-text {
+        order: 1;
+    }
+
+    .maa-laxmi-mission-visual {
+        order: 2;
+    }
+
+    .maa-laxmi-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .maa-laxmi-stat-number {
+        font-size: 2.5rem;
+    }
+
+    .maa-laxmi-products-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .maa-laxmi-container {
+        padding: 0 15px;
+    }
+
+    .maa-laxmi-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .maa-laxmi-value-card,
+    .maa-laxmi-product-card {
+        margin: 0 10px;
+    }
+}
