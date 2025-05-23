@@ -38,26 +38,73 @@
   @keyframes dotPulse{0%,100%{box-shadow:0 0 0 2px rgba(230,185,19,0.3)}50%{box-shadow:0 0 0 5px rgba(230,185,19,0.1)}}
   @keyframes textReveal{0%{opacity:0;transform:translateY(30px);letter-spacing:-0.5px}60%{letter-spacing:1px}100%{opacity:1;transform:translateY(0);letter-spacing:normal}}
   @media(max-width:768px){.mahalaxmi-hero-title{font-size:1.8rem;line-height:1.3}.mahalaxmi-hero-subtitle{font-size:0.9rem}}
- .dropdown:hover .dropdown-menu {
+ /* Main dropdown hover */
+  .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
   }
   
+  /* Nested submenu styles */
+  .dropdown-submenu {
+    position: relative;
+  }
+  
+  .dropdown-submenu .dropdown-submenu-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    display: none;
+    min-width: 200px;
+  }
+  
+  /* Show submenu on hover */
+  .dropdown-submenu:hover .dropdown-submenu-menu {
+    display: block;
+  }
+  
+  /* Styling */
   .dropdown-menu {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: none;
   }
   
+  .dropdown-submenu-menu {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e9ecef;
+  }
+  
   .dropdown-item:hover {
     background-color: #f8f9fa;
-    transform: translateX(5px);
     transition: all 0.2s ease;
+  }
+  
+  .dropdown-submenu > .dropdown-item:hover {
+    background-color: #e3f2fd;
   }
   
   .nav-link:hover {
     color: #0d6efd !important;
     transition: color 0.2s ease;
+  }
+  
+  /* Mobile responsiveness for nested menus */
+  @media (max-width: 991.98px) {
+    .dropdown-submenu .dropdown-submenu-menu {
+      position: static;
+      display: none;
+      margin-left: 20px;
+      box-shadow: none;
+      border: none;
+      background-color: #f8f9fa;
+    }
+    
+    .dropdown-submenu:hover .dropdown-submenu-menu {
+      display: block;
+    }
   }
   </style>
 </head>
@@ -160,6 +207,7 @@
 <!-- Navigation Section -->
 <!-- Navbar -->
 <!-- Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
   <div class="container">
     <!-- Logo -->
@@ -194,17 +242,25 @@
           </ul>
         </li>
 
-        <!-- Product Dropdown -->
+        <!-- Product Dropdown with nested Rice submenu -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle fw-medium" href="#" id="productDropdown" role="button" 
-             data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-            Rice
+             data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            Product
           </a>
           <ul class="dropdown-menu" aria-labelledby="productDropdown">
-            <li><h6 class="dropdown-header text-primary">Types of Rice</h6></li>
-            <li><a class="dropdown-item py-2" href="#">🌾 Basmati Rice</a></li>
-            <li><a class="dropdown-item py-2" href="#">🌾 Jasmine Rice</a></li>
-            <li><a class="dropdown-item py-2" href="#">🌾 Brown Rice</a></li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#" id="riceSubmenu">
+                🌾 Rice <i class="fas fa-chevron-right float-end mt-1"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-submenu-menu">
+                <li><a class="dropdown-item" href="#">Basmati Rice</a></li>
+                <li><a class="dropdown-item" href="#">Jasmine Rice</a></li>
+                <li><a class="dropdown-item" href="#">Brown Rice</a></li>
+              </ul>
+            </li>
+            <!-- You can add more products here -->
+            <li><a class="dropdown-item" href="#">Other Products</a></li>
           </ul>
         </li>
 
