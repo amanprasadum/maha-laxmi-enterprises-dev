@@ -4797,291 +4797,321 @@ body {
   }
 }
 /* terms and condition end ----- --------------------------- */
-/* Maa Laxmi Responsive Navbar Styles */
+/* Import Boxicons */
+@import url('https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css');
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .maa-laxmi-responsive-navbar {
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+  height: 70px;
+}
+
+.maa-laxmi-responsive-navbar.showInput .maa-laxmi-responsive-search-box {
+  width: 200px;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-menu-btn {
+  color: #333;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-logo a {
+  text-decoration: none;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-logo img {
+  height: 45px;
+  width: auto;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links {
+  line-height: 70px;
+  height: 100%;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links {
+  display: flex;
+  list-style: none;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li {
+  position: relative;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li a {
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 9px 17px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li a:hover {
+  color: #007bff;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-arrow {
+  font-size: 12px;
+  line-height: 16px;
+  transition: all 0.3s ease;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li:hover .maa-laxmi-responsive-arrow {
+  transform: rotate(180deg);
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  line-height: 40px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  list-style: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translateY(15px);
+  min-width: 200px;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li:hover .maa-laxmi-responsive-sub-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu li {
+  padding: 0 22px;
+  border-radius: 0px;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu li a {
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu li a:hover {
+  color: #007bff;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu .maa-laxmi-responsive-more {
+  position: relative;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu .maa-laxmi-responsive-more span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu .maa-laxmi-responsive-more:hover .maa-laxmi-responsive-more-arrow {
+  transform: rotate(90deg);
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu .maa-laxmi-responsive-more-sub-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 0 8px 8px 8px;
+  list-style: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translateX(15px);
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu .maa-laxmi-responsive-more:hover .maa-laxmi-responsive-more-sub-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0px);
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-search-box {
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-search-box .bx-search {
+  color: #333;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-search-box .maa-laxmi-responsive-input-box {
+  position: absolute;
+  right: calc(100% - 40px);
+  top: 80%;
+  height: 60px;
+  width: 300px;
+  background: #fff;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.maa-laxmi-responsive-navbar.showInput .maa-laxmi-responsive-search-box .maa-laxmi-responsive-input-box {
+  top: 65px;
+  opacity: 1;
+  pointer-events: auto;
+  background: #fff;
+}
+
+.maa-laxmi-responsive-search-box .maa-laxmi-responsive-input-box::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  right: 10px;
+  top: -6px;
+  transform: rotate(45deg);
+}
+
+.maa-laxmi-responsive-search-box .maa-laxmi-responsive-input-box input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  height: 35px;
+  width: 280px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+}
+
+.maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-sidebar-logo {
+  display: none;
+}
+
+.maa-laxmi-responsive-navbar .bx-menu {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  nav .maa-laxmi-responsive-navbar {
+    padding: 0 25px;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-logo a {
+    font-size: 27px;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-menu-btn {
+    display: block;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links {
     position: fixed;
-    top: 0;
+    height: 100vh;
     width: 100%;
-    z-index: 1000;
-    padding: 12px 0;
-}
-
-.maa-laxmi-responsive-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.maa-laxmi-responsive-logo img {
-    height: 40px;
-    width: auto;
-}
-
-.maa-laxmi-responsive-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.maa-laxmi-responsive-toggle-bar {
-    width: 25px;
-    height: 3px;
-    background: #333;
-    transition: 0.3s;
-}
-
-.maa-laxmi-responsive-menu {
-    display: flex;
-}
-
-.maa-laxmi-responsive-nav-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 30px;
-}
-
-.maa-laxmi-responsive-nav-item {
-    position: relative;
-}
-
-.maa-laxmi-responsive-nav-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.maa-laxmi-responsive-nav-link:hover,
-.maa-laxmi-responsive-active {
-    color: #007bff;
-    background: rgba(0,123,255,0.1);
-}
-
-.maa-laxmi-responsive-arrow {
-    font-size: 12px;
-    transition: 0.3s;
-}
-
-.maa-laxmi-responsive-dropdown:hover .maa-laxmi-responsive-arrow {
-    transform: rotate(180deg);
-}
-
-.maa-laxmi-responsive-dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    border-radius: 8px;
-    min-width: 300px;
-    padding: 15px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: 0.3s;
-}
-
-.maa-laxmi-responsive-dropdown:hover .maa-laxmi-responsive-dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.maa-laxmi-responsive-submenu {
-    position: relative;
-    margin-bottom: 10px;
-}
-
-.maa-laxmi-responsive-submenu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-decoration: none;
-    color: #333;
-    padding: 12px;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-.maa-laxmi-responsive-submenu-toggle:hover {
-    background: #f8f9fa;
-}
-
-.maa-laxmi-responsive-submenu-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.maa-laxmi-responsive-submenu-icon {
-    font-size: 20px;
-}
-
-.maa-laxmi-responsive-submenu-text strong {
-    display: block;
-    font-size: 14px;
-    color: #333;
-}
-
-.maa-laxmi-responsive-submenu-text span {
-    font-size: 12px;
-    color: #666;
-}
-
-.maa-laxmi-responsive-submenu-arrow {
-    font-size: 12px;
-    transition: 0.3s;
-}
-
-.maa-laxmi-responsive-submenu-dropdown {
-    position: absolute;
-    left: 100%;
+    max-width: 280px;
     top: 0;
+    left: -100%;
     background: #fff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    border-radius: 6px;
-    min-width: 200px;
-    padding: 8px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(10px);
-    transition: 0.3s;
-    z-index: 1001;
-}
-
-.maa-laxmi-responsive-submenu-dropdown.maa-laxmi-responsive-right {
-    left: auto;
-    right: 100%;
-    transform: translateX(-10px);
-}
-
-.maa-laxmi-responsive-submenu:hover .maa-laxmi-responsive-submenu-dropdown.maa-laxmi-responsive-right {
-    transform: translateX(0);
-}
-
-.maa-laxmi-responsive-submenu:hover .maa-laxmi-responsive-submenu-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-}
-
-.maa-laxmi-responsive-submenu-link {
     display: block;
-    text-decoration: none;
-    color: #333;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.maa-laxmi-responsive-submenu-link:hover {
-    background: #f0f0f0;
-    color: #007bff;
-}
-
-.maa-laxmi-responsive-divider {
-    border: none;
-    height: 1px;
-    background: #eee;
-    margin: 15px 0 10px;
-}
-
-.maa-laxmi-responsive-view-all {
+    padding: 30px 30px;
+    line-height: 50px;
+    overflow-y: auto;
+    box-shadow: 0px 15px 15px rgba(0,0,0,0.18);
+    transition: all 0.3s ease;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-sidebar-logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-decoration: none;
-    color: #007bff;
+  }
+  .maa-laxmi-responsive-sidebar-logo .maa-laxmi-responsive-logo-name {
+    font-size: 25px;
     font-weight: 600;
-    padding: 10px 12px;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-.maa-laxmi-responsive-view-all:hover {
-    background: rgba(0,123,255,0.1);
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .maa-laxmi-responsive-toggle {
-        display: flex;
-    }
-    
-    .maa-laxmi-responsive-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #fff;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        display: none;
-        padding: 20px;
-    }
-    
-    .maa-laxmi-responsive-menu.active {
-        display: block;
-    }
-    
-    .maa-laxmi-responsive-nav-list {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .maa-laxmi-responsive-nav-item {
-        border-bottom: 1px solid #eee;
-    }
-    
-    .maa-laxmi-responsive-nav-link {
-        padding: 15px 0;
-        justify-content: space-between;
-    }
-    
-    .maa-laxmi-responsive-dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background: #f8f9fa;
-        margin-top: 10px;
-        border-radius: 6px;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-    }
-    
-    .maa-laxmi-responsive-dropdown.active .maa-laxmi-responsive-dropdown-menu {
-        display: block;
-    }
-    
-    .maa-laxmi-responsive-submenu-dropdown {
-        position: static;
-        box-shadow: none;
-        background: #fff;
-        margin-top: 8px;
-        margin-left: 20px;
-        border-left: 2px solid #007bff;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-    }
-    
-    .maa-laxmi-responsive-submenu.active .maa-laxmi-responsive-submenu-dropdown {
-        display: block;
-    }
+    color: #333;
+  }
+  .maa-laxmi-responsive-sidebar-logo .maa-laxmi-responsive-close-btn {
+    font-size: 25px;
+    color: #333;
+    cursor: pointer;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links {
+    display: block;
+    margin-top: 20px;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-arrow {
+    line-height: 40px;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li {
+    display: block;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu {
+    position: relative;
+    top: 0;
+    box-shadow: none;
+    display: none;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu li {
+    border-bottom: none;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu .maa-laxmi-responsive-more .maa-laxmi-responsive-more-sub-menu {
+    display: none;
+    position: relative;
+    left: 0;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li .maa-laxmi-responsive-sub-menu .maa-laxmi-responsive-more .maa-laxmi-responsive-more-sub-menu li {
+    display: block;
+  }
+  .maa-laxmi-responsive-nav-links.show1 .maa-laxmi-responsive-products-sub-menu {
+    display: block;
+  }
+  .maa-laxmi-responsive-nav-links.show2 .maa-laxmi-responsive-more-sub-menu {
+    display: block;
+  }
+  .maa-laxmi-responsive-nav-links.show3 .maa-laxmi-responsive-yarn-sub-menu {
+    display: block;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-nav-links .maa-laxmi-responsive-links li:hover .maa-laxmi-responsive-arrow {
+    transform: rotate(0deg);
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-search-box {
+    width: 40px;
+    height: 40px;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-search-box .maa-laxmi-responsive-input-box {
+    position: absolute;
+    left: calc(100% - 40px);
+    width: 280px;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-search-box .maa-laxmi-responsive-input-box::before {
+    left: 10px;
+  }
+  .maa-laxmi-responsive-navbar .maa-laxmi-responsive-search-box .maa-laxmi-responsive-input-box input {
+    width: 260px;
+  }
 }
