@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma Laxmi Enterprises - Premium Rice Products</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+  .mahalaxmi-hero-title{position:relative;overflow:hidden;font-weight:700;margin-bottom:1.5rem;opacity:0;text-shadow:0 5px 15px rgba(0,0,0,0.1);transform:translateY(30px);animation:fadeSlideUp 1s cubic-bezier(0.2,0.8,0.2,1) forwards;animation-delay:0.3s}
+  .mahalaxmi-hero-title span{position:relative;color:#e6b913;display:inline-block;animation:shimmerGlow 4s infinite;text-shadow:0 0 5px rgba(230,185,19,0.3),0 0 10px rgba(230,185,19,0.2),0 0 15px rgba(230,185,19,0.1);background:linear-gradient(90deg,#e6b913,#f0cb47,#e6b913);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:textShimmer 3s linear infinite}
+  .mahalaxmi-hero-title span::after{content:'';position:absolute;width:100%;height:3px;bottom:-2px;left:0;background:linear-gradient(to right,transparent,#e6b913,transparent);box-shadow:0 0 8px #e6b913;transform:scaleX(0);transform-origin:bottom right;transition:transform 0.5s ease-out;animation:lineRevealGlow 1.2s ease forwards;animation-delay:1s}
+  .mahalaxmi-hero-slide{opacity:0;transition:opacity 0.8s cubic-bezier(0.4,0,0.2,1)}
+  .mahalaxmi-hero-slide.active{opacity:1}
+  .mahalaxmi-hero-slide.active .mahalaxmi-hero-badge-tag{opacity:0;transform:scale(0.8) translateY(-15px);animation:badgeReveal 0.7s cubic-bezier(0.17,0.67,0.83,0.67) forwards}
+  .mahalaxmi-hero-slide.active .mahalaxmi-hero-subtitle{opacity:0;filter:blur(4px);transform:translateY(30px);animation:subtitleReveal 1s ease-out forwards;animation-delay:0.7s}
+  .mahalaxmi-hero-slide.active .mahalaxmi-hero-buttons{opacity:0;transform:scale(0.9) translateY(15px);animation:buttonPopIn 0.8s cubic-bezier(0.2,0.8,0.2,1) forwards;animation-delay:1s}
+  .mahalaxmi-primary-btn{position:relative;overflow:hidden}
+  .mahalaxmi-primary-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:buttonShine 3s infinite;animation-delay:1.5s}
+  @keyframes fadeSlideUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+  @keyframes badgeReveal{0%{opacity:0;transform:scale(0.8) translateY(-15px)}50%{opacity:1;transform:scale(1.05) translateY(0)}100%{opacity:1;transform:scale(1) translateY(0)}}
+  @keyframes textShimmer{0%{background-position:0% center}100%{background-position:200% center}}
+  @keyframes shimmerGlow{0%,100%{text-shadow:0 0 5px rgba(230,185,19,0.3),0 0 10px rgba(230,185,19,0.2),0 0 15px rgba(230,185,19,0.1)}50%{text-shadow:0 0 10px rgba(230,185,19,0.5),0 0 20px rgba(230,185,19,0.3),0 0 30px rgba(230,185,19,0.2)}}
+  @keyframes lineRevealGlow{0%{transform:scaleX(0);opacity:0.5}100%{transform:scaleX(1);transform-origin:bottom left;opacity:1}}
+  @keyframes subtitleReveal{0%{opacity:0;filter:blur(4px);transform:translateY(30px)}100%{opacity:1;filter:blur(0);transform:translateY(0)}}
+  @keyframes buttonPopIn{0%{opacity:0;transform:scale(0.9) translateY(15px)}70%{opacity:1;transform:scale(1.05) translateY(-2px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+  @keyframes buttonShine{0%{left:-100%}20%,100%{left:100%}}
+  .mahalaxmi-hero-slide:not(.active){display:none}
+  .mahalaxmi-hero-slide.active .mahalaxmi-hero-title{animation:textReveal 1s cubic-bezier(0.2,0.8,0.2,1) forwards}
+  .mahalaxmi-dot{position:relative;display:inline-block;width:12px;height:12px;margin:0 6px;border-radius:50%;background-color:rgba(255,255,255,0.5);cursor:pointer;transition:all 0.3s ease}
+  .mahalaxmi-dot:hover{transform:scale(1.2)}
+  .mahalaxmi-dot.active{background-color:#e6b913;box-shadow:0 0 0 2px rgba(230,185,19,0.3),0 0 8px rgba(230,185,19,0.6);animation:dotPulse 2s infinite}
+  @keyframes dotPulse{0%,100%{box-shadow:0 0 0 2px rgba(230,185,19,0.3)}50%{box-shadow:0 0 0 5px rgba(230,185,19,0.1)}}
+  @keyframes textReveal{0%{opacity:0;transform:translateY(30px);letter-spacing:-0.5px}60%{letter-spacing:1px}100%{opacity:1;transform:translateY(0);letter-spacing:normal}}
+  @media(max-width:768px){.mahalaxmi-hero-title{font-size:1.8rem;line-height:1.3}.mahalaxmi-hero-subtitle{font-size:0.9rem}}
+  
+      /* Enhanced Custom Navbar Styling - Light Theme */
+.navbar-custom {
+    background: #ffffff !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Sticky navbar enhancement */
+.navbar-custom.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    padding: 0.8rem 0;
+}
+
+.navbar-custom .navbar-brand {
+    color: #2c3e50 !important;
+    font-weight: 700;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.navbar-custom .navbar-brand:hover {
+    color: #e6b913 !important;
+    /* transform: translateY(-1px); */
+}
+
+/* Center the navigation items */
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #2c3e50 !important;
+    font-weight: 500;
+    padding: 0.8rem 1.4rem !important;
+    position: relative;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 0.9rem;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+    color: #e6b913 !important;
+    /* transform: translateY(-2px); */
+}
+
+/* Enhanced underline effect */
+.navbar-custom .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background: linear-gradient(90deg, #e6b913, #f1c40f);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover::after {
+    width: 85%;
+}
+
+/* Active link styling */
+.navbar-custom .navbar-nav .nav-link.active {
+    color: #e6b913 !important;
+    font-weight: 600;
+}
+
+.navbar-custom .navbar-nav .nav-link.active::after {
+    width: 85%;
+}
+
+/* Enhanced Dropdown Styling */
+.dropdown-menu {
+    background: #ffffff !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    margin-top: 0.8rem;
+    min-width: 220px;
+    padding: 0.8rem 0;
+    animation: dropdownFadeIn 0.3s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    color: #2c3e50 !important;
+    padding: 0.8rem 1.8rem;
+    /* transition: all 0.3s ease; */
+    border-radius: 8px;
+    margin: 0.2rem 0.8rem;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(90deg, transparent, rgba(230, 185, 19, 0.1), transparent); */
+    /* transition: left 0.5s ease; */
+}
+
+.dropdown-item:hover::before {
+    left: 100%;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    /* background: linear-gradient(135deg, #e6b913, #f1c40f) !important; */
+    color: #e6b913 !important;
+    /* transform: translateX(5px); */
+    /* box-shadow: 0 5px 15px rgba(230, 185, 19, 0.3); */
+}
+
+/* Multi-level dropdown enhancement */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -8px;
+    margin-left: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.dropdown-submenu > .dropdown-toggle::after {
+    transform: rotate(-90deg);
+    margin-left: 0.8rem;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.dropdown-submenu:hover > .dropdown-toggle::after {
+    color: #e6b913;
+}
+
+/* Enhanced Navbar Toggler */
+.navbar-toggler {
+    border: 2px solid #2c3e50;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.navbar-toggler:hover {
+    border-color: #e6b913;
+    /* background: rgba(230, 185, 19, 0.1); */
+    /* transform: scale(1.05); */
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(230, 185, 19, 0.25);
+    outline: none;
+}
+
+/* .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    transition: all 0.3s ease;
+} */
+
+/* .navbar-toggler:hover .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28230, 185, 19, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+} */
+
+/* Enhanced Mobile Adjustments */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        margin: 1.5rem 0;
+    }
+
+    .navbar-custom .navbar-nav {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        padding: 2rem;
+        margin-top: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar-custom .navbar-nav .nav-link {
+        padding: 1.2rem !important;
+        border-radius: 10px;
+        margin: 0.3rem 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .navbar-custom .navbar-nav .nav-link:hover {
+        /* background: linear-gradient(135deg, #e6b913, #f1c40f); */
+        color: #e6b913 !important;
+        /* transform: translateY(-2px); */
+        /* box-shadow: 0 5px 15px rgba(230, 185, 19, 0.3); */
+    }
+
+    .navbar-custom .navbar-nav .nav-link::after {
+        display: none;
+    }
+
+    .dropdown-menu {
+        background: #ffffff !important;
+        position: static !important;
+        transform: none !important;
+        border-radius: 12px;
+        margin: 0.8rem 0;
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        /* box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05); */
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        margin-left: 1.5rem;
+        border-left: 3px solid #e6b913;
+        /* background: rgba(255, 255, 255, 0.9); */
+    }
+
+    .dropdown-submenu > .dropdown-toggle::after {
+        transform: rotate(0deg);
+        color: #e6b913;
+    }
+}
+
+/* Demo content styling - Enhanced */
+.demo-content {
+    margin-top: 6rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.demo-section {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.demo-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced Dropdown arrow animation */
+.nav-item.dropdown .nav-link::before {
+    content: '';
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: solid #2c3e50;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: translateY(-50%) rotate(45deg);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-item.dropdown.show .nav-link::before {
+    transform: translateY(-50%) rotate(-135deg);
+    border-color: #e6b913;
+}
+
+.nav-item.dropdown .nav-link:hover::before {
+    border-color: #e6b913;
+    transform: translateY(-50%) rotate(45deg) scale(1.2);
+}
+
+/* Scroll-triggered navbar effects */
+@media (min-width: 992px) {
+    .navbar-custom {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+    }
+    
+    .navbar-custom.navbar-shrink {
+        padding: 0.6rem 0;
+        background: rgba(255, 255, 255, 0.98) !important;
+    }
+}
+
+/* Additional modern enhancements */
+.navbar-brand {
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-brand::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(230, 185, 19, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.navbar-brand:hover::before {
+    left: 100%;
+}
+
+/* Smooth focus indicators for accessibility */
+.nav-link:focus-visible,
+.dropdown-item:focus-visible,
+.navbar-toggler:focus-visible {
+    /* outline: 2px solid #e6b913; */
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+  </style>
+</head>
+
+<body>
+  <!-- Preloader  -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="./assets/images/logo-2.jpg" alt="maa-laxmi-enterprises-logo"
+          style="width: 210px;" srcset=""></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Our Company</a></li>
+              <li><a class="dropdown-item" href="#">Career</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Product
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">
+                  🌾 Rice
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Basmati Rice</a></li>
+                  <li><a class="dropdown-item" href="#">Jasmine Rice</a></li>
+                  <li><a class="dropdown-item" href="#">Brown Rice</a></li>
+                </ul>
+              </li>
+              <li>
+                <hr class="dropdown-divider" style="border-color: rgba(255,255,255,0.3); margin: 0.5rem 1rem;">
+              </li>
+              <li><a class="dropdown-item" href="#">Other Products</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Mahalaxmi Hero Section -->
+  <section class="mahalaxmi-hero-section" id="hero">
+    <div class="mahalaxmi-hero-background">
+      <div class="mahalaxmi-hero-overlay"></div>
+    </div>
+
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <!-- Slide 1: Rice -->
+        <div class="mahalaxmi-hero-slide active" data-slide="0">
+          <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 col-lg-8 text-center px-4">
+              <div class="mahalaxmi-hero-content mx-auto">
+                <div class="mahalaxmi-hero-badge-tag">Premium Quality</div>
+                <h1 class="mahalaxmi-hero-title fs-2 fs-md-1">
+                  Finest <span>Rice</span> Grains <br class="d-none d-md-block">
+                  For Your Family
+                </h1>
+                <p class="mahalaxmi-hero-subtitle mx-auto mx-md-5 px-2">
+                  Hand-picked and carefully processed to preserve natural flavor and nutritional goodness.
+                  Our rice is sourced from the finest fields and processed with care.
+                </p>
+                <div class="mahalaxmi-hero-buttons justify-content-center">
+                  <a href="#rice-products" class="mahalaxmi-primary-btn btn-lg px-4 py-2">Explore Rice</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2: Yarn -->
+        <div class="mahalaxmi-hero-slide" data-slide="1">
+          <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 col-lg-8 text-center px-4">
+              <div class="mahalaxmi-hero-content mx-auto">
+                <div class="mahalaxmi-hero-badge-tag">Craftsman's Choice</div>
+                <h1 class="mahalaxmi-hero-title fs-2 fs-md-1">
+                  Exquisite <span>Yarn</span> <br class="d-none d-md-block">
+                  For Creative Minds
+                </h1>
+                <p class="mahalaxmi-hero-subtitle mx-auto mx-md-5 px-2">
+                  Meticulously spun and dyed to perfection. Our premium yarn collection brings your creative visions to
+                  life with vibrant colors and superior texture.
+                </p>
+                <div class="mahalaxmi-hero-buttons justify-content-center">
+                  <a href="#yarn-products" class="mahalaxmi-primary-btn btn-lg px-4 py-2">Discover Yarn</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Women's Pad -->
+        <div class="mahalaxmi-hero-slide" data-slide="2">
+          <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 col-lg-8 text-center px-4">
+              <div class="mahalaxmi-hero-content mx-auto">
+                <div class="mahalaxmi-hero-badge-tag">Comfort & Care</div>
+                <h1 class="mahalaxmi-hero-title fs-2 fs-md-1">
+                  Gentle <span>Women's Pads</span> <br class="d-none d-md-block">
+                  For Ultimate Comfort
+                </h1>
+                <p class="mahalaxmi-hero-subtitle mx-auto mx-md-5 px-2">
+                  Crafted with care using high-quality, skin-friendly materials. Our women's pads provide exceptional
+                  comfort, protection, and confidence throughout your day.
+                </p>
+                <div class="mahalaxmi-hero-buttons justify-content-center">
+                  <a href="#feminine-products" class="mahalaxmi-primary-btn btn-lg px-4 py-2">View Collection</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mahalaxmi-slide-dots d-flex justify-content-center">
+      <span class="mahalaxmi-dot active" data-slide="0"></span>
+      <span class="mahalaxmi-dot" data-slide="1"></span>
+      <span class="mahalaxmi-dot" data-slide="2"></span>
+    </div>
+  </section>
+  <!-- Features Section -->
+  <section class="section features py-5 py-md-6">
+    <div class="section-pattern"></div>
+    <div class="container">
+      <div class="section-title-container text-center px-3">
+        <span class="section-subtitle" data-aos="fade-up">Why Choose Us</span>
+        <h2 class="section-title fs-2 fs-md-1" data-aos="fade-up" data-aos-delay="100">Premium Quality Features</h2>
+        <p class="section-description mx-auto" data-aos="fade-up" data-aos-delay="200">We take pride in offering the
+          finest
+          quality rice products with exceptional features that stand out in the market.</p>
+      </div>
+      <div class="row features-container g-4">
+        <div class="col-12 col-sm-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="feature-title fs-5 fs-md-4">100% Organic</h3>
+            <p class="feature-description">Our rice is grown using organic farming methods without any harmful chemicals
+              or pesticides.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="feature-title fs-5 fs-md-4">Quality Certified</h3>
+            <p class="feature-description">All our products are certified by national and international quality standard
+              organizations.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="feature-title fs-5 fs-md-4">Nutritious & Healthy</h3>
+            <p class="feature-description">Packed with essential nutrients, our rice varieties contribute to your
+              overall health and well-being.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3 class="feature-title fs-5 fs-md-4">Fast Delivery</h3>
+            <p class="feature-description">We ensure prompt delivery of our products to your doorstep with our efficient
+              logistics network.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="feature-title fs-5 fs-md-4">Secure Packaging</h3>
+            <p class="feature-description">Our products come in secure, tamper-proof packaging to maintain freshness and
+              quality.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="feature-card h-100 p-4">
+            <div class="feature-icon">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <h3 class="feature-title fs-5 fs-md-4">Best Value</h3>
+            <p class="feature-description">We offer premium quality rice at competitive prices, providing the best value
+              for your money.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Products Section -->
+  <section class="section products py-5 py-md-6" id="products">
+    <div class="container">
+      <div class="section-title-container text-center px-3">
+        <span class="section-subtitle" data-aos="fade-up">Our Products</span>
+        <h2 class="section-title fs-2 fs-md-1" data-aos="fade-up" data-aos-delay="100">Our Premium Product Range</h2>
+        <p class="section-description mx-auto" data-aos="fade-up" data-aos-delay="200">Discover our diverse range of
+          high-quality products crafted with care and commitment to excellence.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="product-card h-100">
+            <div class="product-image">
+              <img src="./assets/images/rice-3.jpg" alt="Basmati Rice" class="img-fluid w-100">
+              <span class="product-badge">Best Seller</span>
+            </div>
+            <div class="product-body p-4">
+              <h3 class="product-title fs-5 fs-md-4">Premium Basmati Rice</h3>
+              <p class="product-description">Long-grain aromatic rice with exceptional fragrance and taste. Perfect for
+                biryanis and pulao dishes.</p>
+              <a href="./pages/product-detail.html" class="product-btn d-inline-block mt-3">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="product-card h-100">
+            <div class="product-image">
+              <img src="./assets/images/yarn.jpg" alt="Premium Yarn" class="img-fluid w-100">
+              <span class="product-badge">Handcrafted</span>
+            </div>
+            <div class="product-body p-4">
+              <h3 class="product-title fs-5 fs-md-4">Luxury Knitting Yarn</h3>
+              <p class="product-description">High-quality, soft-touch yarn perfect for crafting and textile projects.
+                Available in various colors and materials.</p>
+              <a href="./pages/product-detail.html" class="product-btn d-inline-block mt-3">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mx-auto" data-aos="fade-up" data-aos-delay="300">
+          <div class="product-card h-100">
+            <div class="product-image">
+              <img src="./assets/images/pad.jpg" alt="Women's Sanitary Pads" class="img-fluid w-100">
+              <span class="product-badge">Eco-Friendly</span>
+            </div>
+            <div class="product-body p-4">
+              <h3 class="product-title fs-5 fs-md-4">Comfort Care Sanitary Pads</h3>
+              <p class="product-description">Premium quality, hygienic sanitary pads with extra absorbency and comfort
+                for daily protection and confidence.</p>
+              <a href="./pages/product-detail.html" class="product-btn d-inline-block mt-3">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Certifications Section -->
+  <section id="certifications" class="section py-5 py-md-6">
+    <div class="section-pattern"></div>
+    <div class="container">
+      <section class="certification-slider-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-4 mb-md-5 px-3">
+              <h2 class="section-title fs-2 fs-md-1">Our Certifications</h2>
+              <p class="section-subtitle mx-auto">We maintain the highest standards of quality and safety</p>
+            </div>
+          </div>
+
+          <div class="certification-slider-container px-2 px-md-4">
+            <div class="certification-slider">
+              <div class="certification-slide">
+                <div class="certification-card h-100 p-3 p-md-4">
+                  <div class="certification-icon">
+                    <i class="fas fa-certificate"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="./assets/images/certificate/fssai.jpg" alt="FSSAI Certificate" class="img-fluid">
+                  </div>
+                  <h3 class="certification-title fs-5 fs-md-4">FSSAI</h3>
+                  <p class="certification-description">Food Safety and Standards Authority of India compliance for all
+                    our food products.</p>
+                  <div class="certification-badge mt-3">
+                    <span>Verified</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card h-100 p-3 p-md-4">
+                  <div class="certification-icon">
+                    <i class="fas fa-award"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="./assets/images/certificate/apeda.jpg" alt="APEDA Certificate" class="img-fluid">
+                  </div>
+                  <h3 class="certification-title fs-5 fs-md-4">APEDA</h3>
+                  <p class="certification-description">Agricultural and Processed Food Products Export Development
+                    Authority approved exporter.</p>
+                  <div class="certification-badge mt-3">
+                    <span>Authorized</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card h-100 p-3 p-md-4">
+                  <div class="certification-icon">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="./assets/images/certificate/iso.jpg" alt="ISO Certificate" class="img-fluid">
+                  </div>
+                  <h3 class="certification-title fs-5 fs-md-4">ISO Certified</h3>
+                  <p class="certification-description">International Organization for Standardization certified
+                    operations and processes.</p>
+                  <div class="certification-badge mt-3">
+                    <span>Certified</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card h-100 p-3 p-md-4">
+                  <div class="certification-icon">
+                    <i class="fas fa-tasks"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="./assets/images/certificate/haccp.jpg" alt="HACCP Certificate" class="img-fluid">
+                  </div>
+                  <h3 class="certification-title fs-5 fs-md-4">HACCP</h3>
+                  <p class="certification-description">Hazard Analysis Critical Control Point compliant packaging and
+                    manufacturing facilities.</p>
+                  <div class="certification-badge mt-3">
+                    <span>Compliant</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card h-100 p-3 p-md-4">
+                  <div class="certification-icon">
+                    <i class="fas fa-medkit"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="./assets/images/certificate/fda.jpg" alt="FDA Certificate" class="img-fluid">
+                  </div>
+                  <h3 class="certification-title fs-5 fs-md-4">FDA</h3>
+                  <p class="certification-description">Food and Drug Administration approved for product safety and
+                    quality standards.</p>
+                  <div class="certification-badge mt-3">
+                    <span>Approved</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card h-100 p-3 p-md-4">
+                  <div class="certification-icon">
+                    <i class="fas fa-industry"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="./assets/images/certificate/gmp.jpg" alt="GMP Certificate" class="img-fluid">
+                  </div>
+                  <h3 class="certification-title fs-5 fs-md-4">GMP</h3>
+                  <p class="certification-description">Good Manufacturing Practice certification ensures consistent
+                    production quality.</p>
+                  <div class="certification-badge mt-3">
+                    <span>Certified</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card h-100 p-3 p-md-4">
+                  <div class="certification-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="./assets/images/certificate/is0-22.jpg" alt="ISO 22000 Certificate" class="img-fluid">
+                  </div>
+                  <h3 class="certification-title fs-5 fs-md-4">ISO 22000</h3>
+                  <p class="certification-description">International food safety management system standard for food
+                    safety throughout the supply chain.</p>
+                  <div class="certification-badge mt-3">
+                    <span>Certified</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certification-slide">
+                <div class="certification-card h-100 p-3 p-md-4">
+                  <div class="certification-icon">
+                    <i class="fas fa-star-of-david"></i>
+                  </div>
+                  <div class="certificate-img">
+                    <img src="./assets/images/certificate/kosher.jpg" alt="Kosher Certificate" class="img-fluid">
+                  </div>
+                  <h3 class="certification-title fs-5 fs-md-4">Kosher</h3>
+                  <p class="certification-description">Products certified to meet kosher dietary requirements and
+                    standards.</p>
+                  <div class="certification-badge mt-3">
+                    <span>Certified</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slider-controls">
+              <button class="slider-prev d-flex align-items-center justify-content-center" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="slider-next d-flex align-items-center justify-content-center" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Additional Certifications -->
+      <div class="row mt-4">
+        <div class="col-lg-10 mx-auto">
+          <div class="additional-certifications p-3 p-md-4">
+            <h4 class="text-center text-md-start mb-3 fs-5 fs-md-4">Additional Quality Guarantees</h4>
+            <div class="row align-items-center g-3">
+              <div class="col-12 col-md-4 text-center text-md-start">
+                <div class="quality-badge d-inline-flex align-items-center">
+                  <i class="fas fa-check-circle me-2"></i>
+                  <span>SGS Certified</span>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 text-center text-md-start">
+                <div class="quality-badge d-inline-flex align-items-center">
+                  <i class="fas fa-check-circle me-2"></i>
+                  <span>Intertek Quality Certification</span>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 text-center text-md-start">
+                <div class="quality-badge d-inline-flex align-items-center">
+                  <i class="fas fa-check-circle me-2"></i>
+                  <span>Export Ready Documentation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <a href="#contact" class="btn-primary">Request Certification Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- export partner section -->
+  <section class="services-section py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title">Your Global Export Partner </h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Premium packaging and logistics solutions for your business</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Packaging Options Card -->
+        <div class="col-lg-6 mb-4">
+          <div class="certification-card">
+            <div class="certification-icon">
+              <i class="fas fa-box"></i>
+            </div>
+            <h3 class="certification-title"> Our Packaging Options</h3>
+            <p class="certification-description">
+              We provide <strong>customized and export-grade packaging</strong> tailored to your brand and logistical
+              needs.
+            </p>
+            <div class="additional-certifications">
+              <h4>Packaging Solutions</h4>
+
+              <div class="quality-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Vacuum sealed for freshness</span>
+              </div>
+              <div class="quality-badge">
+                <i class="fas fa-tag"></i>
+                <span>Private labeling with custom printing</span>
+              </div>
+              <div class="quality-badge">
+                <i class="fas fa-language"></i>
+                <span>Multilingual instructions for South African markets</span>
+              </div>
+            </div>
+            <div class="mt-4">
+              <span class="certification-badge">Premium Packaging</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logistics Card -->
+        <div class="col-lg-6 mb-4">
+          <div class="certification-card">
+            <div class="certification-icon">
+              <i class="fas fa-ship"></i>
+            </div>
+            <h3 class="certification-title">Global Logistics & Shipping Expertise</h3>
+            <p class="certification-description">
+              We handle the full export process, so you don't have to worry.
+            </p>
+            <div class="additional-certifications">
+              <h4>Logistics Solutions</h4>
+              <div class="quality-badge">
+                <i class="fas fa-satellite-dish"></i>
+                <span>Real-time container tracking</span>
+              </div>
+              <div class="quality-badge">
+                <i class="fas fa-file-contract"></i>
+                <span>CIF / FOB / DDP options</span>
+              </div>
+
+              <div class="quality-badge">
+                <i class="fas fa-clipboard-check"></i>
+                <span>Quick documentation and customs clearance</span>
+              </div>
+              <div class="quality-badge">
+                <i class="fas fa-handshake"></i>
+                <span>Partnerships with top logistics providers like Maersk, CMA CGM & MSC</span>
+              </div>
+            </div>
+            <div class="mt-4">
+              <span class="certification-badge">Export Experts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer  -->
+  <footer class="air-cool-footer">
+    <div class="air-cool-footer__shape"></div>
+    <div class="container">
+      <div class="row">
+        <!-- Left Column - Logo Only -->
+        <div class="col-lg-4 mb-5 mb-lg-0 d-flex flex-column justify-content-center align-items-center text-center">
+          <a href="./index.html" class="air-cool-footer__logo mb-3">
+            <img src="./assets/images/logo-2.jpg" class="img-fluid w-233" alt="Maa Laxmi Enterprises" srcset="">
+          </a>
+          <p class="air-cool-footer__tagline text-muted mb-0"
+            style="font-size: 0.9rem; line-height: 1.5; max-width: 250px;">
+            Your trusted partner for quality air conditioning solutions and services across India.
+          </p>
+        </div>
+
+        <!-- Middle Column - Quick Links -->
+        <div class="col-lg-4 col-md-6">
+          <h3 class="air-cool-footer__title">Quick Links</h3>
+          <ul class="air-cool-footer__links">
+            <li><a href="./index.html" class="air-cool-footer__link">Home</a></li>
+            <li><a href="./pages/product.html" class="air-cool-footer__link">Products</a></li>
+            <li><a href="./about.html" class="air-cool-footer__link">About Us</a></li>
+            <li><a href="./contact.html" class="air-cool-footer__link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Right Column - Contact Info and Social Icons -->
+        <div class="col-lg-4 col-md-6">
+          <h3 class="air-cool-footer__title">Contact Us</h3>
+          <ul class="air-cool-footer__contact">
+            <li class="air-cool-footer__contact-item">
+              <div class="air-cool-footer__icon-box">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="air-cool-footer__info">
+                <span class="air-cool-footer__label">Call Us</span>
+                <span class="air-cool-footer__text">+91 98765 43210</span>
+              </div>
+            </li>
+            <li class="air-cool-footer__contact-item">
+              <div class="air-cool-footer__icon-box">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="air-cool-footer__info">
+                <span class="air-cool-footer__label">Email Us</span>
+                <span class="air-cool-footer__text">info@mahalaxmienterprises.com</span>
+              </div>
+            </li>
+            <li class="air-cool-footer__contact-item">
+              <div class="air-cool-footer__icon-box">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="air-cool-footer__info">
+                <span class="air-cool-footer__label">Visit Us</span>
+                <span class="air-cool-footer__text">123 Industrial Area, Mumbai, India - 400001</span>
+              </div>
+            </li>
+          </ul>
+          <div class="air-cool-footer__social">
+            <a href="#" class="air-cool-footer__social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="air-cool-footer__social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="air-cool-footer__social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="air-cool-footer__social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="air-cool-footer__divider"></div>
+      <div class="air-cool-footer__bottom">
+        <p class="air-cool-footer__copyright">© 2025 Ma Laxmi Enterprises. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/custom-plugins/mahalaxmi-hero-custom-plugin.js"></script>
+
+  <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
+
+  <script>
+    // Multi-level dropdown functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
+
+      dropdownSubmenus.forEach(function (submenu) {
+        const dropdownToggle = submenu.querySelector('.dropdown-toggle');
+        const dropdownMenu = submenu.querySelector('.dropdown-menu');
+
+        if (window.innerWidth > 991) {
+          // Desktop hover behavior
+          submenu.addEventListener('mouseenter', function () {
+            dropdownMenu.style.display = 'block';
+          });
+
+          submenu.addEventListener('mouseleave', function () {
+            dropdownMenu.style.display = 'none';
+          });
+        } else {
+          // Mobile click behavior
+          dropdownToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Toggle the submenu
+            if (dropdownMenu.style.display === 'block') {
+              dropdownMenu.style.display = 'none';
+            } else {
+              dropdownMenu.style.display = 'block';
+            }
+          });
+        }
+      });
+
+      // Prevent dropdown from closing when clicking inside
+      document.querySelectorAll('.dropdown-menu').forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function () {
+      const dropdownMenus = document.querySelectorAll('.dropdown-submenu .dropdown-menu');
+      dropdownMenus.forEach(menu => {
+        menu.style.display = '';
+      });
+
+      // Reinitialize dropdown behavior after resize
+      setTimeout(() => {
+        location.reload();
+      }, 500);
+    });
+
+    // Close mobile menu when clicking on regular links (not dropdown toggles)
+    document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)').forEach(link => {
+      link.addEventListener('click', function () {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+          });
+          bsCollapse.hide();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
