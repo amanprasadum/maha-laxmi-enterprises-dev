@@ -4002,59 +4002,380 @@ body {
     }
 }
 /* privacy policy start */
-/* Maa Laxmi Terms & Privacy Styles */
 .maa-laxmi-terms-section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 100px auto;
+    padding: 6rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.maa-laxmi-terms-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: var(--light-gradient);
+    opacity: 0.3;
+    z-index: -1;
 }
 
 .maa-laxmi-terms-container {
-  background-color: var(--light-color);
-  border-radius: 8px;
-  padding: 3rem;
-  box-shadow: var(--card-shadow);
-  margin-bottom: 3rem;
+    background: linear-gradient(145deg, var(--white), var(--light-color));
+    border-radius: 20px;
+    padding: 4rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(230, 185, 19, 0.1);
+}
+
+.maa-laxmi-terms-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient);
+}
+
+.maa-laxmi-terms-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Header Styles */
+.terms-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.terms-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: var(--gradient);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(230, 185, 19, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.terms-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
 }
 
 .maa-laxmi-terms-title {
-  color: var(--secondary-color);
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
+.terms-description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Enhanced Content Styles */
 .maa-laxmi-terms-content {
-  line-height: 1.6;
+    display: grid;
+    gap: 3rem;
 }
 
 .maa-laxmi-terms-item {
-  margin-bottom: 2rem;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+}
+
+.maa-laxmi-terms-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.terms-item-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 12px;
+    color: var(--white);
+    font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .maa-laxmi-terms-subtitle {
-  color: var(--dark-color);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+    color: var(--dark-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 .maa-laxmi-terms-text {
-  color: var(--text-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
 }
 
-/* Responsive adjustments */
+/* Enhanced Interactive Elements */
+.info-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.info-tag {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 3px 10px rgba(230, 185, 19, 0.3);
+}
+
+.usage-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.usage-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: var(--light-color);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.usage-item:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.usage-item i {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.usage-item:hover i {
+    color: var(--white);
+}
+
+.sharing-notice, .important-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(17, 101, 48, 0.1), rgba(230, 185, 19, 0.1));
+    border-radius: 10px;
+    margin-top: 1rem;
+    border: 1px solid rgba(17, 101, 48, 0.2);
+}
+
+.sharing-notice i, .important-notice i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.responsibility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.responsibility-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.responsibility-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.responsibility-item i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.liability-notice {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(230, 185, 19, 0.1));
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.notice-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.notice-content i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.notice-content strong {
+    color: var(--dark-color);
+    margin-right: 0.5rem;
+}
+
+/* Contact Support Section */
+.contact-support {
+    text-align: center;
+    padding: 3rem;
+    background: var(--gradient);
+    border-radius: 20px;
+    color: var(--white);
+    box-shadow: 0 15px 40px rgba(230, 185, 19, 0.3);
+}
+
+.support-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.support-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background: var(--white);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: var(--light-color);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .maa-laxmi-terms-container {
-    padding: 2rem;
-  }
-  
-  .maa-laxmi-terms-title {
-    font-size: 2rem;
-  }
-  
-  .maa-laxmi-terms-subtitle {
-    font-size: 1.3rem;
-  }
+    .maa-laxmi-terms-section {
+        padding: 3rem 1rem;
+    }
+    
+    .maa-laxmi-terms-container {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .maa-laxmi-terms-title {
+        font-size: 2rem;
+    }
+    
+    .terms-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .terms-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .maa-laxmi-terms-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .terms-item-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .responsibility-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-types {
+        justify-content: center;
+    }
+    
+    .contact-support {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .maa-laxmi-terms-container {
+        padding: 1.5rem;
+    }
+    
+    .maa-laxmi-terms-item {
+        padding: 1.5rem;
+    }
+    
+    .terms-description {
+        font-size: 1rem;
+    }
 }
 /* privacy policy end */
 /* terms and condition start */
