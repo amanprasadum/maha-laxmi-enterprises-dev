@@ -4698,3 +4698,44 @@ body {
   }
 }
 /* privacy policy end */
+/* terms and condition start */
+/* Additional Terms-specific Styles */
+.maa-laxmi-terms-updated {
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.maa-laxmi-terms-list {
+  margin: 1rem 0 1rem 2rem;
+  color: var(--text-color);
+}
+
+.maa-laxmi-terms-list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.maa-laxmi-terms-list li::before {
+  content: "•";
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Print Styles */
+@media print {
+  .maa-laxmi-terms-container {
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .maa-laxmi-terms-title {
+    color: var(--black);
+  }
+}
+/* terms and condition end */
