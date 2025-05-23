@@ -23,10 +23,12 @@ body {
     color: var(--text-color);
     background-color: var(--white)
 }
+
 /* util css by me  */
-.w-233{
+.w-233 {
     width: 233px;
 }
+
 /* util css by me end */
 
 .preloader {
@@ -3982,11 +3984,11 @@ body {
     .air-cool-footer {
         padding-top: 80px;
     }
-    
+
     .air-cool-footer__shape {
         height: 80px;
     }
-    
+
     .air-cool-footer__title {
         margin-top: 20px;
     }
@@ -3996,11 +3998,12 @@ body {
     .air-cool-footer__contact-item {
         align-items: center;
     }
-    
+
     .air-cool-footer__info {
         width: calc(100% - 55px);
     }
 }
+
 /* privacy policy start */
 .maa-laxmi-terms-section {
     padding: 6rem 2rem;
@@ -4074,8 +4077,15 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .maa-laxmi-terms-title {
@@ -4200,7 +4210,8 @@ body {
     color: var(--white);
 }
 
-.sharing-notice, .important-notice {
+.sharing-notice,
+.important-notice {
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -4211,7 +4222,8 @@ body {
     border: 1px solid rgba(17, 101, 48, 0.2);
 }
 
-.sharing-notice i, .important-notice i {
+.sharing-notice i,
+.important-notice i {
     color: var(--secondary-color);
     font-size: 1.2rem;
 }
@@ -4322,43 +4334,43 @@ body {
     .maa-laxmi-terms-section {
         padding: 3rem 1rem;
     }
-    
+
     .maa-laxmi-terms-container {
         padding: 2rem;
         margin-bottom: 2rem;
     }
-    
+
     .maa-laxmi-terms-title {
         font-size: 2rem;
     }
-    
+
     .terms-icon {
         width: 60px;
         height: 60px;
     }
-    
+
     .terms-icon i {
         font-size: 1.5rem;
     }
-    
+
     .maa-laxmi-terms-subtitle {
         font-size: 1.3rem;
     }
-    
+
     .terms-item-header {
         flex-direction: column;
         text-align: center;
         gap: 0.5rem;
     }
-    
+
     .responsibility-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .info-types {
         justify-content: center;
     }
-    
+
     .contact-support {
         padding: 2rem;
     }
@@ -4368,57 +4380,195 @@ body {
     .maa-laxmi-terms-container {
         padding: 1.5rem;
     }
-    
+
     .maa-laxmi-terms-item {
         padding: 1.5rem;
     }
-    
+
     .terms-description {
         font-size: 1rem;
     }
 }
+
 /* privacy policy end */
 /* terms and condition start */
 /* Additional Terms-specific Styles */
 .maa-laxmi-terms-updated {
-  color: var(--accent-color);
-  text-align: center;
-  margin-bottom: 2rem;
-  font-weight: 500;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
 }
 
 .maa-laxmi-terms-list {
-  margin: 1rem 0 1rem 2rem;
-  color: var(--text-color);
+    margin: 1rem 0 1rem 2rem;
+    color: var(--text-color);
 }
 
 .maa-laxmi-terms-list li {
-  margin-bottom: 0.5rem;
-  position: relative;
+    margin-bottom: 0.5rem;
+    position: relative;
 }
 
 .maa-laxmi-terms-list li::before {
-  content: "•";
-  color: var(--primary-color);
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
 
 /* Print Styles */
 @media print {
-  .maa-laxmi-terms-container {
-    box-shadow: none;
-    background-color: transparent;
-    padding: 0;
-  }
-  
-  .maa-laxmi-terms-title {
-    color: var(--black);
-  }
+    .maa-laxmi-terms-container {
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .maa-laxmi-terms-title {
+        color: var(--black);
+    }
 }
+
 /* terms and condition end ----- --------------------------- */
 
-/* ========================= navbar 2 start ================================ */
-/* Custom CSS with mle- prefix */
+/* ========================= plant and machine start================================ */
+.maa-laxmi-plant-machine-valuer-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 0;
+}
+
+.maa-laxmi-plant-machine-valuer-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 5px solid #e6b913;
+    height: 100%;
+}
+
+.maa-laxmi-plant-machine-valuer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.maa-laxmi-plant-machine-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.maa-laxmi-plant-machine-section-divider {
+    height: 3px;
+    width: 80px;
+    background-color: #e6b913;
+    margin: 0 0 30px 0;
+}
+
+.maa-laxmi-plant-machine-valuer-image {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.maa-laxmi-plant-machine-valuer-image:hover {
+    transform: scale(1.02);
+}
+
+.maa-laxmi-plant-machine-badge-custom {
+    background-color: #e6b913;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin: 5px;
+    display: inline-block;
+}
+
+.maa-laxmi-plant-machine-highlight-text {
+    color: #e6b913;
+    font-weight: 600;
+}
+
+.maa-laxmi-plant-machine-service-list {
+    list-style: none;
+    padding: 0;
+}
+
+.maa-laxmi-plant-machine-service-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    position: relative;
+    padding-left: 25px;
+}
+
+.maa-laxmi-plant-machine-service-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #e6b913;
+    font-weight: bold;
+}
+
+.maa-laxmi-plant-machine-cta-buttons {
+    margin-top: 30px;
+}
+
+.maa-laxmi-plant-machine-btn-primary-custom {
+    background-color: #e6b913;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.maa-laxmi-plant-machine-btn-primary-custom:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.maa-laxmi-plant-machine-btn-outline-custom {
+    border: 2px solid #e6b913;
+    color: #e6b913;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.maa-laxmi-plant-machine-btn-outline-custom:hover {
+    background-color: #e6b913;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .maa-laxmi-plant-machine-section-title {
+        font-size: 2rem;
+    }
+
+    .maa-laxmi-plant-machine-valuer-card {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
+    .maa-laxmi-plant-machine-cta-buttons {
+        text-align: center;
+    }
+
+    .maa-laxmi-plant-machine-btn-primary-custom,
+    .maa-laxmi-plant-machine-btn-outline-custom {
+        margin: 5px;
+        display: block;
+        margin-bottom: 15px;
+    }
+}
