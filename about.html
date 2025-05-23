@@ -12,6 +12,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/custom-section-css/about-section.css">
+    <link rel="stylesheet" href="./assets/css/custom-section-css/multi-menu-nav.css">
+
 </head>
 
 <body>
@@ -21,87 +23,77 @@
     </div>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="./assets/images/logo-2.jpg" class="img-fluid w-233"
-                    alt="Maa Laxmi Enterprises" srcset=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="navbar-toggler-icon">
-                    <span></span>
-                </div>
+            <a class="navbar-brand" href="./index.html">
+                <img src="./assets/images/logo-2.jpg" alt="maa-laxmi-enterprises-logo" style="width: 210px;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" href="./index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="./about.html">About us</a>
-                    </li>
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./pages/product.html" id="productsDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./our-company.html">Our Company</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Products
                         </a>
-                        <ul class="dropdown-menu mahalaxmi-dropdown" aria-labelledby="productsDropdown">
-                            <li>
-                                <a class="dropdown-item" href="./pages/product.html">
-                                    <div class="dropdown-item-content">
-                                        <div class="dropdown-icon">
-                                            <i class="fas fa-seedling"></i>
-                                        </div>
-                                        <div class="dropdown-text">
-                                            <h6>Rice</h6>
-                                            <span>Premium quality rice varieties</span>
-                                        </div>
-                                    </div>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <span></span> Rice
                                 </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="./pages/product-detail.html">Basmati Rice</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="./pages/product-detail.html">Jasmine Rice</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="./pages/product-detail.html">Brown Rice</a></li>
+                                </ul>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="./pages/product.html">
-                                    <div class="dropdown-item-content">
-                                        <div class="dropdown-icon">
-                                            <i class="fa-solid fa-database"></i>
-                                        </div>
-                                        <div class="dropdown-text">
-                                            <h6>Yarn</h6>
-                                            <span>High-quality textile materials</span>
-                                        </div>
-                                    </div>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <span></span> Yarn
                                 </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="./pages/product.html">
-                                    <div class="dropdown-item-content">
-                                        <div class="dropdown-icon">
-                                            <i class="fas fa-heart"></i>
-                                        </div>
-                                        <div class="dropdown-text">
-                                            <h6>Women's Pad</h6>
-                                            <span>Eco-friendly feminine hygiene</span>
-                                        </div>
-                                    </div>
-                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="./pages/product-detail.html">Basmati Rice</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="./pages/product-detail.html">Jasmine Rice</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="./pages/product-detail.html">Brown Rice</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li>
-                                <a class="dropdown-item view-all" href="./pages/product.html">
-                                    <span>View All Products</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </li>
+                            <li><a class="dropdown-item" href="./pages/product.html">Other Products</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="./contact.html">Contact Us</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- Navbar End -->
     <!-- About Us Section -->
     <section class="section about-us" id="about">
         <div class="container">
@@ -439,6 +431,8 @@
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/custom-plugins/mahalaxmi-hero-custom-plugin.js"></script>
     <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
+    <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
+
 </body>
 
 </html>
