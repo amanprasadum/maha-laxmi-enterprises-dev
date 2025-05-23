@@ -2,270 +2,262 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maa Laxmi Enterprises - Our Company</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
-        rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maa Laxmi Enterprises - Our Company</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/custom-section-css/multi-menu-nav.css">
+
+
 </head>
+
 <body>
-    <!-- Preloader  -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
+  <!-- Preloader  -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
 
-    <!-- Navbar start -->
-   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2 py-lg-3">
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#"> 
-            <img src="./assets/images/logo-2.jpg" class="img-fluid w-233" alt="Maa Laxmi Enterprises" srcset=""> 
-        </a>
-        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="navbar-toggler-icon">
-                <span></span>
-            </div>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto text-center text-lg-start">
-                <li class="nav-item">
-                    <a class="nav-link active px-3 py-2" href="./index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="./about.html">About us</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle px-3 py-2" href="#" id="productsDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Products
-                    </a>
-                    <ul class="dropdown-menu mahalaxmi-dropdown" aria-labelledby="productsDropdown">
-                        <!-- Rice Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-item dropdown-toggle px-3 py-2" href="#" id="riceDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="dropdown-item-content d-flex align-items-center">
-                                    <div class="dropdown-icon me-3">
-                                        <i class="fas fa-seedling"></i>
-                                    </div>
-                                    <div class="dropdown-text">
-                                        <h6 class="mb-0">Rice</h6>
-                                        <span class="small">Premium quality rice varieties</span>
-                                    </div>
-                                </div>
-                                <i class="fas fa-chevron-right submenu-arrow"></i>
-                            </a>
-                            <ul class="dropdown-menu submenu-dropdown" aria-labelledby="riceDropdown">
-                                <li><a class="dropdown-item" href="./pages/basmati-rice.html">Basmati Rice</a></li>
-                                <li><a class="dropdown-item" href="./pages/jasmine-rice.html">Jasmine Rice</a></li>
-                                <li><a class="dropdown-item" href="./pages/brown-rice.html">Brown Rice</a></li>
-                                <li><a class="dropdown-item" href="./pages/wild-rice.html">Wild Rice</a></li>
-                            </ul>
-                        </li>
-                        
-                        <!-- Yarn Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-item dropdown-toggle px-3 py-2" href="#" id="yarnDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="dropdown-item-content d-flex align-items-center">
-                                    <div class="dropdown-icon me-3">
-                                        <i class="fa-solid fa-database"></i>
-                                    </div>
-                                    <div class="dropdown-text">
-                                        <h6 class="mb-0">Yarn</h6>
-                                        <span class="small">High-quality textile materials</span>
-                                    </div>
-                                </div>
-                                <i class="fas fa-chevron-right submenu-arrow"></i>
-                            </a>
-                            <ul class="dropdown-menu submenu-dropdown" aria-labelledby="yarnDropdown">
-                                <li><a class="dropdown-item" href="./pages/cotton-yarn.html">Cotton Yarn</a></li>
-                                <li><a class="dropdown-item" href="./pages/polyester-yarn.html">Polyester Yarn</a></li>
-                                <li><a class="dropdown-item" href="./pages/wool-yarn.html">Wool Yarn</a></li>
-                                <li><a class="dropdown-item" href="./pages/silk-yarn.html">Silk Yarn</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li><hr class="dropdown-divider"></li>
-                        <li>
-                            <a class="dropdown-item view-all py-2 d-flex justify-content-between align-items-center"
-                                href="./pages/product.html">
-                                <span>View All Products</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+      <a class="navbar-brand" href="./index.html">
+        <img src="./assets/images/logo-2.jpg" alt="maa-laxmi-enterprises-logo" style="width: 210px;">
+      </a>
 
-<section class="maa-laxmi-terms-section">
-  <!-- Privacy Policy Container -->
-  <div class="maa-laxmi-terms-container">
-    <div class="terms-header">
-      <div class="terms-icon">
-        <i class="fas fa-shield-alt"></i>
-      </div>
-      <h1 class="maa-laxmi-terms-title">Privacy Policy</h1>
-      <p class="terms-description">Your privacy is important to us. Learn how we collect, use, and protect your information.</p>
-    </div>
-    
-    <div class="maa-laxmi-terms-content">
-      <div class="maa-laxmi-terms-item">
-        <div class="terms-item-header">
-          <div class="item-icon">
-            <i class="fas fa-database"></i>
-          </div>
-          <h2 class="maa-laxmi-terms-subtitle">1. Information We Collect</h2>
-        </div>
-        <p class="maa-laxmi-terms-text">We collect personal information you provide directly to us, such as when you create an account, make a purchase, or contact us. This may include your name, email address, payment information, and other details you choose to provide.</p>
-        <div class="info-types">
-          <span class="info-tag">Personal Data</span>
-          <span class="info-tag">Contact Info</span>
-          <span class="info-tag">Payment Details</span>
-        </div>
-      </div>
-      
-      <div class="maa-laxmi-terms-item">
-        <div class="terms-item-header">
-          <div class="item-icon">
-            <i class="fas fa-cogs"></i>
-          </div>
-          <h2 class="maa-laxmi-terms-subtitle">2. How We Use Your Information</h2>
-        </div>
-        <p class="maa-laxmi-terms-text">We use the information we collect to provide, maintain, and improve our services, to process transactions, to communicate with you, and for security and fraud prevention.</p>
-        <div class="usage-list">
-          <div class="usage-item">
-            <i class="fas fa-check-circle"></i>
-            <span>Service delivery and improvement</span>
-          </div>
-          <div class="usage-item">
-            <i class="fas fa-check-circle"></i>
-            <span>Transaction processing</span>
-          </div>
-          <div class="usage-item">
-            <i class="fas fa-check-circle"></i>
-            <span>Communication and support</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="maa-laxmi-terms-item">
-        <div class="terms-item-header">
-          <div class="item-icon">
-            <i class="fas fa-user-shield"></i>
-          </div>
-          <h2 class="maa-laxmi-terms-subtitle">3. Information Sharing</h2>
-        </div>
-        <p class="maa-laxmi-terms-text">We do not share your personal information with third parties except as necessary to provide our services or as required by law.</p>
-        <div class="sharing-notice">
-          <i class="fas fa-lock"></i>
-          <span>Your data is secure and never sold to third parties</span>
-        </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="./index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./our-company.html">Our Company</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">
+                  <span></span> Rice
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./pages/product-detail.html">Basmati Rice</a>
+                  </li>
+                  <li><a class="dropdown-item" href="./pages/product-detail.html">Jasmine Rice</a>
+                  </li>
+                  <li><a class="dropdown-item" href="./pages/product-detail.html">Brown Rice</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">
+                  <span></span> Yarn
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./pages/product-detail.html">Basmati Rice</a>
+                  </li>
+                  <li><a class="dropdown-item" href="./pages/product-detail.html">Jasmine Rice</a>
+                  </li>
+                  <li><a class="dropdown-item" href="./pages/product-detail.html">Brown Rice</a></li>
+                </ul>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./pages/product.html">Other Products</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contact Us</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-  
-  <!-- Terms & Conditions Container -->
-  <div class="maa-laxmi-terms-container">
-    <div class="terms-header">
-      <div class="terms-icon">
-        <i class="fas fa-file-contract"></i>
+  </nav>
+  <!-- Navbar End -->
+
+  <section class="maa-laxmi-terms-section">
+    <!-- Privacy Policy Container -->
+    <div class="maa-laxmi-terms-container">
+      <div class="terms-header">
+        <div class="terms-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h1 class="maa-laxmi-terms-title">Privacy Policy</h1>
+        <p class="terms-description">Your privacy is important to us. Learn how we collect, use, and protect your
+          information.</p>
       </div>
-      <h1 class="maa-laxmi-terms-title">Terms & Conditions</h1>
-      <p class="terms-description">Please read these terms carefully before using our services.</p>
+
+      <div class="maa-laxmi-terms-content">
+        <div class="maa-laxmi-terms-item">
+          <div class="terms-item-header">
+            <div class="item-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h2 class="maa-laxmi-terms-subtitle">1. Information We Collect</h2>
+          </div>
+          <p class="maa-laxmi-terms-text">We collect personal information you provide directly to us, such as when you
+            create an account, make a purchase, or contact us. This may include your name, email address, payment
+            information, and other details you choose to provide.</p>
+          <div class="info-types">
+            <span class="info-tag">Personal Data</span>
+            <span class="info-tag">Contact Info</span>
+            <span class="info-tag">Payment Details</span>
+          </div>
+        </div>
+
+        <div class="maa-laxmi-terms-item">
+          <div class="terms-item-header">
+            <div class="item-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h2 class="maa-laxmi-terms-subtitle">2. How We Use Your Information</h2>
+          </div>
+          <p class="maa-laxmi-terms-text">We use the information we collect to provide, maintain, and improve our
+            services, to process transactions, to communicate with you, and for security and fraud prevention.</p>
+          <div class="usage-list">
+            <div class="usage-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Service delivery and improvement</span>
+            </div>
+            <div class="usage-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Transaction processing</span>
+            </div>
+            <div class="usage-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Communication and support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="maa-laxmi-terms-item">
+          <div class="terms-item-header">
+            <div class="item-icon">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h2 class="maa-laxmi-terms-subtitle">3. Information Sharing</h2>
+          </div>
+          <p class="maa-laxmi-terms-text">We do not share your personal information with third parties except as
+            necessary to provide our services or as required by law.</p>
+          <div class="sharing-notice">
+            <i class="fas fa-lock"></i>
+            <span>Your data is secure and never sold to third parties</span>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div class="maa-laxmi-terms-content">
-      <div class="maa-laxmi-terms-item">
-        <div class="terms-item-header">
-          <div class="item-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <h2 class="maa-laxmi-terms-subtitle">1. General Terms</h2>
+
+    <!-- Terms & Conditions Container -->
+    <div class="maa-laxmi-terms-container">
+      <div class="terms-header">
+        <div class="terms-icon">
+          <i class="fas fa-file-contract"></i>
         </div>
-        <p class="maa-laxmi-terms-text">By accessing and using our services, you accept and agree to be bound by these terms. If you disagree with any part of the terms, you may not access the service.</p>
-        <div class="important-notice">
-          <i class="fas fa-exclamation-triangle"></i>
-          <span>Acceptance of these terms is required to use our services</span>
-        </div>
+        <h1 class="maa-laxmi-terms-title">Terms & Conditions</h1>
+        <p class="terms-description">Please read these terms carefully before using our services.</p>
       </div>
-      
-      <div class="maa-laxmi-terms-item">
-        <div class="terms-item-header">
-          <div class="item-icon">
-            <i class="fas fa-user-check"></i>
+
+      <div class="maa-laxmi-terms-content">
+        <div class="maa-laxmi-terms-item">
+          <div class="terms-item-header">
+            <div class="item-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h2 class="maa-laxmi-terms-subtitle">1. General Terms</h2>
           </div>
-          <h2 class="maa-laxmi-terms-subtitle">2. User Responsibilities</h2>
-        </div>
-        <p class="maa-laxmi-terms-text">You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
-        <div class="responsibility-grid">
-          <div class="responsibility-item">
-            <i class="fas fa-key"></i>
-            <span>Account Security</span>
-          </div>
-          <div class="responsibility-item">
-            <i class="fas fa-shield-alt"></i>
-            <span>Data Protection</span>
-          </div>
-          <div class="responsibility-item">
-            <i class="fas fa-user-cog"></i>
-            <span>Profile Management</span>
+          <p class="maa-laxmi-terms-text">By accessing and using our services, you accept and agree to be bound by these
+            terms. If you disagree with any part of the terms, you may not access the service.</p>
+          <div class="important-notice">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>Acceptance of these terms is required to use our services</span>
           </div>
         </div>
-      </div>
-      
-      <div class="maa-laxmi-terms-item">
-        <div class="terms-item-header">
-          <div class="item-icon">
-            <i class="fas fa-balance-scale"></i>
+
+        <div class="maa-laxmi-terms-item">
+          <div class="terms-item-header">
+            <div class="item-icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <h2 class="maa-laxmi-terms-subtitle">2. User Responsibilities</h2>
           </div>
-          <h2 class="maa-laxmi-terms-subtitle">3. Limitation of Liability</h2>
+          <p class="maa-laxmi-terms-text">You are responsible for maintaining the confidentiality of your account
+            information and for all activities that occur under your account.</p>
+          <div class="responsibility-grid">
+            <div class="responsibility-item">
+              <i class="fas fa-key"></i>
+              <span>Account Security</span>
+            </div>
+            <div class="responsibility-item">
+              <i class="fas fa-shield-alt"></i>
+              <span>Data Protection</span>
+            </div>
+            <div class="responsibility-item">
+              <i class="fas fa-user-cog"></i>
+              <span>Profile Management</span>
+            </div>
+          </div>
         </div>
-        <p class="maa-laxmi-terms-text">In no event shall we be liable for any indirect, incidental, special, consequential or punitive damages resulting from your use of or inability to use the service.</p>
-        <div class="liability-notice">
-          <div class="notice-content">
-            <i class="fas fa-info-circle"></i>
-            <div>
-              <strong>Important:</strong>
-              <span>This limitation applies to all types of damages and is subject to applicable law.</span>
+
+        <div class="maa-laxmi-terms-item">
+          <div class="terms-item-header">
+            <div class="item-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <h2 class="maa-laxmi-terms-subtitle">3. Limitation of Liability</h2>
+          </div>
+          <p class="maa-laxmi-terms-text">In no event shall we be liable for any indirect, incidental, special,
+            consequential or punitive damages resulting from your use of or inability to use the service.</p>
+          <div class="liability-notice">
+            <div class="notice-content">
+              <i class="fas fa-info-circle"></i>
+              <div>
+                <strong>Important:</strong>
+                <span>This limitation applies to all types of damages and is subject to applicable law.</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Contact & Support -->
-  <div class="contact-support">
-    <div class="support-content">
-      <h3>Questions about our policies?</h3>
-      <p>Contact our support team for clarification on any privacy or terms matters.</p>
-      <button class="contact-btn">
-        <i class="fas fa-envelope"></i>
-        Contact Support
-      </button>
+
+    <!-- Contact & Support -->
+    <div class="contact-support">
+      <div class="support-content">
+        <h3>Questions about our policies?</h3>
+        <p>Contact our support team for clarification on any privacy or terms matters.</p>
+        <button class="contact-btn">
+          <i class="fas fa-envelope"></i>
+          Contact Support
+        </button>
+      </div>
     </div>
-  </div>
-</section>
-<footer class="air-cool-footer">
+  </section>
+  <footer class="air-cool-footer">
     <div class="air-cool-footer__shape"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-5 mb-lg-0">
-          <a href="./index.html" class="air-cool-footer__logo"><img src="./assets/images/logo-2.jpg" class="img-fluid w-233" alt="Maa Laxmi Enterprises" srcset=""></a>
+          <a href="./index.html" class="air-cool-footer__logo"><img src="./assets/images/logo-2.jpg"
+              class="img-fluid w-233" alt="Maa Laxmi Enterprises" srcset=""></a>
           <ul class="air-cool-footer__contact">
             <li class="air-cool-footer__contact-item">
               <div class="air-cool-footer__icon-box">
@@ -344,13 +336,15 @@
     </div>
   </footer>
 
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/custom-plugins/mahalaxmi-hero-custom-plugin.js"></script>
-    <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/custom-plugins/mahalaxmi-hero-custom-plugin.js"></script>
+  <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
+  <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
+
 </body>
 
 </html>
