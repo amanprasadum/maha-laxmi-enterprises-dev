@@ -4082,10 +4082,10 @@ body {
     background: var(--gradient);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: #000000;
 }
 
 .terms-description {
