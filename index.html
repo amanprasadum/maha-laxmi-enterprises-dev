@@ -131,89 +131,84 @@
     </div>
   </nav> -->
   <!-- NAVBAR SECTION -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top py-2 py-lg-3">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#"> 
-            <img src="./assets/images/logo-2.jpg" class="img-fluid w-233" alt="Maa Laxmi Enterprises" srcset=""> 
+<!-- Navbar HTML -->
+<nav class="maa-laxmi-responsive-navbar">
+    <div class="maa-laxmi-responsive-container">
+        <!-- Logo -->
+        <a href="#" class="maa-laxmi-responsive-logo"> 
+            <img src="./assets/images/logo-2.jpg" alt="Maa Laxmi Enterprises"> 
         </a>
-        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="navbar-toggler-icon">
-                <span></span>
-            </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="maa-laxmi-responsive-toggle" type="button" id="maaLaxmiToggle">
+            <span class="maa-laxmi-responsive-toggle-bar"></span>
+            <span class="maa-laxmi-responsive-toggle-bar"></span>
+            <span class="maa-laxmi-responsive-toggle-bar"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto text-center text-lg-start">
-                <li class="nav-item">
-                    <a class="nav-link active px-3 py-2" href="./index.html">Home</a>
+        
+        <!-- Navigation Menu -->
+        <div class="maa-laxmi-responsive-menu" id="maaLaxmiMenu">
+            <ul class="maa-laxmi-responsive-nav-list">
+                <li class="maa-laxmi-responsive-nav-item">
+                    <a href="./index.html" class="maa-laxmi-responsive-nav-link maa-laxmi-responsive-active">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="./about.html">About us</a>
+                <li class="maa-laxmi-responsive-nav-item">
+                    <a href="./about.html" class="maa-laxmi-responsive-nav-link">About Us</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle px-3 py-2" href="#" id="productsDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Products
+                <li class="maa-laxmi-responsive-nav-item maa-laxmi-responsive-dropdown">
+                    <a href="#" class="maa-laxmi-responsive-nav-link maa-laxmi-responsive-dropdown-toggle">
+                        Products <i class="maa-laxmi-responsive-arrow">▼</i>
                     </a>
-                    <ul class="dropdown-menu mahalaxmi-dropdown" aria-labelledby="productsDropdown">
-                        <!-- Rice Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-item dropdown-toggle px-3 py-2" href="#" id="riceDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="dropdown-item-content d-flex align-items-center">
-                                    <div class="dropdown-icon me-3">
-                                        <i class="fas fa-seedling"></i>
-                                    </div>
-                                    <div class="dropdown-text">
-                                        <h6 class="mb-0">Rice</h6>
-                                        <span class="small">Premium quality rice varieties</span>
+                    <div class="maa-laxmi-responsive-dropdown-menu">
+                        <!-- Rice Submenu -->
+                        <div class="maa-laxmi-responsive-submenu">
+                            <a href="#" class="maa-laxmi-responsive-submenu-toggle">
+                                <div class="maa-laxmi-responsive-submenu-content">
+                                    <div class="maa-laxmi-responsive-submenu-icon">🌾</div>
+                                    <div class="maa-laxmi-responsive-submenu-text">
+                                        <strong>Rice</strong>
+                                        <span>Premium quality rice varieties</span>
                                     </div>
                                 </div>
-                                <i class="fas fa-chevron-right submenu-arrow"></i>
+                                <i class="maa-laxmi-responsive-submenu-arrow">▶</i>
                             </a>
-                            <ul class="dropdown-menu submenu-dropdown" aria-labelledby="riceDropdown">
-                                <li><a class="dropdown-item" href="./pages/basmati-rice.html">Basmati Rice</a></li>
-                                <li><a class="dropdown-item" href="./pages/jasmine-rice.html">Jasmine Rice</a></li>
-                                <li><a class="dropdown-item" href="./pages/brown-rice.html">Brown Rice</a></li>
-                                <li><a class="dropdown-item" href="./pages/wild-rice.html">Wild Rice</a></li>
-                            </ul>
-                        </li>
+                            <div class="maa-laxmi-responsive-submenu-dropdown">
+                                <a href="./pages/basmati-rice.html" class="maa-laxmi-responsive-submenu-link">Basmati Rice</a>
+                                <a href="./pages/jasmine-rice.html" class="maa-laxmi-responsive-submenu-link">Jasmine Rice</a>
+                                <a href="./pages/brown-rice.html" class="maa-laxmi-responsive-submenu-link">Brown Rice</a>
+                                <a href="./pages/wild-rice.html" class="maa-laxmi-responsive-submenu-link">Wild Rice</a>
+                            </div>
+                        </div>
                         
-                        <!-- Yarn Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-item dropdown-toggle px-3 py-2" href="#" id="yarnDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="dropdown-item-content d-flex align-items-center">
-                                    <div class="dropdown-icon me-3">
-                                        <i class="fa-solid fa-database"></i>
-                                    </div>
-                                    <div class="dropdown-text">
-                                        <h6 class="mb-0">Yarn</h6>
-                                        <span class="small">High-quality textile materials</span>
+                        <!-- Yarn Submenu -->
+                        <div class="maa-laxmi-responsive-submenu">
+                            <a href="#" class="maa-laxmi-responsive-submenu-toggle">
+                                <div class="maa-laxmi-responsive-submenu-content">
+                                    <div class="maa-laxmi-responsive-submenu-icon">🧶</div>
+                                    <div class="maa-laxmi-responsive-submenu-text">
+                                        <strong>Yarn</strong>
+                                        <span>High-quality textile materials</span>
                                     </div>
                                 </div>
-                                <i class="fas fa-chevron-right submenu-arrow"></i>
+                                <i class="maa-laxmi-responsive-submenu-arrow">▶</i>
                             </a>
-                            <ul class="dropdown-menu submenu-dropdown" aria-labelledby="yarnDropdown">
-                                <li><a class="dropdown-item" href="./pages/cotton-yarn.html">Cotton Yarn</a></li>
-                                <li><a class="dropdown-item" href="./pages/polyester-yarn.html">Polyester Yarn</a></li>
-                                <li><a class="dropdown-item" href="./pages/wool-yarn.html">Wool Yarn</a></li>
-                                <li><a class="dropdown-item" href="./pages/silk-yarn.html">Silk Yarn</a></li>
-                            </ul>
-                        </li>
+                            <div class="maa-laxmi-responsive-submenu-dropdown">
+                                <a href="./pages/cotton-yarn.html" class="maa-laxmi-responsive-submenu-link">Cotton Yarn</a>
+                                <a href="./pages/polyester-yarn.html" class="maa-laxmi-responsive-submenu-link">Polyester Yarn</a>
+                                <a href="./pages/wool-yarn.html" class="maa-laxmi-responsive-submenu-link">Wool Yarn</a>
+                                <a href="./pages/silk-yarn.html" class="maa-laxmi-responsive-submenu-link">Silk Yarn</a>
+                            </div>
+                        </div>
                         
-                        <li><hr class="dropdown-divider"></li>
-                        <li>
-                            <a class="dropdown-item view-all py-2 d-flex justify-content-between align-items-center"
-                                href="./pages/product.html">
-                                <span>View All Products</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </li>
-                    </ul>
+                        <hr class="maa-laxmi-responsive-divider">
+                        <a href="./pages/product.html" class="maa-laxmi-responsive-view-all">
+                            <span>View All Products</span>
+                            <i class="maa-laxmi-responsive-arrow-right">→</i>
+                        </a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link px-3 py-2" href="contact.html">Contact</a>
+                <li class="maa-laxmi-responsive-nav-item">
+                    <a href="./contact.html" class="maa-laxmi-responsive-nav-link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -804,31 +799,24 @@
 
   <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
   <script>
-// Mobile dropdown fix
-document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+document.getElementById('maaLaxmiToggle').addEventListener('click', function() {
+    const menu = document.getElementById('maaLaxmiMenu');
+    menu.classList.toggle('active');
+});
+
+// Mobile dropdown toggles
+document.querySelectorAll('.maa-laxmi-responsive-dropdown-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function(e) {
-        if (window.innerWidth < 992) {
-            e.preventDefault();
-            const dropdownMenu = this.nextElementSibling;
-            dropdownMenu.classList.toggle('show');
-            
-            // Close other open dropdowns
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                if (menu !== dropdownMenu) {
-                    menu.classList.remove('show');
-                }
-            });
-        }
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
     });
 });
 
-// Close dropdowns when clicking outside
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.navbar')) {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-            menu.classList.remove('show');
-        });
-    }
+document.querySelectorAll('.maa-laxmi-responsive-submenu-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
+    });
 });
 </script>
   
