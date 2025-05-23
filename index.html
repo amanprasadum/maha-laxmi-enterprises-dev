@@ -39,267 +39,6 @@
   @keyframes textReveal{0%{opacity:0;transform:translateY(30px);letter-spacing:-0.5px}60%{letter-spacing:1px}100%{opacity:1;transform:translateY(0);letter-spacing:normal}}
   @media(max-width:768px){.mahalaxmi-hero-title{font-size:1.8rem;line-height:1.3}.mahalaxmi-hero-subtitle{font-size:0.9rem}}
 
-.mle-navbar {
-    background-color: var(--light-color) !important;
-    box-shadow: var(--card-shadow);
-    padding: 0.8rem 0;
-    border-bottom: 2px solid var(--primary-color);
-}
-
-.mle-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: var(--secondary-color) !important;
-    transition: var(--transition);
-    text-decoration: none;
-}
-
-.mle-brand:hover {
-    color: var(--primary-color) !important;
-    transform: scale(1.05);
-}
-
-.mle-brand img {
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-}
-
-.mle-nav-center {
-    margin: 0 auto;
-}
-
-.mle-nav-link {
-    color: var(--text-color) !important;
-    font-weight: 500;
-    padding: 0.7rem 1.2rem !important;
-    transition: var(--transition);
-    position: relative;
-    border-radius: 25px;
-    margin: 0 0.2rem;
-    text-decoration: none;
-}
-
-.mle-nav-link:hover,
-.mle-nav-link.active {
-    color: var(--white) !important;
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.mle-nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 5px;
-    left: 50%;
-    background-color: var(--primary-color);
-    transition: var(--transition);
-    transform: translateX(-50%);
-}
-
-.mle-nav-link:hover::after {
-    width: 80%;
-}
-
-/* Dropdown Styles */
-.mle-dropdown-menu {
-    background-color: var(--white);
-    border: 1px solid var(--primary-color);
-    border-radius: 15px;
-    box-shadow: var(--card-shadow);
-    padding: 1rem 0;
-    margin-top: 0.5rem;
-    min-width: 250px;
-}
-
-.mle-dropdown-item {
-    color: var(--text-color) !important;
-    padding: 0.7rem 1.5rem;
-    font-weight: 500;
-    transition: var(--transition);
-    border: none;
-    background: none;
-    text-decoration: none;
-}
-
-.mle-dropdown-item:hover {
-    background-color: var(--primary-color);
-    color: var(--white) !important;
-    padding-left: 2rem;
-}
-
-.mle-dropdown-item:focus {
-    background-color: var(--primary-color);
-    color: var(--white) !important;
-}
-
-.mle-dropdown-divider {
-    border-color: var(--primary-color);
-    opacity: 0.3;
-    margin: 0.5rem 1rem;
-}
-
-/* Nested Dropdown */
-.mle-dropdown-submenu {
-    position: relative;
-}
-
-.mle-dropdown-submenu > .mle-dropdown-item::after {
-    content: "\f105";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    float: right;
-    margin-left: 10px;
-    transition: var(--transition);
-}
-
-.mle-submenu {
-    background-color: var(--white);
-    border: 1px solid var(--primary-color);
-    border-radius: 15px;
-    box-shadow: var(--card-shadow);
-    padding: 1rem 0;
-    min-width: 200px;
-}
-
-/* Desktop Submenu */
-@media (min-width: 992px) {
-    .mle-submenu {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        display: none;
-    }
-
-    .mle-dropdown-submenu:hover > .mle-submenu {
-        display: block;
-    }
-
-    .mle-dropdown-submenu:hover > .mle-dropdown-item::after {
-        transform: rotate(90deg);
-    }
-}
-
-/* Mobile Toggler */
-.mle-toggler {
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    padding: 0.4rem 0.6rem;
-}
-
-.mle-toggler:focus {
-    box-shadow: 0 0 0 0.2rem rgba(230, 185, 19, 0.25);
-    border-color: var(--primary-color);
-}
-
-.mle-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23e6b913' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    width: 1.2em;
-    height: 1.2em;
-}
-
-/* Mobile Responsive */
-@media (max-width: 991.98px) {
-    .mle-nav-center {
-        margin: 1rem 0;
-        text-align: center;
-        width: 100%;
-    }
-
-    .mle-nav-link {
-        margin: 0.3rem 0;
-        border-radius: 10px;
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-
-    .mle-dropdown-menu {
-        border-radius: 10px;
-        margin: 0.5rem 0;
-        background-color: var(--light-color);
-        border: 1px solid var(--primary-color);
-        position: static !important;
-        display: block !important;
-        box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-        transform: none !important;
-        width: 100%;
-        float: none !important;
-    }
-
-    .mle-submenu {
-        position: static !important;
-        display: none !important;
-        box-shadow: none;
-        margin: 0.5rem 0;
-        border-left: 3px solid var(--primary-color);
-        background-color: var(--white);
-        border-radius: 8px;
-        width: 100%;
-        left: 0 !important;
-        top: 0 !important;
-        float: none !important;
-    }
-
-    .mle-submenu.show {
-        display: block !important;
-    }
-
-    .mle-dropdown-submenu > .mle-dropdown-item::after {
-        content: "\f107";
-        transform: none;
-    }
-
-    .mle-dropdown-submenu > .mle-dropdown-item[aria-expanded="true"]::after {
-        transform: rotate(180deg);
-    }
-
-    .navbar-collapse {
-        background-color: var(--light-color);
-        border-radius: 10px;
-        padding: 1rem;
-        margin-top: 1rem;
-        border: 1px solid var(--primary-color);
-    }
-}
-
-@media (max-width: 576px) {
-    .mle-brand {
-        font-size: 1.3rem;
-    }
-    
-    .mle-brand img {
-        width: 28px;
-        height: 28px;
-    }
-
-    .mle-nav-link {
-        font-size: 0.95rem;
-        padding: 0.6rem 1rem !important;
-    }
-
-    .mle-dropdown-item {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
-    }
-}
-
-/* Fix for Bootstrap dropdown toggle */
-.show > .mle-dropdown-menu {
-    display: block !important;
-}
-
-.dropdown-toggle::after {
-    display: inline-block;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0.3em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    border-left: 0.3em solid transparent;
-}
   </style>
 </head>
 
@@ -399,76 +138,62 @@
 <!-- Navigation Section -->
 <!-- Navigation Section -->
 <!-- Navigation Section -->
-<nav class="navbar navbar-expand-lg mle-navbar">
-    <div class="container">
-        <!-- Brand -->
-        <a class="navbar-brand mle-brand" href="#home">
-            <img src="https://via.placeholder.com/35x35/e6b913/ffffff?text=R" alt="Rice Logo" width="35" height="35" class="me-2">
-            RiceMart
-        </a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold" href="#">
+      <img src="logo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+      YourLogo
+    </a>
 
-        <!-- Mobile Toggle Button -->
-        <button class="navbar-toggler mle-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon mle-toggler-icon"></span>
-        </button>
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <!-- Navbar Content -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mle-nav-center">
-                <!-- Home -->
-                <li class="nav-item">
-                    <a class="nav-link active mle-nav-link" href="#home">
-                        <i class="fas fa-home me-1"></i>Home
-                    </a>
-                </li>
+    <!-- Menu Items -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link active fw-medium" aria-current="page" href="#">Home</a>
+        </li>
 
-                <!-- About -->
-                <li class="nav-item">
-                    <a class="nav-link mle-nav-link" href="#about">
-                        <i class="fas fa-info-circle me-1"></i>About
-                    </a>
-                </li>
+        <!-- About Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-medium" href="#" id="aboutDropdown" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="#">Our Company</a></li>
+            <li><a class="dropdown-item" href="#">Career</a></li>
+          </ul>
+        </li>
 
-                <!-- Products with Rice Types -->
-                <li class="nav-item dropdown mle-dropdown">
-                    <a class="nav-link dropdown-toggle mle-nav-link" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-seedling me-1"></i>Products
-                    </a>
-                    <ul class="dropdown-menu mle-dropdown-menu" aria-labelledby="productsDropdown">
-                        <li><a class="dropdown-item mle-dropdown-item" href="#all-products">
-                            <i class="fas fa-th-large me-2"></i>All Products
-                        </a></li>
-                        <li><hr class="dropdown-divider mle-dropdown-divider"></li>
-                        
-                        <!-- Rice Submenu -->
-                        <li class="dropend mle-dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle mle-dropdown-item mle-submenu-toggle" href="#" id="riceSubmenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-grain me-2"></i>Rice Varieties
-                            </a>
-                            <ul class="dropdown-menu mle-submenu" aria-labelledby="riceSubmenu">
-                                <li><a class="dropdown-item mle-dropdown-item" href="#basmati-rice">
-                                    <i class="fas fa-star me-2"></i>Basmati Rice
-                                </a></li>
-                                <li><a class="dropdown-item mle-dropdown-item" href="#jasmine-rice">
-                                    <i class="fas fa-flower me-2"></i>Jasmine Rice
-                                </a></li>
-                                <li><a class="dropdown-item mle-dropdown-item" href="#brown-rice">
-                                    <i class="fas fa-leaf me-2"></i>Brown Rice
-                                </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+        <!-- Product Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-medium" href="#" id="productDropdown" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Product
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productDropdown">
+            <li><h6 class="dropdown-header">Rice Varieties</h6></li>
+            <li><a class="dropdown-item" href="#">Basmati Rice</a></li>
+            <li><a class="dropdown-item" href="#">Jasmine Rice</a></li>
+            <li><a class="dropdown-item" href="#">Brown Rice</a></li>
+          </ul>
+        </li>
 
-                <!-- Contact -->
-                <li class="nav-item">
-                    <a class="nav-link mle-nav-link" href="#contact">
-                        <i class="fas fa-envelope me-1"></i>Contact
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <!-- Contact Us -->
+        <li class="nav-item">
+          <a class="nav-link fw-medium" href="#">Contact Us</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
 
 
@@ -1056,64 +781,7 @@
 
   <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
  
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Handle mobile submenu toggle
-    const submenuToggles = document.querySelectorAll('.mle-submenu-toggle');
-    
-    submenuToggles.forEach(function(toggle) {
-        toggle.addEventListener('click', function(e) {
-            // Check if we're on mobile
-            if (window.innerWidth <= 991.98) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const submenu = this.nextElementSibling;
-                const isOpen = submenu.classList.contains('show');
-                
-                // Close all other submenus
-                document.querySelectorAll('.mle-submenu').forEach(function(s) {
-                    s.classList.remove('show');
-                });
-                
-                // Toggle current submenu
-                if (!isOpen) {
-                    submenu.classList.add('show');
-                    this.setAttribute('aria-expanded', 'true');
-                } else {
-                    submenu.classList.remove('show');
-                    this.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-    });
-    
-    // Close submenus when main dropdown closes
-    const mainDropdown = document.getElementById('productsDropdown');
-    if (mainDropdown) {
-        mainDropdown.addEventListener('hidden.bs.dropdown', function() {
-            document.querySelectorAll('.mle-submenu').forEach(function(submenu) {
-                submenu.classList.remove('show');
-            });
-            document.querySelectorAll('.mle-submenu-toggle').forEach(function(toggle) {
-                toggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-    }
-    
-    // Reset on window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 991.98) {
-            document.querySelectorAll('.mle-submenu').forEach(function(submenu) {
-                submenu.classList.remove('show');
-            });
-            document.querySelectorAll('.mle-submenu-toggle').forEach(function(toggle) {
-                toggle.setAttribute('aria-expanded', 'false');
-            });
-        }
-    });
-});
-  </script>
+ 
 </body>
 
 </html>
