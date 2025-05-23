@@ -2,6 +2,8 @@
       const backgroundImages = [
         './assets/images/basmati.jpg',  // Rice
         './assets/images/yarn-hero.jpg',  // Yarn
+        './assets/images/basmati.jpg',  // Rice
+
         // './assets/images/pad.jpg'  // Women's Pad
       ];
 
