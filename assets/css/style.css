@@ -4100,6 +4100,7 @@ body {
 /* terms and condition end ----- --------------------------- */
 
 /* ========================= navbar 2 start ================================ */
+/* Custom CSS with mle- prefix */
 .mle-navbar {
   box-shadow: 0 2px 4px rgba(0,0,0,.1);
   transition: all 0.3s ease;
@@ -4263,6 +4264,11 @@ html {
 /* Hover effects for better UX */
 .mle-dropdown:hover > .mle-dropdown-menu {
   display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.mle-dropdown-submenu:hover > .mle-submenu {
+  display: block !important;
   animation: fadeIn 0.3s ease;
 }
 
