@@ -799,13 +799,13 @@
 
   <script src="./assets/js/custom-plugins/certificate-slider.js"></script>
   <script>
-// Mobile menu toggle
+    // Mobile menu toggle
 document.getElementById('maaLaxmiToggle').addEventListener('click', function() {
     const menu = document.getElementById('maaLaxmiMenu');
     menu.classList.toggle('active');
 });
 
-// Mobile dropdown   toggles
+// Mobile dropdown toggles
 document.querySelectorAll('.maa-laxmi-responsive-dropdown-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function(e) {
         e.preventDefault();
@@ -817,6 +817,40 @@ document.querySelectorAll('.maa-laxmi-responsive-submenu-toggle').forEach(functi
     toggle.addEventListener('click', function(e) {
         e.preventDefault();
         this.parentElement.classList.toggle('active');
+    });
+});
+
+// Smart positioning for submenus
+document.querySelectorAll('.maa-laxmi-responsive-submenu').forEach(function(submenu) {
+    submenu.addEventListener('mouseenter', function() {
+        const dropdown = this.querySelector('.maa-laxmi-responsive-submenu-dropdown');
+        const rect = dropdown.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        
+        // Check if dropdown goes outside right edge of screen
+        if (rect.right > windowWidth) {
+            dropdown.classList.add('maa-laxmi-responsive-right');
+        } else {
+            dropdown.classList.remove('maa-laxmi-responsive-right');
+        }
+    });
+});
+
+// Also check main dropdown positioning
+document.querySelectorAll('.maa-laxmi-responsive-dropdown').forEach(function(dropdown) {
+    dropdown.addEventListener('mouseenter', function() {
+        const menu = this.querySelector('.maa-laxmi-responsive-dropdown-menu');
+        const rect = menu.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        
+        // Check if dropdown goes outside right edge of screen
+        if (rect.right > windowWidth) {
+            menu.style.left = 'auto';
+            menu.style.right = '0';
+        } else {
+            menu.style.left = '0';
+            menu.style.right = 'auto';
+        }
     });
 });
 </script>
