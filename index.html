@@ -93,7 +93,7 @@
     </div>
   </nav>
 
-  <!-- Mahalaxmi Hero Section -->
+  <!-- HTML Section -->
   <section class="maa-laxmi-hero-section" id="hero">
     <div class="maa-laxmi-hero-background"></div>
     <div class="maa-laxmi-hero-overlay"></div>
@@ -129,8 +129,6 @@
             </p>
             <a href="#yarn-products" class="maa-laxmi-hero-btn">Discover Yarn Range</a>
           </div>
-
-
 
         </div>
       </div>
@@ -659,7 +657,6 @@
   <script src="./assets/js/custom-plugins/multi-menu.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Background images array - Replace with your actual image paths
       const backgroundImages = [
         './assets/images/basmati.jpg',     // Rice
         './assets/images/yarn-hero.jpg'    // Yarn
@@ -669,57 +666,27 @@
       const slides = document.querySelectorAll('.maa-laxmi-hero-slide');
       const dots = document.querySelectorAll('.maa-laxmi-dot');
       let currentSlide = 0;
-      let slideInterval;
 
-      // Initialize first slide
       heroBackground.style.backgroundImage = `url('${backgroundImages[0]}')`;
 
-      // Dot click handlers
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
           showSlide(index);
-          resetAutoSlide();
         });
       });
 
-      // Show slide function
       function showSlide(index) {
-        // Update background
         heroBackground.style.backgroundImage = `url('${backgroundImages[index]}')`;
 
-        // Update slides
         slides.forEach(slide => slide.classList.remove('active'));
         slides[index].classList.add('active');
 
-        // Update dots
         dots.forEach(dot => dot.classList.remove('active'));
         dots[index].classList.add('active');
 
         currentSlide = index;
       }
 
-      // Auto slide
-      function nextSlide() {
-        const nextIndex = (currentSlide + 1) % slides.length;
-        showSlide(nextIndex);
-      }
-
-      function startAutoSlide() {
-        slideInterval = setInterval(nextSlide, 5000);
-      }
-
-      function resetAutoSlide() {
-        clearInterval(slideInterval);
-        startAutoSlide();
-      }
-
-      // Start auto sliding
-      startAutoSlide();
-
-      // Pause on hover
-      const heroSection = document.querySelector('.maa-laxmi-hero-section');
-      heroSection.addEventListener('mouseenter', () => clearInterval(slideInterval));
-      heroSection.addEventListener('mouseleave', startAutoSlide);
     });
   </script>
 </body>
