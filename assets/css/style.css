@@ -72,136 +72,318 @@ body {
 /* background-color: transparent !important; */
 
 /* floating icon start */
-a{
-  text-decoration:none;
+a {
+    text-decoration: none;
 }
+
 .floating_btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content:center;
-  z-index: 1000;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
 @keyframes pulsing {
-  to {
-    box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
-  }
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
 }
 
 .contact_icon {
-  background-color: #42db87;
-  color: #fff;
-  width: 60px;
-  height: 60px;
-  font-size:30px;
-  border-radius: 50px;
-  text-align: center;
-  box-shadow: 2px 2px 3px #999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translatey(0px);
-  animation: pulse 1.5s infinite;
-  box-shadow: 0 0 0 0 #42db87;
-  -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-  -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-  -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-  animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-  font-weight: normal;
-  font-family: sans-serif;
-  text-decoration: none !important;
-  transition: all 300ms ease-in-out;
+    background-color: #42db87;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translatey(0px);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #42db87;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
 }
 
 
 .text_icon {
-  margin-top: 8px;
-  color: #707070;
-  font-size: 13px;
+    margin-top: 8px;
+    color: #707070;
+    font-size: 13px;
 }
+
 /* floating icon start */
 
 
 /* navbar end  */
-/* 
-.hero {
+/* hero section start */
+/* Hero Section Styles */
+.maa-laxmi-hero-section {
     position: relative;
-    min-height: 100vh;
-    padding: 150px 0 100px;
+    height: 100vh;
     overflow: hidden;
-    background-color: var(--light-color)
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.hero-bg {
+.maa-laxmi-hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/api/placeholder/1920/1080') center/cover no-repeat;
-    opacity: .07;
-    z-index: 1
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
 }
 
-.hero-pattern {
+.maa-laxmi-hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(var(--dark-color) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: .1;
-    z-index: 2
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0.6) 100%);
+    z-index: 2;
 }
 
-.hero-content {
+.maa-laxmi-hero-content-wrapper {
     position: relative;
-    z-index: 10
+    z-index: 3;
+    color: white;
 }
 
-.hero-title {
-    font-weight: 800;
-    font-size: 4rem;
-    line-height: 1.2;
-    margin-bottom: 30px;
-    color: var(--dark-color);
-    position: relative
+.maa-laxmi-hero-slide {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
 
-.hero-title::after {
+.maa-laxmi-hero-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.maa-laxmi-hero-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: maa-laxmi-slideUp 0.8s ease forwards 0.2s;
+}
+
+.maa-laxmi-hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: maa-laxmi-slideUp 0.8s ease forwards 0.4s;
+}
+
+.maa-laxmi-highlight {
+    background: linear-gradient(45deg, #e6b913, #f0cb47, #e6b913);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: maa-laxmi-shimmer 3s ease-in-out infinite;
+    position: relative;
+}
+
+.maa-laxmi-highlight::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -5px;
     left: 0;
-    width: 80px;
-    height: 5px;
-    background-color: var(--primary-color)
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #e6b913, transparent);
+    border-radius: 2px;
+    opacity: 0.8;
 }
 
-.hero-title span {
-    color: var(--primary-color)
+.maa-laxmi-hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: maa-laxmi-slideUp 0.8s ease forwards 0.6s;
 }
 
-.hero-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    opacity: .9
-}
-
-.hero-btn {
+.maa-laxmi-hero-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, #e6b913, #f0cb47);
+    color: #333;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: maa-laxmi-slideUp 0.8s ease forwards 0.8s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    z-index: 1
-} */
+}
 
+.maa-laxmi-hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.maa-laxmi-hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(230, 185, 19, 0.4);
+    color: #333;
+    text-decoration: none;
+}
+
+.maa-laxmi-hero-btn:hover::before {
+    left: 100%;
+}
+
+/* Navigation Dots */
+.maa-laxmi-slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 4;
+}
+
+.maa-laxmi-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.maa-laxmi-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.maa-laxmi-dot.active {
+    background: #e6b913;
+    transform: scale(1.2);
+}
+
+.maa-laxmi-dot.active::after {
+    opacity: 1;
+}
+
+.maa-laxmi-dot:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Animations */
+@keyframes maa-laxmi-slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes maa-laxmi-shimmer {
+
+    0%,
+    100% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 200% center;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .maa-laxmi-hero-section {
+        height: 100vh;
+        padding: 0 15px;
+    }
+
+    .maa-laxmi-hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .maa-laxmi-hero-btn {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+
+    .maa-laxmi-slider-dots {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .maa-laxmi-hero-badge {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+    }
+}
+
+/* hero section end */
 .btn-primary {
     background-color: var(--primary-color);
     border: none;
