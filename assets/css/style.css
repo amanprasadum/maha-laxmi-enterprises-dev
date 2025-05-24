@@ -307,6 +307,7 @@ a{
 
 @media (max-width: 576px) {
     .maa-laxmi-hero-section {
+        margin-top: 4rem;
         padding: 0 15px;
     }
     
