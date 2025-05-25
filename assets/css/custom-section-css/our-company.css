@@ -629,3 +629,108 @@
         margin: 0 10px;
     }
 }
+.our-company-page-certificate-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.our-company-page-certificate-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.our-company-page-certificate-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.our-company-page-certificate-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, #e74c3c, #f39c12);
+    border-radius: 2px;
+}
+
+.our-company-page-certificate-title p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.our-company-page-certificate-images {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.our-company-page-certificate-image {
+    flex: 0 0 auto;
+    max-width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    padding: 20px;
+}
+
+.our-company-page-certificate-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.our-company-page-certificate-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.our-company-page-certificate-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .our-company-page-certificate-section {
+        padding: 60px 0;
+    }
+    
+    .our-company-page-certificate-title h2 {
+        font-size: 2rem;
+    }
+    
+    .our-company-page-certificate-images {
+        gap: 30px;
+    }
+    
+    .our-company-page-certificate-image {
+        max-width: 100%;
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .our-company-page-certificate-section {
+        padding: 40px 0;
+    }
+    
+    .our-company-page-certificate-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .our-company-page-certificate-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+}
