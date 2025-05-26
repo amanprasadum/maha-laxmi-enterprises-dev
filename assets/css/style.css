@@ -2979,19 +2979,19 @@ a{
     .mahalaxmi-meta-item,
     .mahalaxmi-details-row {
         flex-direction: column;
-        padding: 12px 0;
+        padding: 8px 0;
     }
 
     .mahalaxmi-meta-label,
     .mahalaxmi-details-label {
-        margin-bottom: 8px;
+        margin-bottom: 4px;
         flex: none;
         font-size: 0.95rem;
     }
     
     .mahalaxmi-details-value {
         font-size: 0.9rem;
-        line-height: 1.5;
+        line-height: 1.4;
     }
     
     .mahalaxmi-card-body {
@@ -3055,16 +3055,21 @@ a{
     }
     
     .mahalaxmi-details-row {
-        padding: 10px 0;
+        padding: 6px 0;
     }
     
-    .mahalaxmi-details-label,
+    .mahalaxmi-details-label {
+        margin-bottom: 3px;
+        font-size: 0.85rem;
+    }
+    
     .mahalaxmi-details-value {
         font-size: 0.85rem;
     }
     
     .mahalaxmi-highlight-item {
-        padding: 10px;
+        padding: 8px;
+        margin-bottom: 8px;
     }
     
     .mahalaxmi-highlight-text,
