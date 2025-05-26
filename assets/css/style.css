@@ -2933,6 +2933,17 @@ a{
     color: var(--white);
 }
 
+/* Enhanced Responsive Styles */
+@media (max-width: 1199px) {
+    .mahalaxmi-card-body {
+        padding: 25px;
+    }
+    
+    .mahalaxmi-details-label {
+        flex: 0 0 140px;
+    }
+}
+
 @media (max-width: 991px) {
     .mahalaxmi-product-info {
         margin-top: 30px;
@@ -2945,21 +2956,122 @@ a{
     .mahalaxmi-btn {
         width: 100%;
     }
+    
+    .mahalaxmi-card-body {
+        padding: 20px;
+    }
+    
+    .mahalaxmi-card-header {
+        padding: 15px 20px;
+    }
+    
+    .mahalaxmi-section-title {
+        font-size: 1.6rem;
+    }
+    
+    /* Stack columns on tablet */
+    .mahalaxmi-product-highlights {
+        margin-top: 40px;
+    }
 }
 
 @media (max-width: 767px) {
-
     .mahalaxmi-meta-item,
     .mahalaxmi-details-row {
         flex-direction: column;
+        padding: 12px 0;
     }
 
     .mahalaxmi-meta-label,
     .mahalaxmi-details-label {
-        margin-bottom: 5px;
+        margin-bottom: 8px;
+        flex: none;
+        font-size: 0.95rem;
+    }
+    
+    .mahalaxmi-details-value {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .mahalaxmi-card-body {
+        padding: 15px;
+    }
+    
+    .mahalaxmi-card-header {
+        padding: 12px 15px;
+    }
+    
+    .mahalaxmi-section-title {
+        font-size: 1.4rem;
+    }
+    
+    .mahalaxmi-product-certification {
+        padding: 12px;
+        margin-bottom: 25px;
+    }
+    
+    .mahalaxmi-product-certification p {
+        font-size: 0.9rem;
+    }
+    
+    .mahalaxmi-product-highlights {
+        margin-top: 25px;
+    }
+    
+    .mahalaxmi-highlight-item {
+        background-color: #f8f9fa;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .mahalaxmi-highlight-text {
+        font-size: 0.9rem;
+    }
+    
+    .mahalaxmi-btn-primary {
+        width: 100% !important;
+        padding: 15px;
+        font-size: 1rem;
     }
 }
 
+@media (max-width: 575px) {
+    .mahalaxmi-product-details-section {
+        padding: 40px 0;
+    }
+    
+    .mahalaxmi-card-body {
+        padding: 12px;
+    }
+    
+    .mahalaxmi-card-header {
+        padding: 10px 12px;
+    }
+    
+    .mahalaxmi-section-title {
+        font-size: 1.2rem;
+    }
+    
+    .mahalaxmi-details-row {
+        padding: 10px 0;
+    }
+    
+    .mahalaxmi-details-label,
+    .mahalaxmi-details-value {
+        font-size: 0.85rem;
+    }
+    
+    .mahalaxmi-highlight-item {
+        padding: 10px;
+    }
+    
+    .mahalaxmi-highlight-text,
+    .mahalaxmi-product-certification p {
+        font-size: 0.85rem;
+    }
+}
 /* ------------------product details page end------------------------------ */
 
 /* ----------------- product page start ---------------------------------- */
