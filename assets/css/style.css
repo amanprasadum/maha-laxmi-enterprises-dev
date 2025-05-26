@@ -3746,7 +3746,8 @@ a{
 
     .mahalaxmi-meta-item,
     .mahalaxmi-details-row {
-        flex-direction: column;
+        flex-direction: row;
+        /* flex-direction: column; */
     }
 
     .mahalaxmi-meta-label,
