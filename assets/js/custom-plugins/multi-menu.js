@@ -39,18 +39,16 @@
       });
     });
 
-    // Handle window resize
-    window.addEventListener('resize', function () {
-      const dropdownMenus = document.querySelectorAll('.dropdown-submenu .dropdown-menu');
-      dropdownMenus.forEach(menu => {
-        menu.style.display = '';
-      });
+    // window.addEventListener('resize', function () {
+    //   const dropdownMenus = document.querySelectorAll('.dropdown-submenu .dropdown-menu');
+    //   dropdownMenus.forEach(menu => {
+    //     menu.style.display = '';
+    //   });
 
-      // Reinitialize dropdown behavior after resize
-      setTimeout(() => {
-        location.reload();
-      }, 500);
-    });
+    //   setTimeout(() => {
+    //     location.reload();
+    //   }, 500);
+    // });
 
     // Close mobile menu when clicking on regular links (not dropdown toggles)
     document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)').forEach(link => {
