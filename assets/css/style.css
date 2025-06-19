@@ -2641,13 +2641,13 @@ a{
 
 
 /* ------------------product details page start------------------------------ */
-/* Enhanced Product Details Page Styles */
 
-/* Product Hero Section Enhancements */
+/* Product Hero Section */
 .mahalaxmi-product-hero-section {
     background: linear-gradient(135deg, var(--light-color) 0%, rgba(230, 185, 19, 0.05) 100%);
     position: relative;
     overflow: hidden;
+    padding: 3rem 0;
 }
 
 .mahalaxmi-product-hero-section::before {
@@ -2658,7 +2658,7 @@ a{
     width: 100%;
     height: 100%;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23116530" opacity="0.03"/><circle cx="75" cy="75" r="1" fill="%23e6b913" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .mahalaxmi-product-image-container {
@@ -2668,24 +2668,29 @@ a{
 
 .mahalaxmi-product-badge-corner {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 1rem;
+    right: 1rem;
     z-index: 3;
 }
 
 .mahalaxmi-product-main-image {
-    position: relative;
-    border-radius: 20px;
+    border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    padding: 30px;
+    box-shadow: var(--card-shadow);
+    background: var(--white);
+    padding: 1.5rem;
     transition: var(--transition);
 }
 
 .mahalaxmi-product-main-image:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.25rem);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mahalaxmi-product-main-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .mahalaxmi-image-overlay {
@@ -2701,22 +2706,30 @@ a{
     opacity: 1;
 }
 
+.mahalaxmi-product-thumbnails {
+    margin-top: 1rem;
+}
+
 .mahalaxmi-thumbnail {
-    position: relative;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    border: 3px solid transparent;
+    box-shadow: var(--card-shadow);
+    border: 2px solid transparent;
     transition: var(--transition);
-    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    background: var(--white);
+}
+
+.mahalaxmi-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .mahalaxmi-thumbnail:hover,
 .mahalaxmi-thumbnail.active {
     border-color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(230, 185, 19, 0.3);
+    transform: translateY(-0.15rem);
 }
 
 .thumbnail-overlay {
@@ -2734,15 +2747,14 @@ a{
     opacity: 1;
 }
 
-/* Product Info Enhancements */
+/* Product Info */
 .mahalaxmi-product-info {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    background: var(--white);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
     border: 1px solid rgba(230, 185, 19, 0.1);
     position: relative;
-    overflow: hidden;
 }
 
 .mahalaxmi-product-info::before {
@@ -2751,121 +2763,108 @@ a{
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 0.25rem;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
 }
 
 .mahalaxmi-product-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 25px;
-    position: relative;
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
 }
 
 .mahalaxmi-product-badge {
-    background: linear-gradient(135deg, var(--primary-color), #f0c20a);
+    background: var(--primary-color);
     color: var(--dark-color);
-    font-weight: 700;
-    padding: 8px 20px;
-    border-radius: 25px;
-    box-shadow: 0 4px 15px rgba(230, 185, 19, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--card-shadow);
 }
 
 .mahalaxmi-product-rating {
     color: #ffa500;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .mahalaxmi-trust-indicators {
     background: rgba(17, 101, 48, 0.05);
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 0.75rem;
+    padding: 1rem;
     border: 1px solid rgba(17, 101, 48, 0.1);
 }
 
 .trust-item {
-    padding: 15px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.7);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
     transition: var(--transition);
+    text-align: center;
 }
 
 .trust-item:hover {
-    background: rgba(255, 255, 255, 1);
-    transform: translateY(-2px);
+    transform: translateY(-0.1rem);
+    background: var(--white);
 }
 
 .trust-item i {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
 }
 
-/* Enhanced Meta Cards */
+/* Meta Cards */
 .mahalaxmi-meta-card {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    border-radius: 15px;
-    padding: 20px;
+    background: var(--white);
+    border-radius: 0.75rem;
+    padding: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: var(--transition);
     display: flex;
     align-items: center;
-    gap: 15px;
-    height: 100%;
+    gap: 1rem;
 }
 
 .mahalaxmi-meta-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.15rem);
     border-color: var(--primary-color);
 }
 
 .meta-icon {
-    width: 45px;
-    height: 45px;
-    background: linear-gradient(135deg, var(--primary-color), #f0c20a);
-    border-radius: 12px;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--primary-color);
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--dark-color);
-    font-size: 1.2rem;
+    font-size: 1rem;
     flex-shrink: 0;
 }
 
-.meta-content {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
 .meta-label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-color);
     opacity: 0.8;
 }
 
 .meta-value {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--dark-color);
 }
 
-/* Enhanced CTA Buttons */
+/* CTA Buttons */
 .mahalaxmi-btn {
-    padding: 15px 25px;
-    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
     font-weight: 600;
     transition: var(--transition);
     border: none;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -2873,591 +2872,204 @@ a{
     overflow: hidden;
 }
 
-.mahalaxmi-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.mahalaxmi-btn:hover::before {
-    left: 100%;
-}
-
-.btn-text {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.btn-subtext {
-    font-size: 0.75rem;
-    opacity: 0.8;
-    margin-top: 2px;
+.mahalaxmi-btn:hover {
+    transform: translateY(-0.1rem);
 }
 
 .mahalaxmi-btn-call {
-    background: linear-gradient(135deg, var(--secondary-color), #0e5025);
+    background: var(--secondary-color);
     color: var(--white);
-    box-shadow: 0 8px 25px rgba(17, 101, 48, 0.3);
-}
-
-.mahalaxmi-btn-call:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(17, 101, 48, 0.4);
+    box-shadow: var(--card-shadow);
 }
 
 .mahalaxmi-btn-enquiry {
-    background: linear-gradient(135deg, var(--primary-color), #f0c20a);
+    background: var(--primary-color);
     color: var(--dark-color);
-    box-shadow: 0 8px 25px rgba(230, 185, 19, 0.3);
-}
-
-.mahalaxmi-btn-enquiry:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(230, 185, 19, 0.4);
+    box-shadow: var(--card-shadow);
 }
 
 .mahalaxmi-quick-contact {
     background: rgba(0, 0, 0, 0.02);
-    padding: 15px;
-    border-radius: 10px;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
     border: 1px dashed rgba(0, 0, 0, 0.1);
 }
 
 /* Product Details Section */
 .mahalaxmi-product-details-section {
     background: linear-gradient(135deg, #f8f9fa 0%, rgba(230, 185, 19, 0.02) 100%);
-    position: relative;
+    padding: 3rem 0;
 }
 
 .mahalaxmi-section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.mahalaxmi-section-divider {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    border-radius: 2px;
-}
-
-.mahalaxmi-card {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.mahalaxmi-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-}
-
-.mahalaxmi-card-header {
-    background: linear-gradient(135deg, var(--white), #f8f9fa);
-    padding: 25px 30px;
-    border-bottom: 2px solid rgba(230, 185, 19, 0.1);
-}
-.mahalaxmi-product-hero-section {
-    background: linear-gradient(135deg, var(--light-color) 0%, rgba(230, 185, 19, 0.05) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.mahalaxmi-product-hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23116530" opacity="0.03"/><circle cx="75" cy="75" r="1" fill="%23e6b913" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.5;
-}
-
-.mahalaxmi-product-image-container {
-    position: relative;
-    z-index: 2;
-}
-
-.mahalaxmi-product-badge-corner {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 3;
-}
-
-.mahalaxmi-product-main-image {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    padding: 30px;
-    transition: var(--transition);
-}
-
-.mahalaxmi-product-main-image:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-}
-
-.mahalaxmi-image-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.mahalaxmi-product-main-image:hover .mahalaxmi-image-overlay {
-    opacity: 1;
-}
-
-.mahalaxmi-thumbnail {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    border: 3px solid transparent;
-    transition: var(--transition);
-    background: linear-gradient(145deg, #ffffff, #f5f5f5);
-}
-
-.mahalaxmi-thumbnail:hover,
-.mahalaxmi-thumbnail.active {
-    border-color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(230, 185, 19, 0.3);
-}
-
-.thumbnail-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(230, 185, 19, 0.1), rgba(17, 101, 48, 0.1));
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.mahalaxmi-thumbnail:hover .thumbnail-overlay {
-    opacity: 1;
-}
-
-/* Product Info Enhancements */
-.mahalaxmi-product-info {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(230, 185, 19, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.mahalaxmi-product-info::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-}
-
-.mahalaxmi-product-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 25px;
-    position: relative;
-}
-
-.mahalaxmi-product-badge {
-    background: linear-gradient(135deg, var(--primary-color), #f0c20a);
-    color: var(--dark-color);
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
     font-weight: 700;
-    padding: 8px 20px;
-    border-radius: 25px;
-    box-shadow: 0 4px 15px rgba(230, 185, 19, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.mahalaxmi-product-rating {
-    color: #ffa500;
-    font-size: 1.1rem;
-}
-
-.mahalaxmi-trust-indicators {
-    background: rgba(17, 101, 48, 0.05);
-    border-radius: 15px;
-    padding: 20px;
-    border: 1px solid rgba(17, 101, 48, 0.1);
-}
-
-.trust-item {
-    padding: 15px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    transition: var(--transition);
-}
-
-.trust-item:hover {
-    background: rgba(255, 255, 255, 1);
-    transform: translateY(-2px);
-}
-
-.trust-item i {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-/* Enhanced Meta Cards */
-.mahalaxmi-meta-card {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    border-radius: 15px;
-    padding: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    height: 100%;
-}
-
-.mahalaxmi-meta-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-color);
-}
-
-.meta-icon {
-    width: 45px;
-    height: 45px;
-    background: linear-gradient(135deg, var(--primary-color), #f0c20a);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: var(--dark-color);
-    font-size: 1.2rem;
-    flex-shrink: 0;
-}
-
-.meta-content {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.meta-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-color);
-    opacity: 0.8;
-}
-
-.meta-value {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--dark-color);
-}
-
-/* Enhanced CTA Buttons */
-.mahalaxmi-btn {
-    padding: 15px 25px;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.mahalaxmi-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.mahalaxmi-btn:hover::before {
-    left: 100%;
-}
-
-.btn-text {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.btn-subtext {
-    font-size: 0.75rem;
-    opacity: 0.8;
-    margin-top: 2px;
-}
-
-.mahalaxmi-btn-call {
-    background: linear-gradient(135deg, var(--secondary-color), #0e5025);
-    color: var(--white);
-    box-shadow: 0 8px 25px rgba(17, 101, 48, 0.3);
-}
-
-.mahalaxmi-btn-call:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(17, 101, 48, 0.4);
-}
-
-.mahalaxmi-btn-enquiry {
-    background: linear-gradient(135deg, var(--primary-color), #f0c20a);
-    color: var(--dark-color);
-    box-shadow: 0 8px 25px rgba(230, 185, 19, 0.3);
-}
-
-.mahalaxmi-btn-enquiry:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(230, 185, 19, 0.4);
-}
-
-.mahalaxmi-quick-contact {
-    background: rgba(0, 0, 0, 0.02);
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px dashed rgba(0, 0, 0, 0.1);
-}
-
-/* Product Details Section */
-.mahalaxmi-product-details-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, rgba(230, 185, 19, 0.02) 100%);
-    position: relative;
-}
-
-.mahalaxmi-section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .mahalaxmi-section-divider {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    width: 5rem;
+    height: 0.25rem;
+    background: var(--primary-color);
     border-radius: 2px;
+    margin: 1rem auto;
 }
 
 .mahalaxmi-card {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    background: var(--white);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
     border: 1px solid rgba(0, 0, 0, 0.05);
     overflow: hidden;
     transition: var(--transition);
 }
 
 .mahalaxmi-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    transform: translateY(-0.25rem);
 }
 
 .mahalaxmi-card-header {
-    background: linear-gradient(135deg, var(--white), #f8f9fa);
-    padding: 25px 30px;
-    border-bottom: 2px solid rgba(230, 185, 19, 0.1);
-    position: relative;
-}
-
-.mahalaxmi-card-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--white);
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(230, 185, 19, 0.1);
 }
 
 .mahalaxmi-card-body {
-    padding: 30px;
+    padding: 1.5rem;
 }
 
 /* Details Grid */
 .mahalaxmi-details-grid {
     display: grid;
-    gap: 20px;
+    gap: 1rem;
+    grid-template-columns: 1fr;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 249, 250, 0.8));
-    border-radius: 12px;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 0.5rem;
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: var(--transition);
 }
 
 .detail-item:hover {
-    transform: translateX(5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateX(0.25rem);
     border-color: var(--primary-color);
 }
 
 .detail-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--primary-color), #f0c20a);
-    border-radius: 10px;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--primary-color);
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--dark-color);
-    font-size: 1.1rem;
+    font-size: 1rem;
     flex-shrink: 0;
 }
 
-.detail-content {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    flex: 1;
-}
-
 .detail-label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--text-color);
     opacity: 0.8;
 }
 
 .detail-value {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--dark-color);
 }
 
 .flag-icon {
-    width: 20px;
-    height: 15px;
+    width: 1.25rem;
+    height: 0.9375rem;
     border-radius: 2px;
 }
 
 /* Certification Card */
-.certification-content {
-    text-align: center;
-}
-
 .cert-badge {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--secondary-color), #0e5025);
+    width: 4rem;
+    height: 4rem;
+    background: var(--secondary-color);
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 2rem;
-    box-shadow: 0 10px 30px rgba(17, 101, 48, 0.3);
+    font-size: 1.5rem;
+    box-shadow: var(--card-shadow);
 }
 
 .certification-stats {
     background: rgba(17, 101, 48, 0.05);
-    border-radius: 10px;
-    padding: 15px;
-    margin-top: 15px;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
 }
 
 /* Features Grid */
 .features-grid {
     display: grid;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 15px;
-    background: linear-gradient(135deg, rgba(230, 185, 19, 0.05), rgba(17, 101, 48, 0.05));
-    border-radius: 10px;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(230, 185, 19, 0.05);
+    border-radius: 0.5rem;
     border: 1px solid rgba(230, 185, 19, 0.1);
     transition: var(--transition);
 }
 
 .feature-item:hover {
-    transform: translateX(3px);
+    transform: translateX(0.15rem);
     border-color: var(--primary-color);
-    background: linear-gradient(135deg, rgba(230, 185, 19, 0.1), rgba(17, 101, 48, 0.08));
 }
 
 .feature-icon {
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(135deg, var(--primary-color), #f0c20a);
-    border-radius: 8px;
+    width: 2rem;
+    height: 2rem;
+    background: var(--primary-color);
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--dark-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
     flex-shrink: 0;
 }
 
 .feature-content {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--dark-color);
-    flex: 1;
 }
 
-/* Enhanced Primary Button */
+/* Primary Button */
 .mahalaxmi-btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), #f0c20a);
+    background: var(--primary-color);
     color: var(--dark-color);
-    padding: 15px 30px;
-    border-radius: 25px;
-    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1.5rem;
+    font-weight: 600;
     border: none;
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 8px 25px rgba(230, 185, 19, 0.3);
-    position: relative;
-    overflow: hidden;
+    box-shadow: var(--card-shadow);
 }
 
 .mahalaxmi-btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(230, 185, 19, 0.4);
+    transform: translateY(-0.1rem);
 }
 
 /* Pulse Animation */
@@ -3466,73 +3078,50 @@ a{
 }
 
 @keyframes pulse {
-    0% {
-        box-shadow: 0 8px 25px rgba(230, 185, 19, 0.3);
+    0%, 100% {
+        box-shadow: var(--card-shadow);
     }
     50% {
-        box-shadow: 0 12px 35px rgba(230, 185, 19, 0.5);
-    }
-    100% {
-        box-shadow: 0 8px 25px rgba(230, 185, 19, 0.3);
+        box-shadow: 0 12px 35px rgba(230, 185, 19, 0.4);
     }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .mahalaxmi-product-title {
-        font-size: 2rem;
-    }
-    
-    .mahalaxmi-section-title {
-        font-size: 2rem;
-    }
-    
     .mahalaxmi-product-info,
     .mahalaxmi-card-body {
-        padding: 20px;
+        padding: 1.5rem;
     }
-    
+
     .mahalaxmi-product-main-image {
-        padding: 20px;
+        padding: 1rem;
     }
-    
+
     .meta-icon,
     .detail-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.9rem;
     }
-    
+
     .cert-badge {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
     }
 }
 
 @media (max-width: 576px) {
-    .mahalaxmi-product-title {
-        font-size: 1.75rem;
-    }
-    
-    .mahalaxmi-section-title {
-        font-size: 1.75rem;
-    }
-    
     .mahalaxmi-btn {
-        padding: 12px 20px;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
-    
-    .btn-text {
-        font-size: 0.9rem;
-    }
-    
-    .btn-subtext {
-        font-size: 0.7rem;
+
+    .mahalaxmi-product-thumbnails .col-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
     }
 }
-
-
 /* ------------------product details page end------------------------------ */
 
 /* ----------------- product page start ---------------------------------- */
