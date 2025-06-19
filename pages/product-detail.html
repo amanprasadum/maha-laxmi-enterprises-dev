@@ -513,6 +513,32 @@
             return false;
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Thumbnail click handler
+            const thumbnails = document.querySelectorAll('.mahalaxmi-thumbnail');
+            const mainImage = document.getElementById('mainProductImage');
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    thumbnail.classList.add('active');
+                    mainImage.src = thumbnail.dataset.img;
+                    mainImage.alt = thumbnail.querySelector('img').alt;
+                });
+            });
+
+            // Scroll animation
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+            animateElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 
 </html>
