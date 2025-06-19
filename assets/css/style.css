@@ -75,6 +75,10 @@ body {
 a{
   text-decoration:none;
 }
+a {
+  text-decoration: none;
+}
+
 .floating_btn {
   position: fixed;
   bottom: 30px;
@@ -82,39 +86,52 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   z-index: 1000;
 }
 
 @keyframes pulsing {
-  to {
-    box-shadow: 0 0 0 30px rgba(66, 219, 135, 0);
+  0% {
+    box-shadow: 0 0 0 0 rgba(66, 219, 135, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(66, 219, 135, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(66, 219, 135, 0);
   }
 }
 
 .contact_icon {
-  background-color: #42db87;
+  background: linear-gradient(135deg, #25d366, #128c7e);
   color: #fff;
   width: 60px;
   height: 60px;
-  font-size: 30px;
+  font-size: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-  box-shadow: 0 0 0 0 #42db87;
-  transition: all 300ms ease-in-out;
+  animation: pulsing 1.5s infinite;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact_icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 .text_icon {
   margin-top: 8px;
-  color: #707070;
+  color: #128c7e;
   font-size: 13px;
-  font-weight: 500;
-  font-family: sans-serif;
+  font-weight: 600;
+  font-family: 'Segoe UI', sans-serif;
   text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
 }
+
 /* floating icon end */
 
 
